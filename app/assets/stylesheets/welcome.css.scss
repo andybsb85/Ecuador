@@ -1,0 +1,93 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body{
+   background-image: url("flame-240490_1280.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 550px;
+
+   
+}
+
+/*======================= header ==================================*/
+
+.header{  
+   height: 120px;
+   margin-left: 12%;
+   margin-right: 12%;
+ 
+}
+.logo{
+     background-color: white;
+     position: absolute;
+     z-index: 1;
+     height: 150px;
+     width: 10%; 
+     padding-left: 1%;
+     padding-right:1%;
+     padding-top: 1%;
+     padding-bottom:1%;
+
+    img{
+     height: 130px;
+     width: 100%; 
+    }
+  }
+
+.header-right{
+  width: 100%;
+  
+  .top-bar{
+     background-color: rgba(0,0,0,0.3);
+    .top-bar-section ul li{
+      background-color: rgba(0,0,0,0.3);
+    }
+  }  
+}
+.language{
+  float: right;
+  width: 50%;
+}
+.has-form{
+  width: 300px;
+}
+.row_login{
+  background-color: #ff0000;
+  width: 100%;
+
+  .column_left{
+    float: left;
+    width: 45%;
+
+  }
+
+  .column_right{
+     float: left;
+     width: 45%;
+  }
+}
+
+.banner{
+
+   float: right;
+   width: 40%; 
+   height: 100px;
+   margin-top: 1%;
+   margin-bottom: 1%;
+  
+  img{
+    width: 100%;
+    height: 60px;
+     } 
+  
+}
+
+
+/*=======================content ==================================*/
+.div-orbit{
+  width: 30%;
+  height: 300px;
+}

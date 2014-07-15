@@ -18,13 +18,21 @@
               <li class="divider"></li>
               <li class= "has-form">
                 <div class= "row_login">
-                    <div class="column_left">
-                      <%= link_to  t('.signup'), :class=> "button radius" %>
-                    </div>
-                    <div class="column_right">
-                      <%= link_to  t('.signin'),  :class=> "button radius" %>
-                    </div>
+                  <% if user_signed_in? %>
+                    Looged in as <strong><%= current_user.email %></strong>
+                    <%= link_to  t('.logout'), destroy_user_session_path, method: :delete %>
+                    <% else %>
+                  <div class="column_left">
+                    <%= link_to  t('.signup'), new_user_registration_path, :class=> "button radius" %>
+                  </div>
+                  <div class="column_right">
+                    <%= link_to  t('.signin'), new_user_session_path, :class=> "button radius" %>
+                    <% end %>
+                  </div>
                 </div>
+                <% flash.each do |name, msg| %>
+                <%= content_tag :div, msg, id: "flash_#{name}" %>
+                <% end %>
               </li>
               <li class="divider"></li>
               <li class= "has-form">

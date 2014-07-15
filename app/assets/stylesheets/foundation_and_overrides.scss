@@ -760,7 +760,7 @@
 
 // We use these to control the timer styles
  $orbit-timer-bg: rgba(255,255,255,0.3);
- $orbit-timer-show-progress-bar: true;
+ $orbit-timer-show-progress-bar: false;
 
 // We use these to control the bullet nav styles
  $orbit-bullet-nav-color: #ccc;
@@ -768,9 +768,9 @@
  $orbit-bullet-radius: rem-calc(9);
 
 // We use these to controls the style of slide numbers
- $orbit-slide-number-bg: rgba(0,0,0,0);
- $orbit-slide-number-font-color: #fff;
- $orbit-slide-number-padding: rem-calc(5);
+// $orbit-slide-number-bg: rgba(0,0,0,0);
+// $orbit-slide-number-font-color: #fff;
+// $orbit-slide-number-padding: rem-calc(5);
 
 // Hide controls on small
  $orbit-nav-hide-for-small: true;

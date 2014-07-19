@@ -1,12 +1,12 @@
 <div class = "header">
-  <div class = "headerUp">
+  <div class = "header-up">
       <div class = "logo">
         <%= image_tag("logo.png") %>
       </div>
-      <div class ="header-right">
+      <!--<div class ="header-right">
         <nav class="top-bar"> 
           <section class="top-bar-section">
-          <!-- Right Nav Section -->
+         
             <ul class="right">
               <li class= "has-form">
                 <div class = "language">
@@ -17,50 +17,84 @@
               </li>
               <li class="divider"></li>
               <li class= "has-form">
-                <div class= "row_login">
-                  <% if user_signed_in? %>
-                    Looged in as <strong><%= current_user.email %></strong>
-                    <%= link_to  t('.logout'), destroy_user_session_path, method: :delete %>
-                    <% else %>
-                  <div class="column_left">
-                    <%= link_to  t('.signup'), new_user_registration_path, :class=> "button radius" %>
-                  </div>
-                  <div class="column_right">
-                    <%= link_to  t('.signin'), new_user_session_path, :class=> "button radius" %>
-                    <% end %>
-                  </div>
-                </div>
-                <% flash.each do |name, msg| %>
-                <%= content_tag :div, msg, id: "flash_#{name}" %>
-                <% end %>
-              </li>
-              <li class="divider"></li>
-              <li class= "has-form">
-                <div class = "search">
-                  <div class="row collapse">
-                    <div class="large-7 small-9 columns">
-                      <%= form_tag("/search", method: "get") do %>
-                      <%= text_field_tag(:q) %>
-                    </div>
-                    <div class="large-5 small-3 columns">
-                      <%= submit_tag("Search", class: "button radius round")%>
-                      <% end %>  
-                    </div>
-                  </div>       
-                </div>
+                 <div class = "search">
+                   <div class="row collapse">
+                     <div class="small-10 columns">
+                       <%= form_tag("/search", method: "get") do %>
+                       <%= text_field_tag(:q) %>
+                     </div>
+                     <div class="small-2 columns">
+                       <%= submit_tag("Search", class: "button radius")%>
+                       <% end %>  
+                     </div>
+                   </div>       
+                 </div>
               </li>
             </ul> 
           </section>
         </nav> 
+      </div>-->
+      <div class ="other_menu">
+        <nav class="top-bar" data-topbar>
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li><a href="#"><%= link_to  t('.aboutEcuador') %></a></li>
+              <li class="divider"></li>
+              <li>
+               <div class="small-12 columns">
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                 </select></div>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <ul>
+                  <div class="small-12 columns">
+                    <div class="row collapse">
+                      <div class="small-10 columns">
+                        <input type="text" placeholder="Search">
+                      </div>
+                      <div class="small-2 columns">
+                        <a href="#" class="button tiny">Go</a>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="divider"></li>
+              <% if user_signed_in? %>
+              <li class="has-dropdown">
+                <a href="#"><%= current_user.username %></a>
+                <ul class="dropdown">
+                  <li><%= link_to  t('.profile') %></li>
+                  <li><%= link_to  t('.logout'), destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              <% else %> 
+              <li>
+                <ul>
+                  <li><%= link_to t('.signup'), new_user_registration_path %></li>
+                  <li><%= link_to t('.signin'), new_user_session_path %></li>
+                </ul>
+              </li>
+                <% end %>
+            </ul>
+          </section>
+        </nav>
       </div>
       <div class = "banner">
         <%= image_tag("advertice.png") %>
       </div>
-
+  </div>
+  <div class = "menu">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#">My Site</a></h1>
+        <h1><a href="#"><%= link_to  t('.ecuadorTurism'), root_url %></a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -69,19 +103,23 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="active"><a href="#">Right Button Active</a></li>
-        <li class="has-dropdown">
-          <a href="#">Right Button Dropdown</a>
+        <li class="active">
+          <a href="#"><%= link_to  t('.aboutEcuador') %></a></li>
+          <li class="divider"></li>
+         <li class="has-dropdown">
+           <a href="#"><%= link_to  t('.destination') %></a></li>
+          <li class="divider"></li>
+         <li class="has-dropdown">
+           <a href="#"><%= link_to  t('.entertainment') %></a></li>
+          <li class="divider"></li>
+         <li class="has-dropdown">
+          <a href="#"><%= link_to  t('.tripPlanner')  %></a>
           <ul class="dropdown">
             <li><a href="#">First link in dropdown</a></li>
           </ul>
         </li>
       </ul>
-
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <li><a href="#">Left Nav Button</a></li>
-      </ul>
     </section>
   </nav>
+ </div>
 </div>

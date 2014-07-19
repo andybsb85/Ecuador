@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-   background-image: url("flame-240490_1280.jpg");
+   background-image: url("amazon.jpg");
    background-repeat: no-repeat;
    background-size: 100% 550px;
 
@@ -13,17 +13,26 @@ body{
 /*======================= header ==================================*/
 
 .header{  
-   height: 120px;
+   float: left;
+   position: relative;
+   height:auto;
    margin-left: 12%;
    margin-right: 12%;
  
 }
+
+.header-up{
+  width: 100%;
+  position: relative;
+  float: left;
+}
 .logo{
      background-color: white;
-     position: absolute;
      z-index: 1;
+     position: absolute;
      height: 150px;
-     width: 10%; 
+     width: 12%; 
+     margin-left:2%;
      padding-left: 1%;
      padding-right:1%;
      padding-top: 1%;
@@ -35,13 +44,22 @@ body{
     }
   }
 
-.header-right{
-  width: 100%;
-  
+.other_menu{
+
   .top-bar{
      background-color: rgba(0,0,0,0.3);
-    .top-bar-section ul li{
+    
+    .top-bar-section ul{
+       background-color: rgba(0,0,0,0.3);
+    }
+    .top-bar-section ul li {
+       background-color: rgba(0,0,0,0.3);
+    }
+    .top-bar-section ul li a{
       background-color: rgba(0,0,0,0.3);
+    }
+    .search{
+      width: 90%;
     }
   }  
 }
@@ -51,9 +69,12 @@ body{
 }
 .has-form{
   width: 300px;
+  
+  .search{
+    width: 20%;
+  }
 }
 .row_login{
-  background-color: #ff0000;
   width: 100%;
 
   .column_left{
@@ -69,7 +90,7 @@ body{
 }
 
 .banner{
-
+   position: relative;
    float: right;
    width: 40%; 
    height: 100px;
@@ -83,9 +104,65 @@ body{
   
 }
 
+.menu{
+  position: relative;
+  width: 100%;
+  float:left;
+}
 
 /*=======================content ==================================*/
-.div-orbit{
-  width: 30%;
-  height: 300px;
+.content{
+  float: left;
+  position: relative;
+  width: 76%;
+  margin-left: 12%;
+  margin-right: 12%;
+  height: auto;
+
+
+    .book-destination{
+      background-color: #990a5f;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: 3%;
+      margin-right: 5%;
+      float: left;
+      position: relative;
+      width: 35%;
+      height: 300px;;
+      
+      .tabs-content{
+    
+        margin-left: -6%;
+        width: 90%;
+        
+       
+      }
+
+    }
+  
+    .map{
+     background-color: #ff0000;
+    }
+  
+
+    .div-orbit{
+      float: left;
+      width: 30%;
+      height: 300px;
+    }
+  
+}
+
+/*=======================footer==================================*/
+
+.footer {
+   position: relative;
+   float:  left;
+   background: #212D48;
+   height: auto;
+   line-height: 50px;
+   color: #fff;
+   text-align: center;
+   width: 100%; 
 }

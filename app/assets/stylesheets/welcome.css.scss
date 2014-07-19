@@ -5,7 +5,7 @@
 body{
    background-image: url("amazon.jpg");
    background-repeat: no-repeat;
-   background-size: 100% 550px;
+   background-size: 100% 600px;
 
    
 }
@@ -122,34 +122,49 @@ body{
 
     .book-destination{
       background-color: #990a5f;
-      margin-top: 5%;
-      margin-bottom: 5%;
-      margin-left: 3%;
-      margin-right: 5%;
-      float: left;
-      position: relative;
-      width: 35%;
-      height: 300px;;
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
       
       .tabs-content{
-    
         margin-left: -6%;
         width: 90%;
-        
-       
       }
 
     }
   
     .map{
-     background-color: #ff0000;
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      background-color: #ff0000;
+    
+    }
+    
+    .calendar{
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      background-color: #ff0000;
+     
+    }
+    .whats-on{
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      background-color: #ff0000;
+    
     }
   
-
     .div-orbit{
-      float: left;
-      width: 30%;
+      margin-top: 10%;
+      width: 100%;
       height: 300px;
+      
+      img{
+        width: 100%;
+        height: 300px;
+      }
     }
   
 }
@@ -166,3 +181,108 @@ body{
    text-align: center;
    width: 100%; 
 }
+
+/*============================Media Queries large screen=================*/
+@media (max-width: 992px) {
+  .header{  
+   float: left;
+   position: relative;
+   height:auto;
+   width: 84%;
+   margin-left: 8%;
+   margin-right: 8%;
+   }
+  
+  .content{
+  float: left;
+  position: relative;
+  width: 84%;
+  margin-left: 8%;
+  margin-right: 8%;
+    
+    .book-destination{
+      background-color: #990a5f;
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      
+      .tabs-content{
+        margin-left: -2%;
+        width: 90%;
+      }
+    }
+  }
+}
+
+/*============================Media Queries style medium screen=================*/
+@media screen and (max-width: 768px){
+  .header{  
+   float: left;
+   position: relative;
+   height:auto;
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+   }
+  
+  .content{
+  float: left;
+  position: relative;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: auto;
+    
+    .book-destination{
+      background-color: #990a5f;
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      
+      .tabs-content{
+        margin-left: 1%;
+        width: 90%;
+      }
+    }
+  } 
+}
+
+
+
+
+/*============================Media Queries style small screen=================*/
+
+@media screen and (max-width: 480px){
+  .header{  
+   float: left;
+   position: relative;
+   height:auto;
+   width: 100%;
+   margin-left: 0%;
+   margin-right: 0%;
+   }
+  
+  .content{
+  float: left;
+  position: relative;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  height: auto;
+    
+    .book-destination{
+      background-color: #990a5f;
+      margin-top: 10%;
+      width: 100%;
+      height: 300px;
+      
+      .tabs-content{
+        margin-left: 6%;
+        width: 90%;
+      }
+    }
+  }
+}
+
+
+

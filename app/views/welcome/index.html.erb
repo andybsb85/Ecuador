@@ -6,17 +6,31 @@
 </ul>-->
 <!--Div with tabs for destination and booking-->
 <div class = "content">
-   <div class= "book-destination">
-      <ul class="tabs" data-tab>
-        <li class="tab-title active"><a href="#panel2-1"><%= t('.selectDestination')%></a></li>
-        <li class="tab-title"><a href="#panel2-2"><%= t('.booking')%></a></li>
-      </ul>
-      <div class="tabs-content">
-        <div class="content active" id="panel2-1">
-          <form>
-            <div class="row">
-              <div class="large-12 columns">
-                  <label><%= t('.selectRegion')%>
+  <div class ="row">
+    <div class= "large-6 columns">
+      <div class= "book-destination">
+        <ul class="tabs" data-tab>
+          <li class="tab-title active"><a href="#panel2-1"><%= t('.selectDestination')%></a></li>
+          <li class="tab-title"><a href="#panel2-2"><%= t('.booking')%></a></li>
+        </ul>
+        <div class="tabs-content">
+          <div class="content active" id="panel2-1">
+            <form>
+              <div class="row">
+                <div class="large-12 columns">
+                    <label><%= t('.selectRegion')%>
+                      <select>
+                        <option value="husker">Husker</option>
+                        <option value="starbuck">Starbuck</option>
+                        <option value="hotdog">Hot Dog</option>
+                        <option value="apollo">Apollo</option>
+                      </select>
+                    </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectCity')%>
                     <select>
                       <option value="husker">Husker</option>
                       <option value="starbuck">Starbuck</option>
@@ -24,137 +38,159 @@
                       <option value="apollo">Apollo</option>
                     </select>
                   </label>
+                </div>
               </div>
-            </div>
-            <div class="row">
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectOption')%>
+                    <select>
+                      <option value="husker">Husker</option>
+                      <option value="starbuck">Starbuck</option>
+                      <option value="hotdog">Hot Dog</option>
+                      <option value="apollo">Apollo</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns">
+                  <a href="#" class="button tiny round"><%= t('.go')%></a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="content" id="panel2-2">
+            <form>
+             <div class="row">
               <div class="large-12 columns">
-                <label><%= t('.selectCity')%>
-                  <select>
-                    <option value="husker">Husker</option>
-                    <option value="starbuck">Starbuck</option>
-                    <option value="hotdog">Hot Dog</option>
-                    <option value="apollo">Apollo</option>
-                  </select>
-                </label>
-              </div>
+                <label>Input Label
+                <input type="text" placeholder="large-12.columns" />
+              </label>
             </div>
-            <div class="row">
-              <div class="large-12 columns">
-                <label><%= t('.selectOption')%>
-                  <select>
-                    <option value="husker">Husker</option>
-                    <option value="starbuck">Starbuck</option>
-                    <option value="hotdog">Hot Dog</option>
-                    <option value="apollo">Apollo</option>
-                  </select>
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-                <a href="#" class="button tiny round"><%= t('.go')%></a>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="content" id="panel2-2">
-          <form>
-           <div class="row">
-            <div class="large-12 columns">
+          </div>
+          <div class="row">
+            <div class="large-4 columns">
               <label>Input Label
-              <input type="text" placeholder="large-12.columns" />
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-4 columns">
-            <label>Input Label
-              <input type="text" placeholder="large-4.columns" />
-            </label>
-          </div>
-          <div class="large-4 columns">
-            <label>Input Label
-              <input type="text" placeholder="large-4.columns" />
-            </label>
-          </div>
-          <div class="large-4 columns">
-            <div class="row collapse">
-              <label>Input Label</label>
-              <div class="small-9 columns">
-                <input type="text" placeholder="small-9.columns" />
-              </div>
-              <div class="small-3 columns">
-                <span class="postfix">.com</span>
+                <input type="text" placeholder="large-4.columns" />
+              </label>
+            </div>
+            <div class="large-4 columns">
+              <label>Input Label
+                <input type="text" placeholder="large-4.columns" />
+              </label>
+            </div>
+            <div class="large-4 columns">
+              <div class="row collapse">
+                <label>Input Label</label>
+                <div class="small-9 columns">
+                  <input type="text" placeholder="small-9.columns" />
+                </div>
+                <div class="small-3 columns">
+                  <span class="postfix">.com</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="large-12 columns">
-            <label>Select Box
-              <select>
-                <option value="husker">Husker</option>
-                <option value="starbuck">Starbuck</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
-              </select>
-            </label>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Select Box
+                <select>
+                  <option value="husker">Husker</option>
+                  <option value="starbuck">Starbuck</option>
+                  <option value="hotdog">Hot Dog</option>
+                  <option value="apollo">Apollo</option>
+                </select>
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>Choose Your Favorite</label>
-            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+          <div class="row">
+            <div class="large-6 columns">
+              <label>Choose Your Favorite</label>
+              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
+              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+            </div>
+            <div class="large-6 columns">
+              <label>Check these out</label>
+              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+            </div>
           </div>
-          <div class="large-6 columns">
-            <label>Check these out</label>
-            <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-            <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Textarea Label
+                <textarea placeholder="small-12.columns"></textarea>
+              </label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="large-12 columns">
-            <label>Textarea Label
-              <textarea placeholder="small-12.columns"></textarea>
-            </label>
+        </form>
           </div>
-        </div>
-      </form>
         </div>
       </div>
     </div>
-   <div class= "map">
-     
-   </div>
+    <div class = "large-6 columns">
+      <div class= "map">
+        <h2>Map</h2>
+      </div>
+    </div>
+  </div>
     <!--Div with orbit-->
-    <div class="div-orbit">
-      <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
-                        pause_on_hover:true;
-                        animation_speed: 600;
-                        timer_speed: 5000;
-                        navigation_arrows:false;
-                        bullets:false;
-                        next_on_click: false;
-                        timer: true;
-                        circular: true,
-                        slide_number: false,">
-        <li data-orbit-slide="headline-1">
-          <div>
-            <%= image_tag "frog.jpg" %>
-          </div>
-        </li>
-        <li data-orbit-slide="headline-2">
-          <div>
-            <%= image_tag "cuenca-175943_1280.jpg" %>
-          </div>
-        </li>
-        <li data-orbit-slide="headline-3">
-          <div>
-             <%= image_tag "flame-240490_1280.jpg" %>
-          </div>
-        </li>
-      </ul>
+  <div class ="row">
+    <div class= "large-6 columns">
+      <div class= "calendar">
+         <h2>Calendar</h2>
+      </div>
+    </div>
+    <div class= "large-6 columns">
+      <div class= "whats-on">
+         <h2>Whats On</h2>
+      </div>
+    </div>
+  </div>
+  <div class= "row">
+    <div class ="large-12 columns">
+      <div class="top_places">
+      <h3><%=t ('.tPlaces') %></h3>
+    </div>  
+      <div class= "places_content">
+        
+        <div class="images">
+          <%= image_tag("pic2.jpg") %>
+         
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class ="row">
+    <div class= "large-6 columns">
+      <div class="div-orbit">
+        <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
+                          pause_on_hover:true;
+                          animation_speed: 600;
+                          timer_speed: 5000;
+                          navigation_arrows:false;
+                          bullets:false;
+                          next_on_click: false;
+                          timer: true;
+                          circular: true,
+                          slide_number: false,">
+          <li data-orbit-slide="headline-1">
+            <div>
+              <%= image_tag "frog.jpg" %>
+            </div>
+          </li>
+          <li data-orbit-slide="headline-2">
+            <div>
+              <%= image_tag "cuenca-175943_1280.jpg" %>
+            </div>
+          </li>
+          <li data-orbit-slide="headline-3">
+            <div>
+               <%= image_tag "flame-240490_1280.jpg" %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 

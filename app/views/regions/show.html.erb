@@ -1,0 +1,23 @@
+<div class="content">
+  <div class ="country-content">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong> name:</strong>
+      <%= @region.name %>
+    </p>
+
+    <p>
+      <strong>Image url:</strong>
+      <%= @region.image_url %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @region.description %>
+    </p>
+
+    <%= link_to 'Edit', edit_region_path(@region) %> |
+    <%= link_to 'Back', regions_path %>
+  </div>
+</div>

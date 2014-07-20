@@ -2,11 +2,11 @@
   <div class="country-content">
      <ul class="breadcrumbs">
        <li><%= link_to  t('.ecuadorTurism'), root_url %></li>
-       <li class="current"><%= link_to  t('.ecuadorTurism'), root_url %></li>
+       <li class="current"><%= link_to  t('.ecuadorTurism'), root_url %>/li>
      </ul>
     <p id="notice"><%= notice %></p>
 
-    <h1><%= @country. name %></h1>
+    <h1><%= @country.name %></h1>
     <h3>Description:</h3><%= @country.description %>
     <strong>Image url:</strong>
       <%= @country.image_url %>

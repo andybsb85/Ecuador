@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+   name: MyString
+  description: MyText
+  image_url: MyString
+  geography: MyText
+  weather: MyText
+  time_zone: MyText
+  visa_information: MyText
+  population: MyText
+  currency: MyText
+  emergency_services: MyText
+  transport: MyText
+
+two:
+   name: MyString
+  description: MyText
+  image_url: MyString
+  geography: MyText
+  weather: MyText
+  time_zone: MyText
+  visa_information: MyText
+  population: MyText
+  currency: MyText
+  emergency_services: MyText
+  transport: MyText

@@ -1,0 +1,62 @@
+
+<%= form_for(@country) do |f| %>
+  <% if @country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% @country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :geography %><br>
+    <%= f.text_area :geography %>
+  </div>
+  <div class="field">
+    <%= f.label :weather %><br>
+    <%= f.text_area :weather %>
+  </div>
+  <div class="field">
+    <%= f.label :time_zone %><br>
+    <%= f.text_area :time_zone %>
+  </div>
+  <div class="field">
+    <%= f.label :visa_information %><br>
+    <%= f.text_area :visa_information %>
+  </div>
+  <div class="field">
+    <%= f.label :population %><br>
+    <%= f.text_area :population %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br>
+    <%= f.text_area :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :emergency_services %><br>
+    <%= f.text_area :emergency_services %>
+  </div>
+  <div class="field">
+    <%= f.label :transport %><br>
+    <%= f.text_area :transport %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

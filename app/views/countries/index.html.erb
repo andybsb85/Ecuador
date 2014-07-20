@@ -1,0 +1,48 @@
+<div class="content">
+  <div class ="country-content">
+    <h1>Listing countries</h1>
+      <table>
+        <thead>
+          <tr>
+            <th> name</th>
+            <th>Description</th>
+            <th>Image url</th>
+            <th>Geography</th>
+            <th>Weather</th>
+            <th>Time zone</th>
+            <th>Visa information</th>
+            <th>Population</th>
+            <th>Currency</th>
+            <th>Emergency services</th>
+            <th>Transport</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+      <tbody>
+        <% @countries.each do |country| %>
+          <tr>
+            <td><%= country. name %></td>
+            <td><%= country.description %></td>
+            <td><%= country.image_url %></td>
+            <td><%= country.geography %></td>
+            <td><%= country.weather %></td>
+            <td><%= country.time_zone %></td>
+            <td><%= country.visa_information %></td>
+            <td><%= country.population %></td>
+            <td><%= country.currency %></td>
+            <td><%= country.emergency_services %></td>
+            <td><%= country.transport %></td>
+            <td><%= link_to 'Show', country %></td>
+            <td><%= link_to 'Edit', edit_country_path(country) %></td>
+            <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Country', new_country_path %>
+  </div>
+</div>

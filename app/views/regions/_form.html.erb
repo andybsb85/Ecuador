@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :country%><br>
-    <%= select(:region, :country_id, [['Ecuador', 1], ['Mexico', 2]]) %>
+    <%= select(:region, :country_id, options_from_collection_for_select(Country.all, :id, :name)) %>
 
   </div>
   <div class="field">

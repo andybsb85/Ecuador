@@ -1,0 +1,28 @@
+<div class="content">
+  <div class ="country-content">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @city.name %>
+    </p>
+
+    <p>
+      <strong>Region:</strong>
+      <%= @city.region %>
+    </p>
+
+    <p>
+      <strong>Image url:</strong>
+      <%= @city.image_url %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @city.description %>
+    </p>
+
+    <%= link_to 'Edit', edit_city_path(@city) %> |
+    <%= link_to 'Back', cities_path %>
+  </div>
+</div>

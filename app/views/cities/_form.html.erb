@@ -1,10 +1,10 @@
-<%= form_for(@region) do |f| %>
-  <% if @region.errors.any? %>
+<%= form_for(@city) do |f| %>
+  <% if @city.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@region.errors.count, "error") %> prohibited this region from being saved:</h2>
+      <h2><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h2>
 
       <ul>
-      <% @region.errors.full_messages.each do |message| %>
+      <% @city.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -16,8 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :country%><br>
-    <%= select(:region, :country_id, options_from_collection_for_select(Country.all, :id, :name)) %>
+    <%= f.label :region_id %><br>
+    <%= select(:city, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
   </div>
   <div class="field">
     <%= f.label :image_url %><br>

@@ -10,9 +10,8 @@
             <ul class="right">
               <li class= "has-form">
                 <div class = "language">
-                  <%= form_tag(root_url, class: 'locale') do %>
-                  <%= select_tag(:LANGUAGES, options_for_select([['Español', 1], ['English', 2]])) %>
-                  <% end %>
+                
+               
                 </div>
               </li>
               <li class="divider"></li>
@@ -50,12 +49,13 @@
               <li class="divider"></li>
               <li>
                <div class="small-12 columns">
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                 </select></div>
+                 <%=form_tag index_path, :class => 'locale' do %>
+                    <%= select_tag 'set_locale',
+                        options_for_select(LANGUAGES, I18n.locale.to_s),
+                        onchange: 'this.form.submit()'%>
+                    <%= javascript_tag "$('.locale input').hide()" %>
+                 <% end %>
+                </div>
               </li>
               <li class="divider"></li>
               <li>
@@ -101,7 +101,7 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#"><%= link_to  t('.ecuadorTurism'), root_url %></a></h1>
+        <h1><a href="#"><%= link_to  t('.ecuadorTurism'), index_path %></a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>

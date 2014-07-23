@@ -11,12 +11,22 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'registrations'}, path_names: {sign_in: "login", sign_out: "logout"}
  
   get 'welcome/index'
+  
+  scope '(:locale)' do
+    resources :destinations
+    resources :type_destinations
+    resources :cities
+    resources :regions
+    resources :countries
+    get 'destination_list/index'
+    root 'welcome#index', as: 'index', via: :all
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

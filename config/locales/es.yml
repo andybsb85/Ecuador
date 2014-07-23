@@ -1,0 +1,14 @@
+--- 
+es: 
+  layouts: 
+    header: 
+      signup: "Registrese"
+      signin: "Inicie Session"
+      profile: "Perfil"
+      logout: "Terminar Sesion"
+      ecuadorTurism: "Ecuador Turismo"
+      destinations: "Destinos"
+      aboutEcuador: "Sobre Ecuador"
+      activities: "Actividades"
+      tripPlanner: "Planear Viaje"
+      experiences: "Experiencias"

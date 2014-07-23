@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'destination_list/index'
+
   resources :destinations
 
   resources :type_destinations

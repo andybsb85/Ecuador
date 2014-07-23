@@ -1,0 +1,33 @@
+<div class="content">
+  <div class ="country-content">   
+    <div class = "row">
+      <div class ="large-3 colums">
+         <h1>Destinations</h1>
+         <form>
+         
+           
+         </form>  
+      </div>
+    </div>
+    <%if notice %>
+    <p id="notice"><%= notice %></p>
+    <% end %>
+    <div class="place">
+     
+    <div class = "row">
+      <div class ="large-6 colums">
+        <div class= "entry">
+          <% @destinations.each do |destination| %>
+          <h3><%=destination.name %></h3>
+            <div class="img_destination">
+              <%= link_to (image_tag(destination.image_url)), destination %>
+            </div>
+            <div class="des_destination">
+            <%= sanitize(destination.description) %>
+            </div>
+          <% end %>
+        </div>   
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module DestinationListHelper
+end

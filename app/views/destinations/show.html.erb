@@ -1,13 +1,14 @@
 <div class="content">
   <div class ="country-content">
+     <ul class="breadcrumbs">
+       <li><%= link_to  t('.ecuadorTurism'), root_url %></li>
+       <li class="current"><%= link_to  t('.destination'), destination_list_index_path %></li>
+       <li class="current"><%= link_to  t('.destination_show') %></li>
+     </ul>
     <p id="notice"><%= notice %></p>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @destination.name %>
-    </p>
-
-    <p>
+    <h2> <%= @destination.name %></h2>
+     <p>
       <strong>City:</strong>
       <%= @destination.city_id %>
     </p>
@@ -18,8 +19,7 @@
     </p>
 
     <p>
-      <strong>Image url:</strong>
-      <%= @destination.image_url %>
+      <%= image_tag(@destination.image_url) %>
     </p>
 
     <p>

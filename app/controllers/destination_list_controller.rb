@@ -1,6 +1,6 @@
 class DestinationListController < ApplicationController
   def index
-    @destinations = Destination.all
-   
+    @destination = Destination.order(:name)
   end
+ 
 end

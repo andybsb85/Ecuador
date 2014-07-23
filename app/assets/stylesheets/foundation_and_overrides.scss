@@ -64,8 +64,8 @@
  $secondary-color: #e7e7e7;
  $alert-color: #f04124;
  $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+ $warning-color: #f08a24;
+ $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
  $global-radius: 3px;
@@ -76,7 +76,7 @@
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
 
-// $column-gutter: rem-calc(30);
+ $column-gutter: rem-calc(30);
 
 // Media Query Ranges
  $small-range: (0em, 40em);
@@ -134,20 +134,20 @@
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
- //$h1-font-size: rem-calc(44);
- //$h2-font-size: rem-calc(37);
- //$h3-font-size: rem-calc(27);
- //$h4-font-size: rem-calc(23);
- //$h5-font-size: rem-calc(18);
- //$h6-font-size: 1rem;
+ $h1-font-size: rem-calc(44);
+ $h2-font-size: rem-calc(37);
+ $h3-font-size: rem-calc(27);
+ $h4-font-size: rem-calc(23);
+ $h5-font-size: rem-calc(18);
+ $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
  //$h1-font-reduction: rem-calc(10) !default;
-// $h2-font-reduction: rem-calc(10) !default;
-// $h3-font-reduction: rem-calc(5) !default;
- //$h4-font-reduction: rem-calc(5) !default;
-// $h5-font-reduction: 0 !default;
-// $h6-font-reduction: 0 !default;
+ $h2-font-reduction: rem-calc(10);
+ $h3-font-reduction: rem-calc(5);
+ $h4-font-reduction: rem-calc(5);
+ $h5-font-reduction: 0;
+ $h6-font-reduction: 0;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
@@ -367,9 +367,9 @@ $button-font-family: $body-font-family;
 // $button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0px;
-// $button-border-style: solid;
-// $button-bg: $primary-color;
+ $button-border-width: 0px;
+ $button-border-style: solid;
+ $button-bg: $primary-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
@@ -519,12 +519,12 @@ $button-font-family: $body-font-family;
   $form-spacing: rem-calc(11);
 
 // We use these to style the labels in different ways
-// $form-label-pointer: pointer;
-// $form-label-font-size: rem-calc(14);
-// $form-label-font-weight: $font-weight-normal;
+$form-label-pointer: pointer;
+$form-label-font-size: rem-calc(14);
+$form-label-font-weight: $font-weight-normal;
  $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color(#000, $lightness: 30%);
-// $form-label-small-transform: capitalize;
+$form-label-font-color: scale-color(#ffffff, $lightness: 30%);
+ $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
@@ -1130,7 +1130,7 @@ $button-font-family: $body-font-family;
  $tabs-navigation-font-family: $body-font-family;
 
  $tabs-content-margin-bottom: rem-calc(24);
- //$tabs-content-padding: $column-gutter/2;
+ $tabs-content-padding: $column-gutter/2;
 
  $tabs-vertical-navigation-margin-bottom: 1.25rem;
 

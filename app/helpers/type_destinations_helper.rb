@@ -1,0 +1,2 @@
+module TypeDestinationsHelper
+end

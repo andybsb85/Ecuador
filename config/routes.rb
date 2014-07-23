@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :destinations
+
+  resources :type_destinations
+
   resources :cities
 
   resources :regions

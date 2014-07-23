@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722091847) do
+ActiveRecord::Schema.define(version: 20140723003146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,33 @@ ActiveRecord::Schema.define(version: 20140722091847) do
     t.datetime "updated_at"
   end
 
+  create_table "destinations", force: true do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.integer  "type_destination_id"
+    t.string   "image_url"
+    t.text     "description"
+    t.text     "address"
+    t.text     "phone"
+    t.text     "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "destinations", ["city_id"], name: "index_destinations_on_city_id", using: :btree
+  add_index "destinations", ["type_destination_id"], name: "index_destinations_on_type_destination_id", using: :btree
+
   create_table "regions", force: true do |t|
     t.string   "name"
     t.integer  "country_id"
     t.string   "image_url"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_destinations", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

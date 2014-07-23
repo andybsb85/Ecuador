@@ -1,0 +1,13 @@
+<div class="content">
+  <div class ="country-content">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @type_destination.name %>
+    </p>
+
+    <%= link_to 'Edit', edit_type_destination_path(@type_destination) %> |
+    <%= link_to 'Back', type_destinations_path %>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="content">
+  <div class ="country-content">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @destination.name %>
+    </p>
+
+    <p>
+      <strong>City:</strong>
+      <%= @destination.city_id %>
+    </p>
+
+    <p>
+      <strong>Type destination:</strong>
+      <%= @destination.type_destination_id %>
+    </p>
+
+    <p>
+      <strong>Image url:</strong>
+      <%= @destination.image_url %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @destination.description %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= @destination.address %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @destination.phone %>
+    </p>
+
+    <p>
+      <strong>Website:</strong>
+      <%= @destination.website %>
+    </p>
+
+    <%= link_to 'Edit', edit_destination_path(@destination) %> |
+    <%= link_to 'Back', destinations_path %>
+  </div>
+</div>

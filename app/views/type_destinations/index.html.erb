@@ -1,0 +1,29 @@
+ <div class="content">
+  <div class ="country-content">
+    <h1>Listing type_destinations</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @type_destinations.each do |type_destination| %>
+          <tr>
+            <td><%= type_destination.name %></td>
+            <td><%= link_to 'Show', type_destination %></td>
+            <td><%= link_to 'Edit', edit_type_destination_path(type_destination) %></td>
+            <td><%= link_to 'Destroy', type_destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Type destination', new_type_destination_path %>
+   </div>
+</div>

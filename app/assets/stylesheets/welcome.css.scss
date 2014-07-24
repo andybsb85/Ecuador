@@ -2,14 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+body.welcome{
+   background-image: url("quito_2.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
+body.destination_list{
    background-image: url("amazon.jpg");
    background-repeat: no-repeat;
    background-size: 100% 600px;
-
-   
 }
 
+body.countries{
+   background-image: url("penguin.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
+body.destinations{
+   background-image: url("quito_1.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
+body.registrations{
+   background-image: url("ecuador_2.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
+body.sessions{
+   background-image: url("chimborazo.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
 /*======================= header ==================================*/
 
 .header{  

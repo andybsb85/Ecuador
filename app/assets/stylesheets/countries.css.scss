@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.country-content{
-  background-color: #ffffff;
+.country{
+  float: left;
+  position: relative;
+  width: 76%;
+  margin-left: 12%;
+  margin-right: 12%;
+  height: auto;
+  background-color:#ffffff;
 }

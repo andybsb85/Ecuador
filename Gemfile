@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "figaro"
 gem 'devise'
-gem 'globalize3'
+gem 'globalize', '~> 4.0.0.alpha.2'
 
 
 group :production do

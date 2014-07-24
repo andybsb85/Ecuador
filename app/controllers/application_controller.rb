@@ -44,4 +44,18 @@ class ApplicationController < ActionController::Base
       logger.debug "default_url_options is passed options: #{options.inspect}\n"
       { locale: I18n.locale }
     end
+         
+           helper_method :current_path
+    def current_path
+        url = request.env["PATH_INFO"]
+        Rails.application.routes.recognize_path url
+    end
+ 
+    def redirect_to_locale
+        if params[:set_locale].present?
+            route = current_path
+            route[:locale] = I18n.locale
+            redirect_to route
+        end
+    end
 end

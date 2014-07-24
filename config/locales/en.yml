@@ -33,3 +33,7 @@ en:
       activities: "Activities"
       tripPlanner: "Trip Planner"
       experiences: "Experiences"
+  
+  destination_list:
+    index:
+      destinations: "Destinations"

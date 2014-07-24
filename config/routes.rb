@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :cities
     resources :regions
     resources :countries
-    get 'destination_list/index'
+
     root 'welcome#index', as: 'index', via: :all
   end
 

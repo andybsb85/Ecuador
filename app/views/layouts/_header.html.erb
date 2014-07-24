@@ -49,7 +49,7 @@
               <li class="divider"></li>
               <li>
                <div class="small-12 columns">
-                 <%=form_tag index_path, :class => 'locale' do %>
+                 <%= form_tag current_path, class: 'locale', :method => :get do %>
                     <%= select_tag 'set_locale',
                         options_for_select(LANGUAGES, I18n.locale.to_s),
                         onchange: 'this.form.submit()'%>

@@ -12,3 +12,6 @@ es:
       activities: "Actividades"
       tripPlanner: "Planear Viaje"
       experiences: "Experiencias"
+  destination_list:
+    index:
+      destinations: "Destinos"

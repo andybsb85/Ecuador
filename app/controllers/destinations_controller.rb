@@ -10,6 +10,9 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
+     if params[:set_locale]
+      redirect_to destination_path(locale: params[:set_locale])   
+     end
   end
 
   # GET /destinations/new

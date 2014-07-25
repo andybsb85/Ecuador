@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_destinations
+
+  resources :plans
+
   get 'destination_list/index'
 
   resources :destinations

@@ -1,0 +1,11 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h2> Your Trip Plan </h2>
+    <ul>
+      <% @plan.line_destinations.each do |destin| %>
+        <li><%= destin.destination.name %></li>
+      <% end %>
+    </ul>
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

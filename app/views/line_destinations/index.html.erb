@@ -1,0 +1,27 @@
+<h1>Listing line_destinations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Destination</th>
+      <th>Plan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @line_destinations.each do |line_destination| %>
+      <tr>
+        <td><%= line_destination.destination %></td>
+        <td><%= line_destination.plan %></td>
+        <td><%= link_to 'Show', line_destination %></td>
+        <td><%= link_to 'Edit', edit_line_destination_path(line_destination) %></td>
+        <td><%= link_to 'Destroy', line_destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Line destination', new_line_destination_path %>

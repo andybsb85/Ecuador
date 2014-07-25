@@ -82,6 +82,7 @@
             <h3><%=destination.name %></h3>
             <div class="des_location">
               <%= sanitize(destination.description) %>
+              <%= button_to 'Add to Plan', line_destinations_path(destination_id: destination) %>
               <p>Averate rating</p>
               <div id= "live-review"></div>
               <span id="live"></span>

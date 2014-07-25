@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @line_destination.destination %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @line_destination.plan %>
+</p>
+
+<%= link_to 'Edit', edit_line_destination_path(@line_destination) %> |
+<%= link_to 'Back', line_destinations_path %>

@@ -4,6 +4,9 @@ class Destination < ActiveRecord::Base
   translates :name, :description
   has_many :line_destinations
   
+  geocoded_by :address
+  after_validation :geocode
+  
   before_destroy :ensure_not_referenced_by_any_line_destination
   
   private

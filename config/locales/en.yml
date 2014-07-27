@@ -33,7 +33,35 @@ en:
       activities: "Activities"
       tripPlanner: "Trip Planner"
       experiences: "Experiences"
+      events: "Events"
+  
+  welcome:
+    index:
+      selectRegion: "Select Region"  
+      selectCity: "Select City"
+      selectOption: "Select Type Destination"
+      searchDestination: "Search Destination"
+      booking: "Booking"
+      go: "Search"
+      
+  countries:
+    show:
+      description: "Description"
+      geography: "Geography"
+      weather: "Weather"
+      timeZone: "Time Zone"
+      visaInformation: "Visa Information"
+      population: "Population"
+      currency: "Currency"
+      emergencyServices: "Emergency Services"
+      transport: "Transport"
   
   destination_list:
     index:
-      destinations: "Destinations"
+      destinations: "DESTINATIONS"
+      selectRegion: "Select Region"
+      selectCity: "Select City"
+      searchDestination: "Search Destination"
+      searchTypeDestination: "Destination by Type"
+      selectTypeDestination: "Destination Type"
+      go: "Search"

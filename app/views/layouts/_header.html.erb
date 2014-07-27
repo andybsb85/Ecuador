@@ -3,36 +3,6 @@
       <div class = "logo">
         <%= image_tag("logo.png") %>
       </div>
-      <!--<div class ="header-right">
-        <nav class="top-bar"> 
-          <section class="top-bar-section">
-         
-            <ul class="right">
-              <li class= "has-form">
-                <div class = "language">
-                
-               
-                </div>
-              </li>
-              <li class="divider"></li>
-              <li class= "has-form">
-                 <div class = "search">
-                   <div class="row collapse">
-                     <div class="small-10 columns">
-                       <%= form_tag("/search", method: "get") do %>
-                       <%= text_field_tag(:q) %>
-                     </div>
-                     <div class="small-2 columns">
-                       <%= submit_tag("Search", class: "button radius")%>
-                       <% end %>  
-                     </div>
-                   </div>       
-                 </div>
-              </li>
-            </ul> 
-          </section>
-        </nav> 
-      </div>-->
       <div class ="other_menu">
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
@@ -45,7 +15,8 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li><a href="#"><%= link_to  t('.aboutEcuador')%></a></li>
+              <li><a href="#", ><%= link_to (image_tag "social-icons-02.png"), "https://www.facebook.com/andrea.becerra.712161"%></a></li>
+              <li><a href="#", ><%= link_to (image_tag "social-icons-01.png"), "https://www.facebook.com/andrea.becerra.712161"%></a></li>
               <li class="divider"></li>
               <li>
                <div class="small-12 columns">
@@ -114,7 +85,7 @@
           <a href="#"><%= link_to  t('.aboutEcuador'), country_path(1) %></a></li>
           <li class="divider"></li>
          <li>
-           <a href="#"><%= link_to  t('.whatsOn') %></a></li>
+           <a href="#"><%= link_to  t('.events') %></a></li>
           <li class="divider"></li>
          <li>
            <a href="#"><%= link_to  t('.destinations'), destination_list_index_path %></a></li>

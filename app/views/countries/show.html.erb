@@ -7,16 +7,15 @@
     <p id="notice"><%= notice %></p>
 
     <h1><%= @country.name %></h1>
-    <h3>Description:</h3><%= @country.description %>
-    <strong>Image url:</strong>
-      <%= @country.image_url %>
-    <h3>Geography:</h3><%= @country.geography %>
-    <h3>Weather:</h3><%= @country.weather %>
-    <h3>Time zone:</h3><%= @country.time_zone %>
-    <h3>Visa information:</h3><%= @country.visa_information %>
-    <h3>Population:</h3><%= @country.population %>
-    <h3>Currency:</h3><%= @country.currency %>
-    <h3>Emergency services:</h3><%= @country.emergency_services %>
-    <h3>Transport:</h3><%= @country.transport %>
+    <h3><%= t ('.description')%>:</h3><%= @country.description %>
+    <%= @country.image_url %>
+    <h3><%= t ('.geography')%>:</h3><%= @country.geography %>
+    <h3><%= t ('.weather')%>:</h3><%= @country.weather %>
+    <h3><%= t ('.timeZone')%>:</h3><%= @country.time_zone %>
+    <h3><%= t ('.visaInformation')%>:</h3><%= @country.visa_information %>
+    <h3><%= t ('.population')%>:</h3><%= @country.population %>
+    <h3><%= t ('.currency')%>:</h3><%= @country.currency %>
+    <h3><%= t ('.emergencyServices')%>:</h3><%= @country.emergency_services %>
+    <h3><%= t ('.transport')%>:</h3><%= @country.transport %>
   </div>
 </div>

@@ -11,7 +11,7 @@
       <div class = "large-3 columns">
         <div class= "select-destination">
           <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.selectDestination')%></a></li>
+            <li class="tab-title"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
           </ul>
           <div class="tabs-content">
             <div class="content active" id="panel1-1">
@@ -41,15 +41,15 @@
         </div>
         <div class= "filter-destination">
           <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.selectDestination')%></a></li>
+            <li class="tab-title"><a href="#panel2-1"><%= t('.searchTypeDestination')%></a></li>
           </ul>
           <div class="tabs-content">
             <div class="content active" id="panel2-1">
               <form>
                 <div class="row">
                   <div class="large-12 columns">
-                    <label><%= t('.selectRegion')%>
-                      <%= select(:destination_list, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+                    <label><%= t('.selectTypeDestination')%>
+                      <%= select(:destination_list, :type_destination_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
                     </label>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
         </div> 
       </div>
       <div class = "large-9 columns">
-        <h1><%= t('.destinations') %></h1>
+       <h3><%= t('.destinations') %></h3>
         <div class= "row">
           <% @destination.each do |destination| %>
             <div class="destination">

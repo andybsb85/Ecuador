@@ -12,6 +12,35 @@ es:
       activities: "Actividades"
       tripPlanner: "Planear Viaje"
       experiences: "Experiencias"
+      events: "Eventos"
+      
+  welcome:
+    index:
+      selectRegion: "Seleccione Region"  
+      selectCity: "Seleccione City"
+      selectOption: "Seleccione Tipo de Destino"
+      searchDestination: "Buscar Destino"
+      booking: "Reservaciones"
+      go: "Buscar"
+      
+  countries:
+    show:
+      description: "Descripción"
+      geography: "Geografía"
+      weather: "Clima"
+      timeZone: "Zona Horaria"
+      visaInformation: "Información de Visa"
+      population: "Población"
+      currency: "Moneda"
+      emergencyServices: "Servicios de Emergencia"
+      transport: "Transporte"
+      
   destination_list:
     index:
-      destinations: "Destinos"
+      destinations: "DESTINOS"
+      selectRegion: "Seleccione Region"
+      selectCity: "Seleccione Ciudad"
+      searchDestination: "Buscar Destino"
+      searchTypeDestination: "Buscar Destino por Tipo"
+      selectTypeDestination: "Tipo de Destino"
+      go: "Buscar"

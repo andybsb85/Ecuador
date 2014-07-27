@@ -5,6 +5,7 @@ class Destination < ActiveRecord::Base
   has_many :line_destinations
   
   geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
   after_validation :geocode
   
   before_destroy :ensure_not_referenced_by_any_line_destination

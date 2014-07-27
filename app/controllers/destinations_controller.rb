@@ -5,12 +5,12 @@ class DestinationsController < ApplicationController
   # GET /destinations.json
   def index
     @destinations = Destination.all
-    @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
-      next if destination.latitude.nil? || destination.longitude.nil?
+     @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
       marker.lat destination.latitude
       marker.lng destination.longitude
-    end
+     end
   end
+
 
   # GET /destinations/1
   # GET /destinations/1.json
@@ -18,6 +18,7 @@ class DestinationsController < ApplicationController
      if params[:set_locale]
       redirect_to destination_path(locale: params[:set_locale])   
      end
+      
   end
 
   # GET /destinations/new

@@ -1,21 +1,29 @@
-<div class="country">
-  <div class="show">
-     <ul class="breadcrumbs">
-       <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
-       <li class="current"><%= link_to  t('.aboutEcuador'), country_path(1) %></li>
-     </ul>
+<div class= "content">
+  <div class="country">
+    <ul class="breadcrumbs">
+         <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
+         <li class="current"><%= link_to  t('.aboutEcuador'), country_path(1) %></li>
+       </ul>
     <p id="notice"><%= notice %></p>
-
-    <h1><%= @country.name %></h1>
-    <h3><%= t ('.description')%>:</h3><%= @country.description %>
-    <%= @country.image_url %>
-    <h3><%= t ('.geography')%>:</h3><%= @country.geography %>
-    <h3><%= t ('.weather')%>:</h3><%= @country.weather %>
-    <h3><%= t ('.timeZone')%>:</h3><%= @country.time_zone %>
-    <h3><%= t ('.visaInformation')%>:</h3><%= @country.visa_information %>
-    <h3><%= t ('.population')%>:</h3><%= @country.population %>
-    <h3><%= t ('.currency')%>:</h3><%= @country.currency %>
-    <h3><%= t ('.emergencyServices')%>:</h3><%= @country.emergency_services %>
-    <h3><%= t ('.transport')%>:</h3><%= @country.transport %>
+      <h3><%= @country.name %></h3>
+     <div class = "row">
+        <div class = "large-9 columns">
+          <div class = "image-ecuador">
+            <%= image_tag (@country.image_url) %>
+          </div>
+          <h3><%= t ('.description')%>:</h3><%= @country.description %>
+          <h3><%= t ('.geography')%>:</h3><%= @country.geography %>
+          <h3><%= t ('.weather')%>:</h3><%= @country.weather %>
+          <h3><%= t ('.timeZone')%>:</h3><%= @country.time_zone %>
+          <h3><%= t ('.visaInformation')%>:</h3><%= @country.visa_information %>
+          <h3><%= t ('.population')%>:</h3><%= @country.population %>
+          <h3><%= t ('.currency')%>:</h3><%= @country.currency %>
+          <h3><%= t ('.emergencyServices')%>:</h3><%= @country.emergency_services %>
+          <h3><%= t ('.transport')%>:</h3><%= @country.transport %>
+       </div>
+        <div class = "large-3 columns">
+      <p>hkjhj</p>
+    </div>
+     </div>
   </div>
 </div>

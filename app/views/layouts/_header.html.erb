@@ -15,19 +15,22 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li><a href="#", ><%= link_to (image_tag "social-icons-02.png"), "https://www.facebook.com/andrea.becerra.712161"%></a></li>
-              <li><a href="#", ><%= link_to (image_tag "social-icons-01.png"), "https://www.facebook.com/andrea.becerra.712161"%></a></li>
+             <li><div class ="social">
+                <ul>
+                  <li><%= link_to (image_tag "facebook.png"), "https://www.facebook.com/andrea.becerra.712161"%></li>
+                  <li><%= link_to (image_tag "twitter.png"), "https://www.facebook.com/andrea.becerra.712161"%></li>
+                  <li><%= link_to (image_tag "google+.png"), "https://www.facebook.com/andrea.becerra.712161"%></li>
+               </ul></div>
+              </li>
               <li class="divider"></li>
-              <li>
-               <div class="small-12 columns">
+              <li><div class="small-12 columns">
                  <%= form_tag current_path, class: 'locale', :method => :get do %>
                     <%= select_tag 'set_locale',
                         options_for_select(LANGUAGES, I18n.locale.to_s),
                         onchange: 'this.form.submit()'%>
                     <%= javascript_tag "$('.locale input').hide()" %>
                  <% end %>
-                </div>
-              </li>
+                </div></li>
               <li class="divider"></li>
               <li>
                 <ul>
@@ -53,13 +56,14 @@
                 </ul>
               </li>
               <% else %> 
-              <li>
-                <ul>
+               <ul>
                   <li><%= link_to t('.signup'), new_user_registration_path %></li>
+                </ul>
+                <li class="divider"></li>
+                <ul>
                   <li><%= link_to t('.signin'), new_user_session_path %></li>
                 </ul>
-              </li>
-                <% end %>
+              <% end %>
             </ul>
           </section>
         </nav>

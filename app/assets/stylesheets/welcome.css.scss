@@ -43,8 +43,8 @@ body.sessions{
    float: left;
    position: relative;
    height:auto;
-   margin-left: 12%;
-   margin-right: 12%;
+   margin-left: 10%;
+   margin-right: 10%;
  
 }
 
@@ -76,49 +76,30 @@ body.sessions{
   .top-bar{
      background-color: rgba(0,0,0,0.3);
     
+    .top-bar-section{
+        .social ul li a{
+          padding-left: 3px;
+          padding-right: 3px;
+       }
+       
+    }
+    
     .top-bar-section ul{
        background-color: rgba(0,0,0,0.3);
       
-      img{
-        width: 35%;
-        
-      }
     }
     .top-bar-section ul li {
        background-color: rgba(0,0,0,0.3);
-    }
+     }
     .top-bar-section ul li a{
       background-color: rgba(0,0,0,0.3);
+      
     }
     .search{
       width: 90%;
     }
-  }  
-}
-.language{
-  float: right;
-  width: 50%;
-}
-.has-form{
-  width: 300px;
-  
-  .search{
-    width: 20%;
   }
-}
-.row_login{
-  width: 100%;
-
-  .column_left{
-    float: left;
-    width: 45%;
-
-  }
-
-  .column_right{
-     float: left;
-     width: 45%;
-  }
+ 
 }
 
 .banner{
@@ -146,9 +127,9 @@ body.sessions{
 .content{
   float: left;
   position: relative;
-  width: 76%;
-  margin-left: 12%;
-  margin-right: 12%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
   height: auto;
 
 

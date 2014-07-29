@@ -11,16 +11,63 @@
           <div class = "image-ecuador">
             <%= image_tag (@country.image_url) %>
           </div>
-          <h3><%= t ('.description')%>:</h3><%= @country.description %>
-          <h3><%= t ('.geography')%>:</h3><%= @country.geography %>
-          <h3><%= t ('.weather')%>:</h3><%= @country.weather %>
-          <h3><%= t ('.timeZone')%>:</h3><%= @country.time_zone %>
-          <h3><%= t ('.visaInformation')%>:</h3><%= @country.visa_information %>
-          <h3><%= t ('.population')%>:</h3><%= @country.population %>
-          <h3><%= t ('.currency')%>:</h3><%= @country.currency %>
-          <h3><%= t ('.emergencyServices')%>:</h3><%= @country.emergency_services %>
-          <h3><%= t ('.transport')%>:</h3><%= @country.transport %>
-       </div>
+           <dl class="accordion" data-accordion>
+            <dd class="accordion-navigation">
+              <a href="#panel1"><h5><%= t ('.description')%>:</h5></a>
+              <div id="panel1" class="content active">
+                <%= @country.description %>
+              </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel2"><h5><%= t ('.geography')%>:</h5></a>
+               <div id="panel2" class="content">
+                <%= @country.geography %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel3"><h5><%= t ('.weather')%>:</h5></a>
+               <div id="panel3" class="content">
+                 <%= @country.weather %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel4"><h5><%= t ('.timeZone')%></h5></a>
+               <div id="panel4" class="content">
+                 <%= @country.time_zone %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel5"><h5><%= t ('.visaInformation')%>:</h5></a>
+               <div id="panel5" class="content">
+                 <%= @country.visa_information %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel6"><h5><%= t ('.population')%>:</h5></a>
+               <div id="panel6" class="content">
+                 <%= @country.population %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel7"><h5><%= t ('.currency')%>:</h5></a>
+               <div id="panel7" class="content">
+                 <%= @country.currency %>
+               </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel8"><h5><%= t ('.emergencyServices')%>:</h5></a>
+               <div id="panel8" class="content">
+                 <%= @country.emergency_services %>
+                </div>
+             </dd>
+             <dd class="accordion-navigation">
+               <a href="#panel9"><h5><%= t ('.transport')%>:</h5></a>
+               <div id="panel9" class="content">
+                 <%= @country.transport %>
+              </div>
+             </dd>
+          </dl>
+        </div>  
         <div class = "large-3 columns">
       <p>hkjhj</p>
     </div>

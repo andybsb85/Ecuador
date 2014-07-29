@@ -157,10 +157,11 @@ body.sessions{
     }
     
     .calendar{
+      float: left;
+      position: relative;
       margin-top: 10%;
       width: 100%;
       height: 300px;
-      background-color: #ff0000;
      
     }
     .whats-on{

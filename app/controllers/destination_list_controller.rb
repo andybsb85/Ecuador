@@ -3,7 +3,11 @@ class DestinationListController < ApplicationController
     if params[:set_locale]
       redirect_to destination_list_index_path(locale: params[:set_locale])    
     else
-    @destination = Destination.order(:name)
+      @search = Destination.search do
+        fulltext params[:search]
+      end
+    @destination= @search.results
+     
     end
   end
 end

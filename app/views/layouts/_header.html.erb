@@ -37,10 +37,14 @@
                   <div class="small-12 columns">
                     <div class="row collapse">
                       <div class="small-10 columns">
-                        <input type="text" placeholder="Search">
+                        <%= form_tag destination_list_index_path, :method => :get do %>
+                          
+                            <%= text_field_tag :search, params[:search] %>
                       </div>
                       <div class="small-2 columns">
-                        <a href="#" class="button tiny">Go</a>
+                        <%= submit_tag "Go", :class=> "button tiny", :name => nil %>
+                          
+                        <% end %>
                       </div>
                     </div>
                   </div>

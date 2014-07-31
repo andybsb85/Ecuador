@@ -124,7 +124,7 @@ body.sessions{
 }
 
 /*=======================content ==================================*/
-.content{
+.content-body{
   float: left;
   position: relative;
   width: 80%;
@@ -141,7 +141,7 @@ body.sessions{
       color: #ffffff;
       
       .tabs-content{
-        margin-left: -6%;
+        margin-left: 5%;
         width: 90%;
       }
 
@@ -157,10 +157,11 @@ body.sessions{
     }
     
     .calendar{
+      float: left;
+      position: relative;
       margin-top: 10%;
       width: 100%;
       height: 300px;
-      background-color: #ff0000;
      
     }
     .whats-on{

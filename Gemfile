@@ -31,6 +31,8 @@ gem 'devise'
 gem 'globalize', '~> 4.0.0.alpha.2'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'jquery-ui-rails', '~> 4.2.1'
+gem 'fullcalendar-rails'
 
 
 

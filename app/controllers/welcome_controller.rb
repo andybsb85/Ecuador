@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
     else
        @cities = City.all
        @hashcity = Gmaps4rails.build_markers(@cities) do |city, marker|
-        marker.lat city.latitude
-        marker.lng city.longitude
+       marker.lat city.latitude
+       marker.lng city.longitude
        end
      end
   end

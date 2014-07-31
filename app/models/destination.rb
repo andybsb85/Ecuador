@@ -1,4 +1,5 @@
 class Destination < ActiveRecord::Base
+
   belongs_to :city
   belongs_to :type_destination
   translates :name, :description
@@ -9,11 +10,16 @@ class Destination < ActiveRecord::Base
   after_validation :geocode
   
   before_destroy :ensure_not_referenced_by_any_line_destination
- 
-  searchable do
-    text :name, :description
+
+  
+  def self.search(search)
+  if search
+    with_translations.where('name LIKE ?', "%#{search}%")
+  else
+    with_translations
   end
- 
+end  
+
   
   private
     #ensure that there are no line items referencing this product

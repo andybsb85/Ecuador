@@ -1,13 +1,12 @@
 class DestinationListController < ApplicationController
   def index
-    if params[:set_locale]
-      redirect_to destination_list_index_path(locale: params[:set_locale])    
-    else
-      @search = Destination.search do
-        fulltext params[:search]
+         
+      @destination = Destination.with_translations(I18n.locale).search(params[:query])
       end
-    @destination= @search.results
-     
-    end
-  end
+  
+      def with_translations(*locales)
+      locales = translated_locales if locales.empty?
+      includes(:translations).with_locales(locales).with_required_attributes
+     end
 end
+

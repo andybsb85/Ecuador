@@ -31,8 +31,7 @@ gem 'devise'
 gem 'globalize', '~> 4.0.0.alpha.2'
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+
 
 
 group :production do

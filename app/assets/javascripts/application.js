@@ -17,6 +17,7 @@
 //= require underscore
 //= require gmaps/google
 //= require jquery.ui.datepicker
+//= require fullcalendar
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

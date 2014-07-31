@@ -45,5 +45,6 @@ module CalendarHelper
       last = date.end_of_month.end_of_week(START_DAY)
       (first..last).to_a.in_groups_of(7)
     end
+    
   end
 end

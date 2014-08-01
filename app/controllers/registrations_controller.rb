@@ -14,9 +14,9 @@ class RegistrationsController < Devise::RegistrationsController
       if @user.save
         # Tell the UserMailer to send a welcome email after save
         UserMailer.signup_confirmation(@user).deliver
-        flash[:notice] = "User succesfully created"
+           flash[:notice] = "User succesfully created"
       else
-         flash[:notice] = "Test Error"
+        flash[:notice] = "Unsuccesfull"
       end
   end
   
@@ -24,4 +24,10 @@ class RegistrationsController < Devise::RegistrationsController
   def update
     super
   end
+  
+  protected
+    def after_sign_up_path_for(resource)
+      signed_in_root_path(resource) 
+    end
+  
 end

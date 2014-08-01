@@ -120,7 +120,6 @@
   <div class ="row">
     <div class= "large-6 columns">
       <div id= "calendar">
-        
       </div>
     </div>
     <div class= "large-6 columns">
@@ -155,4 +154,25 @@
     });
   </script>
 
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+     $('#calendar').fullCalendar({
+        theme: true,
+        events:  '/events.json',
+        eventColor: '#0e12a7',
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: null
+    },
+        height: 250,
+       eventRender: function(event, element) {
+            element.attr('title', event.description);
+         
+          
+        }
+     })
+ });
+ </script>
 <% end %>

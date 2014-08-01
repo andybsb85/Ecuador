@@ -27,21 +27,7 @@
     <% end %>
   </tbody>
 </table>
-<div id= "calendar">
-</div>
+
 <br>
 
 <%= link_to 'New Event', new_event_path %>
-
-<%= content_for :scripts do %>
- <script type="text/javascript">
- $(document).ready(function() {
-
-     $('#calendar').fullCalendar({
-       events: '/events.json'
-    })
-
-});
- </script>
-
-<% end %>

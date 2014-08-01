@@ -5,14 +5,15 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    @events_by_date = @events.group_by(&:date)
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
+  
 
   # GET /events/new
   def new

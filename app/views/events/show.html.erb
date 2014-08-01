@@ -1,28 +1,92 @@
-<p id="notice"><%= notice %></p>
+<div class = "content-body">
+  <div class ="show-event">
+    <div class ="row">
+      <div class ="large-3 columns">
+        <div id= "calendar">
+        </div>
+        <div class= "select-destination">
+          <ul class="tabs" data-tab>
+            <li class="tab-title"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
+          </ul>
+          <div class="tabs-content">
+            <div class="content active" id="panel1-1">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectRegion')%>
+                      <%= select(:destination_list, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectCity')%>
+                      <%= select(:destination_list, :city_id, options_from_collection_for_select(City.all, :id, :name)) %>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <a href="#" class="button tiny round"><%= t('.go')%></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class= "large-9 columns"> 
+        <p id="notice"><%= notice %></p>
+        <p>
+          <strong>Name:</strong>
+          <%= @event.name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+        <p>
+          <%= image_tag (@event.image_url) %>
+        </p>
 
-<p>
-  <%= image_tag (@event.image_url) %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @event.description %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+        <p>
+          <strong>Date:</strong>
+          <%= @event.date %>
+        </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+        <p>
+          <strong>Place:</strong>
+          <%= @event.place %>
+        </p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
+        <%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Back', events_path %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= content_for :scripts do %>
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+     $('#calendar').fullCalendar({
+        theme: true,
+        events:  '/events.json',
+        eventColor: '#0e12a7',
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: null
+    },
+        height: 200,
+       eventRender: function(event, element) {
+         element.attr('title', event.description);
+           
+        }
+     })
+ });
+ </script>
+<% end %>

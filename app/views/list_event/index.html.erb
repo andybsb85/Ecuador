@@ -1,0 +1,54 @@
+<div class = "content-body">
+  <div class = "list-event">
+    <div class ="row">
+      <div class= "large-3 columns">
+        <div id= "calendar">
+        </div>
+      </div>
+      <div class= "large-9 columns">
+       <h3><%= t('.destinations') %></h3>
+        <div class= "row">
+          <% @events.each do |event| %>
+            <div class="destination">
+              <div class="img_location">
+                <%= link_to (image_tag(event.image_url)), event %>
+              </div>
+              <div class="des_location">
+                <h5><%= link_to (event.name), event %></h5>
+                <%= sanitize(event.description) %>
+                <%= button_to 'Add to Plan', line_destinations_path(event_id: event) %>
+                <p>Averate rating</p>
+                <div id= "live-review"></div>
+                <span id="live"></span>
+              </div>
+            </div>
+            <% end %>  
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= content_for :scripts do %>
+ <script type="text/javascript">
+ $(document).ready(function() {
+
+     $('#calendar').fullCalendar({
+        theme: true,
+        events:  '/events.json',
+        eventColor: '#0e12a7',
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: null
+    },
+        height: 200,
+       eventRender: function(event, element) {
+         element.attr('title', event.description);
+           
+        }
+     })
+ });
+ </script>
+<% end %>

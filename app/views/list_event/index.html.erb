@@ -2,7 +2,7 @@
   <div class = "list-event">
     <div class ="row">
       <div class= "large-3 columns">
-        <div id= "calendar">
+        <div id= "calendare">
         </div>
       </div>
       <div class= "large-9 columns">
@@ -34,7 +34,7 @@
  <script type="text/javascript">
  $(document).ready(function() {
 
-     $('#calendar').fullCalendar({
+     $('#calendare').fullCalendar({
         theme: true,
         events:  '/events.json',
         eventColor: '#0e12a7',
@@ -45,7 +45,7 @@
     },
         height: 200,
        eventRender: function(event, element) {
-         element.attr('title', event.description);
+         element.attr('title', event.name);
            
         }
      })

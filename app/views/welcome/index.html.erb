@@ -15,21 +15,21 @@
               <div class="row">
                 <div class="large-12 columns">
                     <label><%= t('.selectRegion')%>
-                      <%= select(:destination, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+                      <%= select(:destinations, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
                     </label>
                 </div>
               </div>
               <div class="row">
                 <div class="large-12 columns">
                   <label><%= t('.selectCity')%>
-                    <%= select(:destination, :city_di, options_from_collection_for_select(City.all, :id, :name)) %>
+                    <%= select(:destinations, :city_di, options_from_collection_for_select(City.all, :id, :name)) %>
                   </label>
                 </div>
               </div>
               <div class="row">
                 <div class="large-12 columns">
                   <label><%= t('.selectOption')%>
-                    <%= select(:destination, :city_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
+                    <%= select(:destinations, :city_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
                   </label>
                 </div>
               </div>
@@ -130,16 +130,16 @@
   </div>
   <div class= "row">
     <div class ="large-12 columns">
-      <div class="top_places">
-      <h3><%=t ('.tPlaces') %></h3>
-    </div>  
-      <div class= "places_content">
-        
-        <div class="images">
-          <%= image_tag("pic2.jpg") %>
-         
-        </div>
-      </div>
+      <% @destination.each do |destination| %>
+        <div class="destinationI">
+              <div class="img_location">
+                <%= link_to (image_tag(destination.image_url)), destination %>
+              </div>
+              <div class="des_location">
+                <h5><%= link_to (destination.name), destination %></h5>
+              </div>
+            </div>
+        <% end %>  
     </div>    
   </div>
 </div>
@@ -168,7 +168,7 @@
     },
         height: 250,
        eventRender: function(event, element) {
-            element.attr('title', event.description);
+            element.attr('title', event.name);
          
           
         }

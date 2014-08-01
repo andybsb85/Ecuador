@@ -3,6 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .show-event{
+  
+   #calendars{
+      border: 5px solid #990a5f;
+      border-radius: 10px;
+      margin-top: 10%;
+      width: 100%;
+     height: auto;
+    
+    .fc-header-title h2 {
+     font-size: 1.1em;
+     white-space: normal !important;
+     }
+   }
     .select-destination{
           background-color: #990a5f;
           margin-top: 10%;

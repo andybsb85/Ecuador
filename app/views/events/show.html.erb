@@ -1,7 +1,7 @@
 <div class = "content-body">
   <div class ="show-event">
     <div class ="row">
-      <div class ="large-3 columns">
+      <div class ="large-4 columns">
         <div id= "calendars">
         </div>
         <div class= "select-destination">
@@ -35,34 +35,34 @@
           </div>
         </div>
       </div>
-      <div class= "large-9 columns"> 
-        <p id="notice"><%= notice %></p>
-        <p>
-          <strong>Event:</strong>
-          <%= @event.name %>
-        </p>
+      <div class= "large-8 columns"> 
+        <!--  <p id="notice"><%= notice %></p> -->
+          <p>
+            <strong>Event:</strong>
+            <%= @event.name %>
+          </p>
 
-        <p>
-          <%= image_tag (@event.image_url) %>
-        </p>
+          <div class = "image-event">
+            <%= image_tag (@event.image_url) %>
+          </div>
 
-        <p>
-          <strong>Description:</strong>
-          <%= @event.description %>
-        </p>
+          <p>
+            <strong>Description:</strong>
+            <%= @event.description %>
+          </p>
 
-        <p>
-          <strong>Date:</strong>
-          <%= @event.date %>
-        </p>
+          <p>
+            <strong>Date:</strong>
+            <%= @event.date %>
+          </p>
 
-        <p>
-          <strong>Place:</strong>
-          <%= @event.place %>
-        </p>
+          <p>
+            <strong>Place:</strong>
+            <%= @event.place %>
+          </p>
 
-        <%= link_to 'Edit', edit_event_path(@event) %> |
-        <%= link_to 'Back', events_path %>
+          <%= link_to 'Edit', edit_event_path(@event) %> |
+          <%= link_to 'Back', events_path %>
       </div>
     </div>
   </div>

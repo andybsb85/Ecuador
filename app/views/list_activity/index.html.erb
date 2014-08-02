@@ -1,0 +1,91 @@
+<div class="content-body">
+  <div class ="activity_list">
+    <ul class="breadcrumbs">
+       <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
+       <li class="current"><%= link_to  t('.aboutEcuador'), country_path(1) %></li>
+     </ul>
+   
+    <div class = "row">
+      <div class = "large-3 columns">
+        <div class= "select-destination">
+          <ul class="tabs" data-tab>
+            <li class="tab-title"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
+          </ul>
+          <div class="tabs-content">
+            <div class="content active" id="panel1-1">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectRegion')%>
+                      <%= select(:destination_list, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectCity')%>
+                      <%= select(:destination_list, :city_id, options_from_collection_for_select(City.all, :id, :name)) %>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <a href="#" class="button tiny round"><%= t('.go')%></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class= "filter-destination">
+          <ul class="tabs" data-tab>
+            <li class="tab-title"><a href="#panel2-1"><%= t('.searchTypeDestination')%></a></li>
+          </ul>
+          <div class="tabs-content">
+            <div class="content active" id="panel2-1">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectTypeDestination')%>
+                      <%= select(:destination_list, :type_destination_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <a href="#" class="button tiny round"><%= t('.go')%></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class ="row">
+          <div class="large-12 columns">
+            <h4> Plan Trip</h4>
+          </div>
+        </div> 
+      </div>
+      <div class = "large-9 columns">
+        <h3><%= t('.activities') %></h3>
+        <div class= "row">
+          <% @activities.each do |activity| %>
+            <div class="destination">
+              <div class="img_location">
+                <%= link_to (image_tag(activity.image_url)), activity %>
+              </div>
+              <div class="des_location">
+                <h5><%= link_to (activity.name), activity %></h5>
+                <%= sanitize(activity.summary) %>
+               <%= button_to 'Add to Plan', line_destinations_path(activity_id: activity),  {class: 'button tiny radius'} %>
+                <p>Averate rating</p>
+                <div id= "live-review"></div>
+                <span id="live"></span>
+              </div>
+            </div>
+            <% end %>  
+          </div>
+       </div>
+    </div>
+  </div>
+</div>

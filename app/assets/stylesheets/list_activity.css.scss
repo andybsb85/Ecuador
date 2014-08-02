@@ -1,0 +1,67 @@
+// Place all the styles related to the ListActivity controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.activity_list{
+  background-color: #ffffff;
+  
+   .select-destination{
+      background-color: #990a5f;
+      margin-top: 10%;
+      width: 100%;
+      height: 220px;
+      
+        .tabs-content{
+        margin-left: 5%;
+        width: 90%;
+        } 
+    }
+  .filter-destination{
+      background-color: #990a5f;
+      margin-top: 10%;
+      width: 100%;
+      height: 155px;
+      
+      .tabs-content{
+        margin-left: 5%;
+        width: 90%;
+     } 
+   }
+  
+   .destination{
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: 31%;
+    height: 400px;
+    float: left;
+    border: 2px solid #0e12a7;
+    background: #f3f3f3;
+    border-radius: 4px;
+    
+    .img_location{
+      float: left;
+      width: 100%;
+      height: 200px;
+      
+      img{
+        width: 100%;
+        height: 200px;
+        border-radius: 1px;
+      }
+    }
+    .des_location{
+     
+      padding: 5px 20px; 
+      float: left;
+      width: 100%;
+      height: 90px;
+
+      h5{
+         font-weight:bold;
+         color: #f50504;
+      }
+    }
+  }
+}

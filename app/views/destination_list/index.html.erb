@@ -1,8 +1,5 @@
 <div class="content-body">
   <div class ="destination_list">
-     <%if notice %>
-     <p id="notice"><%= notice %></p>
-     <% end %> 
     <ul class="breadcrumbs">
        <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
        <li class="current"><%= link_to  t('.aboutEcuador'), country_path(1) %></li>
@@ -79,7 +76,7 @@
               </div>
               <div class="des_location">
                 <h5><%= link_to (destination.name), destination %></h5>
-                <%= sanitize(destination.description) %>
+                <%= sanitize(destination.summary) %>
                 <%= button_to 'Add to Plan', line_destinations_path(destination_id: destination),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id= "live-review"></div>

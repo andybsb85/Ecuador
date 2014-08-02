@@ -1,30 +1,28 @@
 Rails.application.routes.draw do
+  resources :countries
+  resources :regions
+  resources :cities
+  resources :type_destinations
+  resources :destinations
   resources :events
-
   resources :line_destinations
   resources :plans
-
+  resources :events
   get 'destination_list/index'
   get 'list_event/index'
-
-  resources :destinations
-  resources :type_destinations
-  resources :cities
-  resources :regions
-  resources :countries
-  resources :events
-
+  
  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   devise_for :users, controllers: {registrations: 'registrations', session: 'sessions'}, path_names: {sign_in: "login", sign_out: "logout"}
  
   get 'welcome/index'
   
   scope '(:locale)' do
-    resources :destinations
-    resources :type_destinations
-    resources :cities
-    resources :regions
     resources :countries
+    resources :regions
+    resources :cities
+    resources :type_destinations
+    resources :destinations
+    resources :events
     get 'destination_list/index'
 
     root 'welcome#index', as: 'index', via: :all

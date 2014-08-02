@@ -5,9 +5,11 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index 
-    
+     if params[:set_locale]
+       redirect_to countries_path(locale: params[:set_locale])    
+     else
      @countries = Country.all
-    
+     end
   end
 
   # GET /countries/1

@@ -4,8 +4,11 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+     if params[:set_locale]
+      redirect_to events_path(locale: params[:set_locale])    
+     else
     @events = Event.all
- 
+     end
   end
 
   # GET /events/1
@@ -15,6 +18,7 @@ class EventsController < ApplicationController
       redirect_to event_path(locale: params[:set_locale])    
     end
   end
+
   
 
   # GET /events/new

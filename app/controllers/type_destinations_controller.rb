@@ -4,7 +4,11 @@ class TypeDestinationsController < ApplicationController
   # GET /type_destinations
   # GET /type_destinations.json
   def index
-    @type_destinations = TypeDestination.all
+      if params[:set_locale]
+        redirect_to type_destinations_path(locale: params[:set_locale])    
+     else  
+     @type_destinations = TypeDestination.all
+      end
   end
 
   # GET /type_destinations/1

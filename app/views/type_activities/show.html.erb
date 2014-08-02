@@ -1,0 +1,13 @@
+<div class="content-body">
+  <div class ="country-content">
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @type_activity.name %>
+    </p>
+
+    <%= link_to 'Edit', edit_type_activity_path(@type_activity) %> |
+    <%= link_to 'Back', type_activities_path %>
+  </div>
+</div>

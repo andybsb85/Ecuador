@@ -1,0 +1,29 @@
+<div class="content-body">
+  <div class ="country-content">
+    <h1>Listing type_activities</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @type_activities.each do |type_activity| %>
+        <tr>
+          <td><%= type_activity.name %></td>
+          <td><%= link_to 'Show', type_activity %></td>
+          <td><%= link_to 'Edit', edit_type_activity_path(type_activity) %></td>
+          <td><%= link_to 'Destroy', type_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Type activity', new_type_activity_path %>
+  </div>
+</div>

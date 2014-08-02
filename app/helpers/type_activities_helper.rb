@@ -1,0 +1,2 @@
+module TypeActivitiesHelper
+end

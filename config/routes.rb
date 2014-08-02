@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :events
   get 'destination_list/index'
   get 'list_event/index'
+  resources :type_activities
   
  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   devise_for :users, controllers: {registrations: 'registrations', session: 'sessions'}, path_names: {sign_in: "login", sign_out: "logout"}
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     resources :destinations
     resources :events
     get 'destination_list/index'
+    resources :type_activities
 
     root 'welcome#index', as: 'index', via: :all
   end

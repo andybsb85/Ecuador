@@ -1,4 +1,10 @@
 <div class = "header">
+   <% if flash[:alert] %>
+  <div data-alert class="alert-box secondary">
+    <p id="notice"><%=flash[:alert]%></p>
+   <a href="#" class="close">&times;</a>
+  </div>
+   <% end %>
   <div class = "header-up">
       <div class = "logo">
         <%= image_tag("logo.png") %>

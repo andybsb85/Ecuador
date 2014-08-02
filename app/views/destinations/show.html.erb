@@ -8,89 +8,73 @@
        <li class="current"><%= link_to  t('.destination'), destination_list_index_path %></li>
        <li class="current"><%= link_to  t('.destination_show') %></li>
      </ul>
-    <p id="notice"><%= notice %></p>
- <div class ="row">
+    <div class ="row">
     <div class= "large-6 columns">
+     
+    </div>
+    <div class= "large-9 columns">
+      <h3> <%= @destination.name %></h3>
+     
       <div class="div-orbit">
         <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
                           pause_on_hover:true;
                           animation_speed: 600;
                           timer_speed: 5000;
-                          navigation_arrows:false;
+                          navigation_arrows:true;
                           bullets:false;
                           next_on_click: false;
                           timer: true;
-                          circular: true,
-                          slide_number: false,">
+                          circular: true;
+                          slide_number: false;">
           <li data-orbit-slide="headline-1">
             <div>
-              <%= image_tag "frog.jpg" %>
+             <%= image_tag(@destination.image_url) %>
             </div>
           </li>
           <li data-orbit-slide="headline-2">
             <div>
-              <%= image_tag "cuenca_1.jpg" %>
+             <%= image_tag(@destination.image_url_two) %>
             </div>
           </li>
           <li data-orbit-slide="headline-3">
             <div>
-               <%= image_tag "llama.jpg" %>
+              <%= image_tag(@destination.image_url_three) %>
             </div>
           </li>
         </ul>
       </div>
+      <div class = "options">
+      <%= link_to (image_tag "share-facebook.png"), "https://www.facebook.com/sharer/sharer.php?u=http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/destinations/3?locale=en"%>
+       <%= link_to 'Print' %>
+      </div>
+      <div class="content-destination">
+        <p>
+          <strong>Description:</strong>
+          <%= @destination.description %>
+        </p>
+
+        <p>
+          <strong>Address:</strong>
+          <%= @destination.address %>
+        </p>
+
+        <p>
+          <strong>Phone:</strong>
+          <%= @destination.phone %>
+        </p>
+
+        <p>
+          <strong>Website:</strong>
+          <%= @destination.website %>
+        </p>
+      </div>
+      <div class = "map-destination">
+      <div style='width: 100%;'>
+        <div id="map" style='width: 100%; height: 290px;'></div>
+      </div>
+         
+      </div>
     </div>
-  </div>
-    <h2> <%= @destination.name %></h2>
-     <p>
-      <strong>City:</strong>
-      <%= @destination.city_id %>
-    </p>
-
-    <p>
-      <strong>Type destination:</strong>
-      <%= @destination.type_destination_id %>
-    </p>
-
-    <p>
-      <%= image_tag(@destination.image_url) %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @destination.description %>
-    </p>
-
-    <p>
-      <strong>Address:</strong>
-      <%= @destination.address %>
-    </p>
-      <p>
-      <strong>Latitude:</strong>
-        <%= @destination.latitude %>
-    </p>
-      <p>
-      <strong>Longitude:</strong>
-        <%= @destination.longitude %>
-    </p>
-
-    <p>
-      <strong>Phone:</strong>
-      <%= @destination.phone %>
-    </p>
-
-    <p>
-      <strong>Website:</strong>
-      <%= @destination.website %>
-    </p>
-    
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
- <a href="https://www.facebook.com/sharer/sharer.php?u=http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/destinations/3?locale=en">Share on Facebook</a>
-
-    <%= link_to 'Edit', edit_destination_path(@destination) %> |
-    <%= link_to 'Back', destinations_path %>
   </div>
 </div>
 

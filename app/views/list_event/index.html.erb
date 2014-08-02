@@ -15,8 +15,8 @@
               </div>
               <div class="des_location">
                 <h5><%= link_to (event.name), event %></h5>
-                <%= sanitize(event.description) %>
-                <%= button_to 'Add to Plan', line_destinations_path(event_id: event) %>
+                <%= sanitize(event.summary) %>
+                <%= button_to 'Add to Plan', line_destinations_path(event_id: event),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id= "live-review"></div>
                 <span id="live"></span>

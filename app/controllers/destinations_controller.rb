@@ -4,22 +4,22 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
-    
     @destinations = Destination.all
-     @hash = Gmaps4rails.build_markers(@destinations) do |destination, marker|
-      marker.lat destination.latitude
-      marker.lng destination.longitude
-     end
   end
 
 
   # GET /destinations/1
   # GET /destinations/1.json
   def show
-     if params[:set_locale]
-      redirect_to destination_path(locale: params[:set_locale])   
-     end
-      
+    if params[:set_locale]
+      redirect_to destination_path(locale: params[:set_locale])    
+    else
+      @destination = Destination.find(params[:id])
+      @hash = Gmaps4rails.build_markers(@destination) do |destination, marker|
+      marker.lat destination.latitude
+      marker.lng destination.longitude
+    end
+   end
   end
 
   # GET /destinations/new
@@ -79,6 +79,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name, :city_id, :type_destination_id, :image_url, :description, :address, :latitude, :longitude, :phone, :website)
+      params.require(:destination).permit(:name, :city_id, :type_destination_id, :image_url, :image_url_two, :image_url_three, :summary, :description, :address, :latitude, :longitude, :phone, :website)
     end
 end

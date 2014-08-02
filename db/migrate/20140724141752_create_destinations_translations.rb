@@ -2,6 +2,7 @@ class CreateDestinationsTranslations < ActiveRecord::Migration
   def self.up
     Destination.create_translation_table!({
       :name => :string,
+      :summary => :text,
       :description => :text,
      
     }, {

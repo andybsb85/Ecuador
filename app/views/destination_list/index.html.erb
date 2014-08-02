@@ -80,7 +80,7 @@
               <div class="des_location">
                 <h5><%= link_to (destination.name), destination %></h5>
                 <%= sanitize(destination.description) %>
-                <%= button_to 'Add to Plan', line_destinations_path(destination_id: destination) %>
+                <%= button_to 'Add to Plan', line_destinations_path(destination_id: destination),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id= "live-review"></div>
                 <span id="live"></span>

@@ -5,13 +5,15 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-  
+ 
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    @event = Event.find(params[:id])
+    if params[:set_locale]
+      redirect_to event_path(locale: params[:set_locale])    
+    end
   end
   
 
@@ -72,6 +74,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :image_url, :description, :date, :place)
+      params.require(:event).permit(:name, :image_url, :summary, :description, :date, :place)
     end
 end

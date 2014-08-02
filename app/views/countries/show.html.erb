@@ -1,10 +1,9 @@
 <div class= "content-body">
   <div class="country">
-    <ul class="breadcrumbs">
-         <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
-         <li class="current"><%= link_to  t('.aboutEcuador'), country_path(1) %></li>
-       </ul>
-      <h3><%= @country.name %></h3>
+     <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>
+    <h3><%= @country.name %></h3>
      <div class = "row">
         <div class = "large-9 columns">
           <div class = "image-ecuador">

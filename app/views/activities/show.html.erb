@@ -1,54 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="content-body">
+  <div class ="country-content">
+      <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>
+    <div class ="row">
+    <div class= "large-3 columns">
+    </div>
+    <div class= "large-9 columns">
+      <p>
+        <strong>Name:</strong>
+        <%= @activity.name %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @activity.name %>
-</p>
+      <p>
+        <strong>City:</strong>
+        <%= @activity.city %>
+      </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @activity.city %>
-</p>
+      <p>
+        <strong>Type activity:</strong>
+        <%= @activity.type_activity %>
+      </p>
 
-<p>
-  <strong>Type activity:</strong>
-  <%= @activity.type_activity %>
-</p>
+      <p>
+        <strong>Image url:</strong>
+        <%= @activity.image_url %>
+      </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @activity.image_url %>
-</p>
+      <p>
+        <strong>Summary:</strong>
+        <%= @activity.summary %>
+      </p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @activity.summary %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @activity.description %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @activity.description %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @activity.address %>
+      </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @activity.address %>
-</p>
+      <p>
+        <strong>Latitude:</strong>
+        <%= @activity.latitude %>
+      </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @activity.latitude %>
-</p>
+      <p>
+        <strong>Longitude:</strong>
+        <%= @activity.longitude %>
+      </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @activity.longitude %>
-</p>
+      <p>
+        <strong>Website:</strong>
+        <%= @activity.website %>
+      </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @activity.website %>
-</p>
-
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %>
+      <%= link_to 'Edit', edit_activity_path(@activity) %> |
+      <%= link_to 'Back', activities_path %>
+    </div>
+  </div>
+</div>

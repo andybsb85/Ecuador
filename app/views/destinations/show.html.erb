@@ -3,13 +3,11 @@
 
 <div class="content-body">
   <div class ="country-content">
-     <ul class="breadcrumbs">
-       <li><%= link_to  t('.ecuadorTurism'), index_path %></li>
-       <li class="current"><%= link_to  t('.destination'), destination_list_index_path %></li>
-       <li class="current"><%= link_to  t('.destination_show') %></li>
-     </ul>
+      <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>
     <div class ="row">
-    <div class= "large-6 columns">
+    <div class= "large-3 columns">
      
     </div>
     <div class= "large-9 columns">

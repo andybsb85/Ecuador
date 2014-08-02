@@ -33,6 +33,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'fullcalendar-rails'
+gem "breadcrumbs_on_rails"
 
 
 

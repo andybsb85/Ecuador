@@ -65,3 +65,8 @@ en:
       searchTypeDestination: "Destination by Type"
       selectTypeDestination: "Destination Type"
       go: "Search"
+
+  devise:
+    sessions:
+      new:
+        sign-in: "Login"

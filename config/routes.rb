@@ -18,7 +18,7 @@ Rails.application.routes.draw do
  
   get 'welcome/index'
   
-  scope '(:locale)' do
+  scope '(:locale)', :locale => /en|tr/ do
     resources :countries
     resources :regions
     resources :cities
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :type_activities
     resources :activities
     get 'list_activity/index'
-
+    resources :sessions
     root 'welcome#index', as: 'index', via: :all
   end
 

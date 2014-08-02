@@ -44,3 +44,8 @@ es:
       searchTypeDestination: "Buscar Destino por Tipo"
       selectTypeDestination: "Tipo de Destino"
       go: "Buscar"
+      
+  devise:
+    sessions:
+      new:
+        sign-in: "Inicie Sesion"

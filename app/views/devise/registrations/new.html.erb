@@ -1,7 +1,7 @@
 <div class="content-body">
   <div class="devise-margin">
     <div class="devise-content">
-      <h2>Sign up</h2>
+      <h2><%= t('.sign-up')%></h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
@@ -18,7 +18,7 @@
         <div><%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-      <div><%= f.submit "Sign up", :class=> "button tiny radius" %></div>
+      <div><%= f.submit t('.sign-up'), :class=> "button tiny radius" %></div>
       <% end %>
 
       <%= render "devise/shared/links" %>

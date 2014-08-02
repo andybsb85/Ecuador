@@ -1,6 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
   def new
-    super
+     if params[:set_locale]
+       redirect_to new_user_registration_path(locale: params[:set_locale])    
+     else
+       super      
+     end
   end
   
   
@@ -22,12 +26,16 @@ class RegistrationsController < Devise::RegistrationsController
   
   
   def update
-    super
+      if params[:set_locale]
+        redirect_to edit_user_registration_path(locale: params[:set_locale])    
+     else
+       super      
+     end
   end
   
   protected
     def after_sign_up_path_for(resource)
-      signed_in_root_path(resource) 
+      new_user_session_path(resource) 
     end
   
 end

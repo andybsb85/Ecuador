@@ -46,6 +46,14 @@ es:
       go: "Buscar"
       
   devise:
-    sessions:
+    shared:
+      links:
+        sign-in: "Inicie Sesión"
+        sign-up: "Registrese"
+        forgot-password: "Olvidó su Contraseña?"
+        confimation-instructions: "No recibió instrucciones de Confirmación?"
+        unlock-instructions: "No recibió instrucciones de desbloqueo?"
+    passwords:
       new:
-        sign-in: "Inicie Sesion"
+        forgot-password: "Olvidó su Contraseña?"
+        send-password: "Enviar instrucciones para resetear contraseña"

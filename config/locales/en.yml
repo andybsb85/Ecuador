@@ -21,6 +21,7 @@
 
 --- 
 en: 
+  
   layouts: 
     header: 
       signup: "Sign Up"
@@ -65,8 +66,16 @@ en:
       searchTypeDestination: "Destination by Type"
       selectTypeDestination: "Destination Type"
       go: "Search"
-
+      
   devise:
-    sessions:
-      new:
+    shared:
+      links:
         sign-in: "Login"
+        sign-up: "Sign Up"
+        forgot-password: "Forgot your password?"
+        confimation-instructions: "Didn't receive confirmation instructions?"
+        unlock-instructions: "Didn't receive unlock instructions?"
+    passwords:
+      new:
+        forgot-password: "Forgot your password?"
+        send-password: "Send me reset password instructions"

@@ -45,7 +45,7 @@ Rails.application.configure do
     password: ENV["GMAIL_PASSWORD"],
 
   }
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }  
+ config.action_mailer.default_url_options = { :host => 'yoursite.herokuapp.com' }
   config.action_mailer.default :charset => "utf-8"
 
   # `config.assets.precompile` has moved to config/initializers/assets.rb

@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   resources :type_activities
   get 'list_activity/index'
  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  devise_for :users, controllers: {registrations: 'registrations', session: 'sessions'}, path_names: {sign_in: "login", sign_out: "logout"}
+ 
  
   get 'welcome/index'
   
-  scope '(:locale)', :locale => /en|tr/ do
+  scope '(:locale)' do
     resources :countries
     resources :regions
     resources :cities
@@ -29,7 +29,9 @@ Rails.application.routes.draw do
     resources :type_activities
     resources :activities
     get 'list_activity/index'
-    resources :sessions
+    devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: {sign_in: "login", sign_out: "logout"}
+ 
+    
     root 'welcome#index', as: 'index', via: :all
   end
 

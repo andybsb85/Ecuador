@@ -2,7 +2,7 @@ class Destination < ActiveRecord::Base
 
   belongs_to :city
   belongs_to :type_destination
-  translates :name, :description
+  translates :name, :summary, :description
   has_many :line_destinations
   
   geocoded_by :address

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140801234433) do
+ActiveRecord::Schema.define(version: 20140802002128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140801234433) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.text     "summary"
     t.text     "description"
   end
 
@@ -83,6 +84,9 @@ ActiveRecord::Schema.define(version: 20140801234433) do
     t.integer  "city_id"
     t.integer  "type_destination_id"
     t.string   "image_url"
+    t.string   "image_url_two"
+    t.string   "image_url_three"
+    t.text     "summary"
     t.text     "description"
     t.text     "address"
     t.text     "phone"
@@ -91,23 +95,33 @@ ActiveRecord::Schema.define(version: 20140801234433) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "image_url_two"
-    t.string   "image_url_three"
-    t.text     "summary"
   end
 
   add_index "destinations", ["city_id"], name: "index_destinations_on_city_id", using: :btree
   add_index "destinations", ["type_destination_id"], name: "index_destinations_on_type_destination_id", using: :btree
 
+  create_table "event_translations", force: true do |t|
+    t.integer  "event_id",    null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "summary"
+    t.text     "description"
+  end
+
+  add_index "event_translations", ["event_id"], name: "index_event_translations_on_event_id", using: :btree
+  add_index "event_translations", ["locale"], name: "index_event_translations_on_locale", using: :btree
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.text     "image_url"
+    t.text     "summary"
     t.text     "description"
     t.date     "date"
     t.text     "place"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "summary"
   end
 
   create_table "line_destinations", force: true do |t|

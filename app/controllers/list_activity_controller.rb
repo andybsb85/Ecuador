@@ -7,7 +7,7 @@ class ListActivityController < ApplicationController
       if params[:set_locale]
         redirect_to list_activity_index_path(locale: params[:set_locale])    
     else
-      @activities = Activity.all
+      @activities = Activity.all.page(params[:page]).per(9)
      end
   end
 end

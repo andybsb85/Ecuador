@@ -10,11 +10,11 @@ class DestinationListController < ApplicationController
        redirect_to destination_list_index_path(locale: params[:set_locale])    
     else    
        if params[:search_topic]
-         @destination = Destination.where(type_destination_id: params[:search_topic])
+         @destination = Destination.where(type_destination_id: params[:search_topic]).page(params[:page]).per(9)
        elsif params[:search_city]
-         @destination = Destination.where(city_id: params[:search_city])
+         @destination = Destination.where(city_id: params[:search_city]).page(params[:page]).per(9)
        else
-       @destination = Destination.all
+       @destination = Destination.all.page(params[:page]).per(9)
       end
      end
   end

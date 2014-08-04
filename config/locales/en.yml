@@ -67,6 +67,26 @@ en:
       selectTypeDestination: "Destination Type"
       go: "Search"
       
+  list_event:
+    index:
+      events: "EVENTS"
+      selectRegion: "Select Region"
+      selectCity: "Select City"
+      searchDestination: "Search Destination"
+      searchTypeDestination: "Destination by Type"
+      selectTypeDestination: "Destination Type"
+      go: "Search"
+      
+  list_activity:
+    index:
+      activities: "ACTIVITIES"
+      selectRegion: "Select Region"
+      selectCity: "Select City"
+      searchDestination: "Search Destination"
+      searchTypeDestination: "Destination by Type"
+      selectTypeDestination: "Destination Type"
+      go: "Search"
+      
   devise:
     shared:
       links:

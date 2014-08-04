@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :activities
   resources :countries
   resources :regions
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
     resources :activities
     get 'list_activity/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: {sign_in: "login", sign_out: "logout"}
- 
+    devise_for :admins
     
     root 'welcome#index', as: 'index', via: :all
   end

@@ -93,6 +93,7 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
+         <li class="divider"></li>
         <li>
           <a href="#"><%= link_to  t('.aboutEcuador'), country_path(1) %></a></li>
           <li class="divider"></li>
@@ -105,15 +106,18 @@
          <li>
            <a href="#"><%= link_to  t('.activities'), list_activity_index_path %></a></li>
          <li class="divider"></li>
-         <li class="has-dropdown">
-           <a href="#"><%= link_to  t('.tripPlanner')%></a>
-          <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-          </ul>
+         <li>
+           <a href="#"><%= link_to  t('.tips')%></a>
         </li>
          <li class="divider"></li>
          <li>
-           <a href="#"><%= link_to  t('.experiences') %></a></li>
+           <a href="#"><%= link_to  t('.blog') %></a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+           <a href="#"><%= link_to  t('.book') %></a></li>
+         <ul class="dropdown">
+            <li><a href="#">Link to despegar</a></li>
+          </ul>
       </ul>
     </section>
   </nav>

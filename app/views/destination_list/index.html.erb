@@ -15,20 +15,18 @@
                 <div class="row">
                   <div class="large-12 columns">
                     <label><%= t('.selectRegion')%>
-                      <%= select(:destination_list, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
+                      <%= select_tag 'search_region', options_from_collection_for_select(Region.order(:name), :id, :name) %>
                     </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="large-12 columns">
                     <label><%= t('.selectCity')%>
-                      <%= select(:destination_list, :city_id, options_from_collection_for_select(City.all, :id, :name)) %>
+                     <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                      <%= select_tag 'search_city', options_from_collection_for_select(City.order(:name), :id, :name) %>
+                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
                     </label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <a href="#" class="button tiny round"><%= t('.go')%></a>
                   </div>
                 </div>
               </form>
@@ -44,14 +42,10 @@
               <form>
                 <div class="row">
                   <div class="large-12 columns">
-                    <label><%= t('.selectTypeDestination')%>
-                      <%= select(:destination_list, :type_destination_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
-                    </label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <a href="#" class="button tiny round"><%= t('.go')%></a>
+                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeDestination.all, :id, :name) %>
+                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
                   </div>
                 </div>
               </form>
@@ -60,12 +54,12 @@
         </div>
         <div class ="row">
           <div class="large-12 columns">
-            <h4> Plan Trip</h4>
+             <%= render @plan %>
           </div>
         </div> 
       </div>
       <div class = "large-9 columns">
-       <h3><%= t('.destinations') %></h3>
+        <h4><strong><%= t('.destinations') %></strong></h4>
         <div class= "row">
           <% @destination.each do |destination| %>
             <div class="destination">

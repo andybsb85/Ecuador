@@ -5,7 +5,7 @@
   <div class ="country-content">
       <ul class="breadcrumbs">
       <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>
+      </ul>
     <div class ="row">
     <div class= "large-3 columns">
      
@@ -41,9 +41,29 @@
           </li>
         </ul>
       </div>
-      <div class = "options">
-      <%= link_to (image_tag "share-facebook.png"), "https://www.facebook.com/sharer/sharer.php?u=http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/destinations/3?locale=en"%>
-       <%= link_to 'Print' %>
+      <div class="row">
+        <div class = "medium-5 columns">
+             <ul class="social-share-list list-inline">
+                <li class="twt">
+                  <%= tweet_button %>
+               </li>
+               <li class="fb">
+                  <%= like_button(690575874330211) %>
+               </li>
+               <li class="pi">
+                 <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
+               </li>
+               <li class = "gp">
+             <%= google_plus_button %>
+               </li>
+            </ul>
+        </div>
+        <div class = "medium-5 columns">
+           <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>
+        </div>
+        <div class ="medium-2 columns">
+          <%= link_to 'Print' %>
+         </div>
       </div>
       <div class="content-destination">
         <p>
@@ -73,6 +93,7 @@
          
       </div>
     </div>
+  </div>
   </div>
 </div>
 

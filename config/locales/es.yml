@@ -44,6 +44,26 @@ es:
       searchTypeDestination: "Buscar Destino por Tipo"
       selectTypeDestination: "Tipo de Destino"
       go: "Buscar"
+  
+  list_event:
+    index:
+      events: "EVENTOS"
+      selectRegion: "Seleccione Region"
+      selectCity: "Seleccione Ciudad"
+      searchDestination: "Buscar Destino"
+      searchTypeDestination: "Buscar Destino por Tipo"
+      selectTypeDestination: "Tipo de Destino"
+      go: "Buscar"
+      
+  list_activity:
+    index:
+      activities: "ACTIVIDADES"
+      selectRegion: "Seleccione Region"
+      selectCity: "Seleccione Ciudad"
+      searchDestination: "Buscar Destino"
+      searchTypeDestination: "Buscar Destino por Tipo"
+      selectTypeDestination: "Tipo de Destino"
+      go: "Buscar"
       
   devise:
     shared:

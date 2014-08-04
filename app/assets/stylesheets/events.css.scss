@@ -37,4 +37,16 @@
        height: 380px;
      }
    }
+  
+
+ul.social-share-list {
+  li {
+     list-style-type: none;
+    display: inline;
+    .twt {margin-right: 35px;margin-bottom: -5px;}
+    .gp {margin-right:  35px;margin-bottom: -5px;}
+    .pi {margin-right: 35px;margin-bottom: -5px;}
+    .fb {margin-right: 35px;margin-bottom: -5px;}
+  }
+}
 }

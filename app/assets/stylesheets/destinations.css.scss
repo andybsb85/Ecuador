@@ -15,13 +15,7 @@
         height: 299px;
       }
     }
-  .options{
-    margin-top: 2%;
-    
-    img{
-      height: 25px;
-    }
-  }
+ 
   .content-destination{
     margin-top: 3%;
   }
@@ -34,5 +28,15 @@
       width: 60%;
       height: auto;
   }
+  ul.social-share-list {
+  li {
+     list-style-type: none;
+    display: inline;
+    .twt {margin-right: -35px;margin-bottom: -5px;}
+    .gp {margin-right: -33px;margin-bottom: -5px;}
+    .pi {margin-right: -33px;margin-bottom: -5px;}
+    .fb {margin-right: -33px;margin-bottom: -5px;}
+  }
+}
   
 }

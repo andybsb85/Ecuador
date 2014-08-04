@@ -1,0 +1,8 @@
+<h2> Your Plan </h2>
+    <table>
+      <%= render(@plan.line_destinations) %>
+    </table>
+        <%= link_to 'Destroy', @plan, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to t('.print') %>
+        <%= link_to t('.email') %>
+        <%= link_to 'Back', destination_list_index_path %>

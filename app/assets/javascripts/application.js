@@ -16,6 +16,7 @@
 //= require foundation
 //= require underscore
 //= require gmaps/google
+//= require social-share-button
 //= require jquery.ui.datepicker
 //= require fullcalendar
 //= require_tree .

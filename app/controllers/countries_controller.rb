@@ -19,17 +19,20 @@ class CountriesController < ApplicationController
   # GET /countries/1.json
   def show
     if params[:set_locale]
-    redirect_to country_path(locale: params[:set_locale])    
+    redirect_to country_path(locale: params[:set_locale])   
+      authorize! :read, @country
     end
   end
 
   # GET /countries/new
   def new
-    @country = Country.new
+     @country = Country.new
+    authorize! :create, @country
   end
 
   # GET /countries/1/edit
   def edit
+     authorize! :update, @country
   end
 
   # POST /countries
@@ -65,10 +68,12 @@ class CountriesController < ApplicationController
   # DELETE /countries/1
   # DELETE /countries/1.json
   def destroy
+     authorize! :destroy, @country
     @country.destroy
     respond_to do |format|
       format.html { redirect_to countries_url, notice: 'Country was successfully destroyed.' }
       format.json { head :no_content }
+     
     end
   end
 

@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale, :default_url_options
   before_action :set_i18n_locale_from_params
+
  
 
   
@@ -28,7 +29,7 @@ class ApplicationController < ActionController::Base
             end
           end
         end
-
+         
    private
   
     def set_locale

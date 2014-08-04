@@ -34,6 +34,9 @@ gem 'gmaps4rails'
 gem 'jquery-ui-rails', '~> 4.2.1'
 gem 'fullcalendar-rails'
 gem "breadcrumbs_on_rails"
+gem 'cancancan', '~> 1.9'
+gem 'social-buttons'
+gem 'social-share-button'
 
 
 

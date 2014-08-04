@@ -7,11 +7,32 @@
       <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
       </ul>
     <div class ="row">
-    <div class= "large-3 columns">
+      <div class= "large-3 columns">
      
-    </div>
-    <div class= "large-9 columns">
-      <h3> <%= @destination.name %></h3>
+      </div>
+      <div class= "large-9 columns">
+        <div class="row">
+          <div class = "large-9 columns">
+            <ul class="social-share-list list-inline">
+              <li class="twt">
+                <%= tweet_button %>
+              </li>
+              <li class="fb">
+                <%= like_button(690575874330211) %>
+              </li>
+              <li class="pi">
+                <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
+              </li>
+              <li class = "gp">
+                <%= google_plus_button %>
+              </li>
+            </ul>
+          </div>
+          <div class = "large-3 columns">
+            <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>         
+          </div>
+        </div>
+        <h4><strong> <%= @destination.name %></strong></h4>
      
       <div class="div-orbit">
         <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
@@ -41,30 +62,7 @@
           </li>
         </ul>
       </div>
-      <div class="row">
-        <div class = "medium-5 columns">
-             <ul class="social-share-list list-inline">
-                <li class="twt">
-                  <%= tweet_button %>
-               </li>
-               <li class="fb">
-                  <%= like_button(690575874330211) %>
-               </li>
-               <li class="pi">
-                 <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
-               </li>
-               <li class = "gp">
-             <%= google_plus_button %>
-               </li>
-            </ul>
-        </div>
-        <div class = "medium-5 columns">
-           <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>
-        </div>
-        <div class ="medium-2 columns">
-          <%= link_to 'Print' %>
-         </div>
-      </div>
+     
       <div class="content-destination">
         <p>
           <strong>Description:</strong>

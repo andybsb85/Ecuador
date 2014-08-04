@@ -64,7 +64,7 @@ es:
       searchTypeDestination: "Buscar Destino por Tipo"
       selectTypeDestination: "Tipo de Destino"
       go: "Buscar"
-      
+  
   devise:
     shared:
       links:
@@ -77,3 +77,13 @@ es:
       new:
         forgot-password: "Olvidó su Contraseña?"
         send-password: "Enviar instrucciones para resetear contraseña"
+        
+  kaminari:
+    prev_page:
+      previous: "&lt; Anterior"
+    next_page:
+      next: "Siguiente &gt;"
+    last_page:
+      last: "Ultimo"
+    first_page:
+      first: "Primero"

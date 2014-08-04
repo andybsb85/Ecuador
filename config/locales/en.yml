@@ -21,7 +21,7 @@
 
 --- 
 en: 
-  
+
   layouts: 
     header: 
       signup: "Sign Up"
@@ -99,3 +99,13 @@ en:
       new:
         forgot-password: "Forgot your password?"
         send-password: "Send me reset password instructions"
+        
+  kaminari:
+    prev_page:
+      previous: "&lt; Previous"
+    next_page:
+      next: "Next &gt;"
+    last_page:
+      last: "Last"
+    first_page:
+      first: "First"

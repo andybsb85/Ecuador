@@ -13,6 +13,7 @@ class DestinationsController < ApplicationController
       redirect_to destinations_path(locale: params[:set_locale])    
     else
       @destinations = Destination.all
+     
     end
   end
 
@@ -25,10 +26,12 @@ class DestinationsController < ApplicationController
     else
       @destination = Destination.find(params[:id])
       @hash = Gmaps4rails.build_markers(@destination) do |destination, marker|
-      marker.lat destination.latitude
-      marker.lng destination.longitude
+
+        marker.lat destination.latitude
+        marker.lng destination.longitude
+   
+      end
     end
-   end
   end
 
   # GET /destinations/new

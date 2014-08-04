@@ -3,22 +3,22 @@ class WelcomeController < ApplicationController
     if params[:set_locale]
       redirect_to index_path(locale: params[:set_locale])    
     else
-       @cities = City.all
-       @hashcity = Gmaps4rails.build_markers(@cities) do |city, marker|
-#<<<<<<< HEAD
-       marker.lat city.latitude
-       marker.lng city.longitude
-#=======
-        marker.lat city.latitude
-        marker.lng city.longitude
+      @activities = Activity.all
+      @hashactivity = Gmaps4rails.build_markers(@activities) do |activity, marker|
+       marker.lat activity.latitude
+       marker.lng activity.longitude
          
         @events = Event.all
         @events_by_date = @events.group_by(&:date)
         @date = params[:date] ? Date.parse(params[:date]) : Date.today
-      
-#>>>>>>> destination
-         @destination = Destination.all         
+                
        end
-     end
+        @destination = Destination.all
+        @hash = Gmaps4rails.build_markers(@destination) do |destination, marker|
+
+        marker.lat destination.latitude
+        marker.lng destination.longitude
+      end
+    end
   end
 end

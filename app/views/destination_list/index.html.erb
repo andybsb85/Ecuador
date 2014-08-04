@@ -5,25 +5,35 @@
     </ul>   
     <div class = "row">
       <div class = "large-3 columns">
-        <div class= "select-destination">
+        <div class ="search-div">
+          <h4><strong><%= t('.searchEvent') %></strong></h4>
+          <div class= "select-destination">
           <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
+            <li class="tab-title active"><a href="#panel2-1"><%= t('.byCity')%></a></li>
+            <li class="tab-title"><a href="#panel2-2"><%= t('.byType')%></a></li>
           </ul>
           <div class="tabs-content">
-            <div class="content active" id="panel1-1">
+            <div class="content active" id="panel2-1">
               <form>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <label><%= t('.selectRegion')%>
-                      <%= select_tag 'search_region', options_from_collection_for_select(Region.order(:name), :id, :name) %>
-                    </label>
-                  </div>
-                </div>
                 <div class="row">
                   <div class="large-12 columns">
                     <label><%= t('.selectCity')%>
                      <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
-                      <%= select_tag 'search_city', options_from_collection_for_select(City.order(:name), :id, :name) %>
+                      <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
+                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class ="content" id="panel2-2">
+              <form>
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label><%= t('.selectTypeDestination')%>
+                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeDestination.all, :id, :name) %>
                       <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
                     <% end %> 
                     </label>
@@ -33,24 +43,6 @@
             </div>
           </div>
         </div>
-        <div class= "filter-destination">
-          <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.searchTypeDestination')%></a></li>
-          </ul>
-          <div class="tabs-content">
-            <div class="content active" id="panel2-1">
-              <form>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
-                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeDestination.all, :id, :name) %>
-                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
-                    <% end %> 
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
         <div class ="row">
           <div class="large-12 columns">

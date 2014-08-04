@@ -2,11 +2,14 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :name
-      t.text :image_url
+      t.belongs_to :city, index: true
+      t.string :image_url
       t.text :summary
       t.text :description
       t.date :date
-      t.text :place
+      t.text :address
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

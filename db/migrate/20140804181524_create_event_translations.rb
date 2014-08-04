@@ -1,5 +1,5 @@
 class CreateEventTranslations < ActiveRecord::Migration
-   def self.up
+    def self.up
      Event.create_translation_table!({
       :name => :string,
       :summary => :text,

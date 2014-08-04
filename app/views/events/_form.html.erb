@@ -16,28 +16,39 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :city_id %><br>
+    <%= f.text_field :city_id %>
+  </div>
+  <div class="field">
     <%= f.label :image_url %><br>
-    <%= f.text_area :image_url %>
+    <%= f.text_field :image_url %>
   </div>
   <div class="field">
     <%= f.label :summary %><br>
-    <%= f.text_area :summary %>
+    <%= f.text_field :summary %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_field :description %>
   </div>
+
   <div class="field">
     <%= f.label :date %><br>
     <%= f.text_field :date %>
   </div>
-
   <div class="field">
-    <%= f.label :place %><br>
-    <%= f.text_area :place %>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-

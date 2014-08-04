@@ -147,12 +147,14 @@
 <%= content_for :scripts do %>
   <script type="text/javascript">
     handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hashcity.to_json %>);
+     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);        
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      handler.getMap().setZoom(17);
     });
   </script>
+
 
  <script type="text/javascript">
  $(document).ready(function() {
@@ -169,8 +171,6 @@
         height: 250,
        eventRender: function(event, element) {
             element.attr('title', event.name);
-         
-          
         }
      })
  });

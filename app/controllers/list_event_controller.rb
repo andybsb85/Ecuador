@@ -9,7 +9,7 @@ class ListEventController < ApplicationController
     @events = Event.all.page(params[:page]).per(9)
     @events_by_date = @events.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-
+    @regions = Region.all
      end
    end
  end

@@ -1,28 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-   add_breadcrumb "Ecuador Tourism", :index_path
-  add_breadcrumb "List Events", :list_event_index_path
-  add_breadcrumb "Event", :event_path
 
   # GET /events
   # GET /events.json
   def index
-     if params[:set_locale]
-      redirect_to events_path(locale: params[:set_locale])    
-     else
     @events = Event.all
-     end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    if params[:set_locale]
-      redirect_to event_path(locale: params[:set_locale])    
-    end
   end
-
-  
 
   # GET /events/new
   def new
@@ -81,6 +69,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :image_url, :summary, :description, :date, :place)
+      params.require(:event).permit(:string, :city_id, :string, :text, :text, :date, :text, :float, :float)
     end
 end

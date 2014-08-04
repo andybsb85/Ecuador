@@ -5,64 +5,45 @@
     </ul>
     <div class = "row">
       <div class = "large-3 columns">
-        <div class= "select-destination">
+        <div class ="search-div">
+          <h4><strong><%= t('.searchEvent') %></strong></h4>
+          <div class= "select-destination">
           <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
-          </ul>
-          <div class="tabs-content">
-            <div class="content active" id="panel1-1">
-              <form>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <label><%= t('.selectRegion')%>
-                      <%= select(:destination_list, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
-                    </label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <label><%= t('.selectCity')%>
-                      <%= select(:destination_list, :city_id, options_from_collection_for_select(City.all, :id, :name)) %>
-                    </label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="large-12 columns">
-                    <a href="#" class="button tiny round"><%= t('.go')%></a>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class= "filter-destination">
-          <ul class="tabs" data-tab>
-            <li class="tab-title"><a href="#panel2-1"><%= t('.searchTypeDestination')%></a></li>
+            <li class="tab-title active"><a href="#panel2-1"><%= t('.byCity')%></a></li>
+            <li class="tab-title"><a href="#panel2-2"><%= t('.byType')%></a></li>
           </ul>
           <div class="tabs-content">
             <div class="content active" id="panel2-1">
               <form>
                 <div class="row">
                   <div class="large-12 columns">
-                    <label><%= t('.selectTypeDestination')%>
-                      <%= select(:destination_list, :type_destination_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
+                    <label><%= t('.selectCity')%>
+                     <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                      <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
+                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
                     </label>
                   </div>
                 </div>
+              </form>
+            </div>
+            <div class ="content" id="panel2-2">
+              <form>
                 <div class="row">
                   <div class="large-12 columns">
-                    <a href="#" class="button tiny round"><%= t('.go')%></a>
+                    <label><%= t('.selectTypeDestination')%>
+                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeDestination.all, :id, :name) %>
+                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                    </label>
                   </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <div class ="row">
-          <div class="large-12 columns">
-            <h4> Plan Trip</h4>
-          </div>
-        </div> 
+        </div>
       </div>
       <div class = "large-9 columns">
         <h4><strong><%= t('.activities') %></strong></h4>

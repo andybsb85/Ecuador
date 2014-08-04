@@ -1,15 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  image_url: MyText
-  description: MyText
-  date: 2014-07-28
-  place: MyText
+  string: 
+  city_id: 
+  string: 
+  text: 
+  text: 
+  date: 2014-08-04
+  text: 
+  float: 
+  float: 
 
 two:
-  name: MyString
-  image_url: MyText
-  description: MyText
-  date: 2014-07-28
-  place: MyText
+  string: 
+  city_id: 
+  string: 
+  text: 
+  text: 
+  date: 2014-08-04
+  text: 
+  float: 
+  float: 

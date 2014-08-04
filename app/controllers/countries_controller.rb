@@ -27,12 +27,12 @@ class CountriesController < ApplicationController
   # GET /countries/new
   def new
      @country = Country.new
-    authorize! :create, @country
+    #authorize! :create, @country
   end
 
   # GET /countries/1/edit
   def edit
-     authorize! :update, @country
+     #authorize! :update, @country
   end
 
   # POST /countries

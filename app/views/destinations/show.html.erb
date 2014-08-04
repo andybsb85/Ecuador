@@ -85,23 +85,28 @@
         </p>
       </div>
       <div class = "map-destination">
-      <div style='width: 100%;'>
-        <div id="map" style='width: 100%; height: 290px;'></div>
+        <div style='width: 100%;'>
+          <div id="map" style='width: 100%; height: 290px;'></div>
+        </div>
       </div>
-         
+      <div class = "weather">
+        <%= client = YahooWeather::Client.new
+response = client.fetch_by_location('quito ecuador') %> 
       </div>
     </div>
-  </div>
-  </div>
+   </div>
+ </div>
 </div>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
     handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);        
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      handler.getMap().setZoom(17);
+     
     });
   </script>
 <% end %>

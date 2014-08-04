@@ -4,12 +4,13 @@ class Destination < ActiveRecord::Base
   belongs_to :type_destination
   translates :name, :summary, :description
   has_many :line_destinations
+  before_destroy :ensure_not_referenced_by_any_line_destination
   
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode
   
-  before_destroy :ensure_not_referenced_by_any_line_destination
+
 
   
   def self.search(search)

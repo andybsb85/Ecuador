@@ -1,3 +1,47 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show-event{
+   background-color: #ffffff;
+     
+   #calendars{
+      border: 5px solid #990a5f;
+      border-radius: 10px;
+      margin-top: 10%;
+      width: 100%;
+      height: auto;
+    
+    .fc-header-title h2 {
+     font-size: 1.2em;
+     white-space: normal !important;
+     }
+   }
+     .search-div{
+    margin-top: 10%;
+    border-radius: 10px;
+    border: 3px solid #990a5f;
+      .select-destination{
+        background-color: #990a5f;
+        width: 100%;
+        height: 160px;
+
+          .tabs-content{
+          margin-left: 5%;
+          width: 90%;
+          } 
+       }
+     }
+  
+
+ul.social-share-list {
+  li {
+     list-style-type: none;
+    display: inline;
+    .twt {margin-right: 35px;margin-bottom: -5px;}
+    .gp {margin-right:  35px;margin-bottom: -5px;}
+    .pi {margin-right: 35px;margin-bottom: -5px;}
+    .fb {margin-right: 35px;margin-bottom: -5px;}
+  }
+}
+}

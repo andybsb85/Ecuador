@@ -1,49 +1,91 @@
-<p id="notice"><%= notice %></p>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
-<p>
-  <strong>String:</strong>
-  <%= @event.string %>
-</p>
+<div class = "content-body">
+  <div class ="show-event">
+    <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>
+    <div class ="row">
+      <div class ="large-4 columns">
+        <div id= "calendars">
+        </div>
+      </div>
+      <div class= "large-8 columns"> 
+        <!--  <p id="notice"><%= notice %></p> -->
+        <h3><%= @event.name %></h3>
+        <div class="row">
+          <div class = "large-9 columns">
+            <ul class="social-share-list list-inline">
+              <li class="twt">
+                <%= tweet_button %>
+              </li>
+              <li class="fb">
+                <%= like_button(690575874330211) %>
+              </li>
+              <li class="pi">
+                <%= pinit_button(url: request.url, media: @event.image_url, description: "Amazing Picture") %>
+              </li>
+              <li class = "gp">
+                <%= google_plus_button %>
+              </li>
+            </ul>
+          </div>
+          <div class = "large-3 columns">
+            <h5>Share:</h5><%= social_share_button_tag(@event.image_url) %>         
+         </div>
+        </div>
+        <div class = "row">
+          <div class = "image-event">
+              <%= image_tag (@event.image_url) %>
+          </div>
+        </div>
+        <div class = "row">
+          <div class = "large-12 columns">
+             <p>
+                <strong>Summary:</strong>
+                <%= @event.summary %>
+              </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @event.city %>
-</p>
+              <p>
+                <strong>Description:</strong>
+                <%= @event.description %>
+              </p>
 
-<p>
-  <strong>String:</strong>
-  <%= @event.string %>
-</p>
+              <p>
+                <strong>Date:</strong>
+                <%= @event.date %>
+              </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @event.text %>
-</p>
+              <p>
+                <strong>Place:</strong>
+                <%= @event.address %>
+              </p>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @event.text %>
-</p>
+<%= content_for :scripts do %>
+ <script type="text/javascript">
+ $(document).ready(function() {
 
-<p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @event.text %>
-</p>
-
-<p>
-  <strong>Float:</strong>
-  <%= @event.float %>
-</p>
-
-<p>
-  <strong>Float:</strong>
-  <%= @event.float %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+     $('#calendars').fullCalendar({
+        theme: true,
+        events:  '/events.json',
+        eventColor: '#f50504',
+        header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: null
+    },
+        height: 200,
+       eventRender: function(event, element) {
+         element.attr('title', event.name);
+           
+        }
+     })
+ });
+ </script>
+<% end %>

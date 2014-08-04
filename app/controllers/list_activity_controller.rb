@@ -7,8 +7,15 @@ class ListActivityController < ApplicationController
       if params[:set_locale]
         redirect_to list_activity_index_path(locale: params[:set_locale])    
     else
-      @activities = Activity.all.page(params[:page]).per(9)
+    
       @regions = Region.all
+         if params[:search_topic]
+           @activities = Activity.where(type_activity_id: params[:search_topic]).page(params[:page]).per(9)
+       elsif params[:search_city]
+           @activities = Activity.where(city_id: params[:search_city]).page(params[:page]).per(9)
+       else
+           @activities = Activity.all.page(params[:page]).per(9)
+      end
      end
   end
 end

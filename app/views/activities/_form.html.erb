@@ -17,11 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :city_id %><br>
-    <%= f.text_field :city_id %>
+    <%= select(:activity, :city_id, options_from_collection_for_select(City.all, :id, :name)) %>
   </div>
   <div class="field">
     <%= f.label :type_activity_id %><br>
-    <%= f.text_field :type_activity_id %>
+  <%= select(:activity, :type_activity_id, options_from_collection_for_select(TypeActivity.all, :id, :name)) %>
   </div>
   <div class="field">
     <%= f.label :image_url %><br>

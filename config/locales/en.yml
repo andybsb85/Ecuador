@@ -70,21 +70,20 @@ en:
   list_event:
     index:
       events: "EVENTS"
-      selectRegion: "Select Region"
+      searchEvent: "Search Event"
       selectCity: "Select City"
-      searchDestination: "Search Destination"
-      searchTypeDestination: "Destination by Type"
-      selectTypeDestination: "Destination Type"
+      byCity: "By City"
       go: "Search"
+      addPlan: "Add to Plan"
       
   list_activity:
     index:
       activities: "ACTIVITIES"
       selectRegion: "Select Region"
       selectCity: "Select City"
-      searchDestination: "Search Destination"
-      searchTypeDestination: "Destination by Type"
-      selectTypeDestination: "Destination Type"
+      searchActivity: "Search Activity"
+      searchTypeActivity: "Activity by Type"
+      selectTypeActivity: "Activity Type"
       go: "Search"
       
   devise:

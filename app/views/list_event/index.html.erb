@@ -21,7 +21,7 @@
                       <label><%= t('.selectCity')%>
                         <%= form_tag({ controller: 'list_event', action: 'index' }, method: 'get') do %>
                         <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
-                        <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                        <%= submit_tag t('.go'), name: nil, class: 'button tiny radius' %>
                       <% end %> 
                       </label>
                     </div>
@@ -42,8 +42,8 @@
               </div>
               <div class="des_location">
                 <h5><%= link_to (event.name), event %></h5>
+                <p><%= event.city_id %>, Ecuador</p>
                 <%= sanitize(event.summary) %>
-                <%= button_to 'Add to Plan', line_destinations_path(event_id: event),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id= "live-review"></div>
                 <span id="live"></span>
@@ -51,7 +51,11 @@
             </div>
             <% end %>  
           </div>
-        <%= paginate @events %>
+         <div class="pagination-centered">
+           <div class="pagination">
+             <%= paginate @events %>
+           </div>
+         </div>
       </div>
     </div>
   </div>

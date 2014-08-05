@@ -6,109 +6,77 @@
     <div class= "large-6 columns">
       <div class= "book-destination">
         <ul class="tabs" data-tab>
-          <li class="tab-title active"><a href="#panel2-1"><%= t('.searchDestination')%></a></li>
-          <li class="tab-title"><a href="#panel2-2"><%= t('.booking')%></a></li>
+          <li class="tab-title active"><a href="#panel2-1"><%= t('.searchEvent')%></a></li>
+          <li class="tab-title"><a href="#panel2-2"><%= t('.searchDestination')%></a></li>
+          <li class="tab-title"><a href="#panel2-3"><%= t('.searchActivity')%></a></li>
         </ul>
         <div class="tabs-content">
           <div class="content active" id="panel2-1">
             <form>
               <div class="row">
                 <div class="large-12 columns">
-                    <label><%= t('.selectRegion')%>
-                      <%= select(:destinations, :region_id, options_from_collection_for_select(Region.all, :id, :name)) %>
-                    </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="large-12 columns">
                   <label><%= t('.selectCity')%>
-                    <%= select(:destinations, :city_di, options_from_collection_for_select(City.all, :id, :name)) %>
+                    <%= form_tag({ controller: 'list_event', action: 'index' }, method: 'get') do %>
+                      <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
+                      <%= submit_tag t('.go'), name: nil, class: 'button tiny radius'%>
+                    <% end %> 
                   </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="large-12 columns">
-                  <label><%= t('.selectOption')%>
-                    <%= select(:destinations, :city_id, options_from_collection_for_select(TypeDestination.all, :id, :name)) %>
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="large-12 columns">
-                  <a href="#" class="button tiny round"><%= t('.go')%></a> <%= submit_tag("Search") %>
                 </div>
               </div>
             </form>
           </div>
           <div class="content" id="panel2-2">
             <form>
-             <div class="row">
-              <div class="large-12 columns">
-                <label>Input Label
-                <input type="text" placeholder="large-12.columns" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>Input Label
-                <input type="text" placeholder="large-4.columns" />
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <label>Input Label
-                <input type="text" placeholder="large-4.columns" />
-              </label>
-            </div>
-            <div class="large-4 columns">
-              <div class="row collapse">
-                <label>Input Label</label>
-                <div class="small-9 columns">
-                  <input type="text" placeholder="small-9.columns" />
-                </div>
-                <div class="small-3 columns">
-                  <span class="postfix">.com</span>
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectCity')%>
+                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
+                    <%= submit_tag  t('.go'), name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                  </label>
                 </div>
               </div>
-            </div>
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectTypeDestination')%>
+                    <%= form_tag({ controller: 'destination_list', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeDestination.all, :id, :name) %>
+                    <%= submit_tag  t('.go'), name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                  </label>
+                </div>
+              </div>
+            </form>    
           </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Select Box
-                <select>
-                  <option value="husker">Husker</option>
-                  <option value="starbuck">Starbuck</option>
-                  <option value="hotdog">Hot Dog</option>
-                  <option value="apollo">Apollo</option>
-                </select>
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Choose Your Favorite</label>
-              <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-              <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-            </div>
-            <div class="large-6 columns">
-              <label>Check these out</label>
-              <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-              <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Textarea Label
-                <textarea placeholder="small-12.columns"></textarea>
-              </label>
-            </div>
-          </div>
-        </form>
+          <div class="content" id="panel2-3">
+            <form>
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectCity')%>
+                    <%= form_tag({ controller: 'list_activity', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
+                    <%= submit_tag  t('.go'), name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="large-12 columns">
+                  <label><%= t('.selectTypeDestination')%>
+                    <%= form_tag({ controller: 'list_activity', action: 'index' }, method: 'get') do %>
+                    <%= select_tag 'search_topic', options_from_collection_for_select(TypeActivity.all, :id, :name) %>
+                    <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                    <% end %> 
+                  </label>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <div class = "large-6 columns">
+    <div class= "large-6 columns">
       <div class= "map">
         <div style='width: 100%;'>
           <div id="map" style='width: 100%; height: 290px;'></div>
@@ -116,7 +84,6 @@
       </div>
     </div>
   </div>
-    <!--Div with orbit-->
   <div class ="row">
     <div class= "large-6 columns">
       <div id= "calendar">
@@ -124,7 +91,9 @@
     </div>
     <div class= "large-6 columns">
       <div class= "whats-on">
-         <h2>Whats On</h2>
+        <div class="flex-video">
+          <iframe width="540" height="301" src="//www.youtube.com/embed/9Fi88GBOHOA" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -148,10 +117,10 @@
   <script type="text/javascript">
     handler = Gmaps.build('Google');
      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);        
+      markers = handler.addMarkers(<%=raw @hashcity.to_json %>);        
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(17);
+      handler.getMap().setZoom(6);
     });
   </script>
 

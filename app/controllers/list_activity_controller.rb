@@ -10,11 +10,11 @@ class ListActivityController < ApplicationController
     
       @regions = Region.all
          if params[:search_topic]
-           @activities = Activity.where(type_activity_id: params[:search_topic]).page(params[:page]).per(9)
+           @activities = Activity.where(type_activity_id: params[:search_topic]).page(params[:page]).per(6)
        elsif params[:search_city]
-           @activities = Activity.where(city_id: params[:search_city]).page(params[:page]).per(9)
+           @activities = Activity.where(city_id: params[:search_city]).page(params[:page]).per(6)
        else
-           @activities = Activity.all.page(params[:page]).per(9)
+           @activities = Activity.all.page(params[:page]).per(6)
       end
      end
   end

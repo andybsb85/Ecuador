@@ -90,8 +90,22 @@
         </div>
       </div>
       <div class = "weather">
-        <%= client = YahooWeather::Client.new
-response = client.fetch_by_location('quito ecuador') %> 
+        <% form_id = "destination_#{@destination.id}_rating" %>
+<% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
+    <% user_id = current_user.id %>
+<% else %>
+    <% user_id = -1 %>
+<% end %>        
+        <%= form_for @destination.ratings.find_or_create_by(user_id: user_id) do |f| %>
+        <%= f.hidden_field :destination_id, :value => @destination.id %>
+        <% if user_signed_in? %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+        <% end %>        
+        <%= f.hidden_field :stars, :id => form_id + "_stars" %>
+    <% end %>
+<% (1..5).each do |i| %>
+    <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= form_id %>"></li>
+<% end %>
       </div>
     </div>
    </div>

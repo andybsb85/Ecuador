@@ -59,4 +59,11 @@ class ApplicationController < ActionController::Base
             redirect_to route
         end
     end
+         
+    def js_logged_in
+       if(!user_signed_in?)
+          flash[:error] = "You must be a signed in to leave a rating!"
+           render :js => "window.location = '/users/sign_in'"
+       end
+   end
 end

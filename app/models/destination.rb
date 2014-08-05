@@ -4,6 +4,7 @@ class Destination < ActiveRecord::Base
   belongs_to :type_destination
   translates :name, :summary, :description
   has_many :line_destinations
+  has_many :ratings
   before_destroy :ensure_not_referenced_by_any_line_destination
   
   geocoded_by :address
@@ -20,6 +21,21 @@ class Destination < ActiveRecord::Base
     with_translations
   end
 end  
+  
+  def avg_rating
+  average_rating = 0.0
+  count = 0
+  ratings.each do |rating| 
+    average_rating += rating.stars
+    count += 1
+  end
+                
+  if count != 0
+    (average_rating / count)
+  else
+    count
+  end
+end
 
   
   private

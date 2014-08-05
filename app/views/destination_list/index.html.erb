@@ -65,6 +65,7 @@
                 <p>Averate rating</p>
                 <div id= "live-review"></div>
                 <span id="live"></span>
+                <div id="average_rating" style="display:inline;"><%= @destination.try(:average_rating) %></div>
               </div>
             </div>
             <% end %>  

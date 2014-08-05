@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :line_destinations
   resources :plans
   resources :events
+  resources :ratings
   get 'destination_list/index'
   get 'list_event/index'
   resources :type_activities
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
     resources :type_activities
     resources :activities
     get 'list_activity/index'
-    devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: {sign_in: "login", sign_out: "logout"}
+    devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
     devise_for :admins
     
     root 'welcome#index', as: 'index', via: :all

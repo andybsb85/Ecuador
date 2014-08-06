@@ -19,9 +19,9 @@
 //= require jquery.min.js
 //= require social-share-button
 //= require jquery.ui.datepicker
-//= require fullcalendar
 //= require jquery.fancybox.pack
 //= require jquery.fancybox
+//= require fullcalendar
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

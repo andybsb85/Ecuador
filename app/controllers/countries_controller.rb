@@ -20,7 +20,7 @@ class CountriesController < ApplicationController
   def show
     if params[:set_locale]
     redirect_to country_path(locale: params[:set_locale])   
-      authorize! :read, @country
+      #authorize! :read, @country
     end
   end
 
@@ -68,7 +68,7 @@ class CountriesController < ApplicationController
   # DELETE /countries/1
   # DELETE /countries/1.json
   def destroy
-     authorize! :destroy, @country
+    # authorize! :destroy, @country
     @country.destroy
     respond_to do |format|
       format.html { redirect_to countries_url, notice: 'Country was successfully destroyed.' }

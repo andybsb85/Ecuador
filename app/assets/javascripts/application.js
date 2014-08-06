@@ -16,9 +16,12 @@
 //= require foundation
 //= require underscore
 //= require gmaps/google
+//= require jquery.min.js
 //= require social-share-button
 //= require jquery.ui.datepicker
 //= require fullcalendar
+//= require jquery.fancybox.pack
+//= require jquery.fancybox
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

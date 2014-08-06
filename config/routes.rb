@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'gallery/index'
+
   resources :users
   resources :activities
   resources :countries
@@ -31,6 +33,7 @@ Rails.application.routes.draw do
     resources :type_activities
     resources :activities
     get 'list_activity/index'
+    get 'gallery/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
     devise_for :admins
     

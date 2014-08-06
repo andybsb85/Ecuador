@@ -3,6 +3,8 @@ $(function() {
     var star = $(this);
     var form_id = star.attr("data-form-id");
     var stars = star.attr("data-stars");
+    
+    set_stars(form_id, stars);
     $('#' + form_id + '_stars').val(stars);
 
     $.ajax({
@@ -18,16 +20,15 @@ $(function() {
         }
       })
   });        
-});
-
-function update_stars(){
+  
+  function update_stars(){
   $('.star_rating_form').each(function() {
     var form_id = $(this).attr('id');
     set_stars(form_id, $('#' + form_id + '_stars').val());
   });
 }
-
-function set_stars(form_id, stars) {
+  
+  function set_stars(form_id, stars) {
   for(i = 1; i <= 5; i++){
     if(i <= stars){
       $('#' + form_id + '_' + i).addClass("on");
@@ -36,3 +37,4 @@ function set_stars(form_id, stars) {
     }
   }
 }
+});

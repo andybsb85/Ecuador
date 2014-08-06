@@ -5,24 +5,23 @@ class Destination < ActiveRecord::Base
   translates :name, :summary, :description
   has_many :line_destinations
   has_many :ratings
+  belongs_to :user
   before_destroy :ensure_not_referenced_by_any_line_destination
   
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode
   
-
-
-  
+ 
   def self.search(search)
-  if search
-    with_translations.where('name LIKE ?', "%#{search}%")
-  else
-    with_translations
-  end
-end  
+    if search
+      with_translations.where('name LIKE ?', "%#{search}%")
+    else
+      with_translations
+    end
+  end  
   
-  def avg_rating
+def avg_rating
   average_rating = 0.0
   count = 0
   ratings.each do |rating| 
@@ -36,7 +35,6 @@ end
     count
   end
 end
-
   
   private
     #ensure that there are no line items referencing this product

@@ -70,8 +70,15 @@
           </div>
         </div>  
         <div class = "large-3 columns">
-      <p>hkjhj</p>
-    </div>
-     </div>
-  </div>
+          <h4><%= t('.know-regions') %></h4>
+            <ul>
+              <li><%= link_to t('.andes'), region_path(1) %></li>
+              <li><%= link_to t('.amazon'), region_path(2) %></li>
+              <li><%= link_to t('.coast'), region_path(3) %></li>
+              <li><%= link_to t('.galapagos'), region_path(4) %></li>
+            </ul>
+          <h4><%= t('.know-cities') %></h4>
+        </div>
+      </div>
+   </div>
 </div>

@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .country-content{
   background-color: #ffffff;
+  height: auto;
   
    .div-orbit{
       border: 3px solid #0e12a7;
@@ -45,11 +46,16 @@
   padding: 0; 
   width: 25px;
   height: 25px;
-  background: url("star-half.png") top left;
+  background: url("star-off.png") top left;
 } 
 
 li.rating_star.on {
   background: url("star-on.png") 0 -25px;
 } 
+  
+.average_rating{
+    float: left;
+    
+  }
   
 }

@@ -16,6 +16,7 @@ class DestinationListController < ApplicationController
          @destination = Destination.where(city_id: params[:search_city]).page(params[:page]).per(6)
        else
        @destination = Destination.all.page(params[:page]).per(6)
+        
       end
      end
   end

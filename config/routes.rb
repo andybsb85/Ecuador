@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :events
   resources :ratings
   get 'destination_list/index'
+  get 'tip/index'
   get 'list_event/index'
   resources :type_activities
   get 'list_activity/index'
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
     resources :activities
     get 'list_activity/index'
     get 'gallery/index'
+    get 'tip/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
     devise_for :admins
     

@@ -1,0 +1,26 @@
+<div class="content-body">
+  <div class ="destination_list">
+     <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>   
+    
+   <button onClick="swap('one','two', 'three')">Before Travel</button>
+    <button onClick="swap('two','one', 'three')">View Results</button>
+    <button onClick="swap('three','one', 'two')">Information</button>
+    <div>
+    <span style="display:none" id="one">
+      <h3>Before Travel</h3>
+      <p>div1</p></span>
+    <span style="display:none" id="two">div2</span>
+    <span id="three">div3</span>
+    </div>
+
+<%= content_for :scripts do %>
+<script type = "text/javascript">
+function swap(one, two, three) {
+    document.getElementById(one).style.display = 'block';
+    document.getElementById(two).style.display = 'none';
+    document.getElementById(three).style.display = 'none';
+}
+</script>
+<% end %>

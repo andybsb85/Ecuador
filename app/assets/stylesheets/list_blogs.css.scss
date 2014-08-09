@@ -1,0 +1,17 @@
+// Place all the styles related to the ListBlogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#parallax-header { 
+	height:200px; background-color:gray; 
+ }
+#parallax {
+	position:relative; overflow:hidden; width:950px; height:250px;
+	background-image:url('images/background.jpg');
+}
+.parallax-viewport {
+	position: relative;     /* relative, absolute, fixed */
+	overflow: hidden;
+}
+.parallax-layer {
+  position: absolute;}

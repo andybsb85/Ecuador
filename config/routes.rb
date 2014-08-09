@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'list_blogs/index'
+
+  resources :blogs
+
   get 'gallery/index'
 
   resources :users
@@ -30,6 +34,7 @@ Rails.application.routes.draw do
     resources :type_destinations
     resources :destinations
     resources :events
+    resources :blogs
     get 'destination_list/index'
     resources :type_activities
     resources :activities

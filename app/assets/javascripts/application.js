@@ -18,6 +18,8 @@
 //= require gmaps/google
 //= require social-share-button
 //= require jquery.ui.datepicker
+//= require jquery.event.frame
+//= require jquery.jparallax.min.js
 //= require fancybox
 //= require fullcalendar
 //= require_tree .

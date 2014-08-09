@@ -1,0 +1,38 @@
+<script type="text/javascript" src="../js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" language="JavaScript" src="jquery.jparallax.min.js" ></script>
+<script type="text/javascript" language="JavaScript" src="jquery.event.frame.js" ></script>
+
+<div class="content-body">
+  <div class ="list_blogs">
+    <ul class="breadcrumbs">
+      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    </ul>
+        
+    <h4><%= t('.blog') %></h4>
+
+      <div id="parallax" class="clear">
+        <div class="parallax-layer" style="width:1200px; height:250px;">
+          <%= image_tag('butterflies3.png') %>
+        </div>
+        <div class="parallax-layer" style="width:500px; height:250px;">
+           <%= image_tag('grass.png') %>
+        </div>
+        <div class="parallax-layer" style="width:500px; height:250px;">
+           <%= image_tag('frog2.png') %>
+         </div>
+     </div>  
+  </div>
+</div>
+
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+ jQuery(document).ready(function() 
+{
+    $('#parallax .parallax-layer')
+    .parallax({
+        mouseport: $('#parallax')
+    });
+});
+</script>  
+<% end %>

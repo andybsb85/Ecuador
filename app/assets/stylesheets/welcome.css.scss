@@ -245,6 +245,10 @@ h1, h2, h3, h4, h5, h6{
 /*=======================footer==================================*/
 
 .footer {
+  a{
+    color: #ffffff;
+  }
+   margin-top: 2%;
    position: relative;
    float:  left;
    background: #212D48;
@@ -253,6 +257,32 @@ h1, h2, h3, h4, h5, h6{
    color: #fff;
    text-align: center;
    width: 100%; 
+  .large-12{
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  .site{
+    text-align: left;
+    padding-left: 5%;
+  }
+  .site ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  .site ul li{
+    background-image: url(yellow.png);
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 20px; 
+    text-align: left;
+  }
+  .logo-footer{
+    margin-top: 7%;
+    float: right;
+    width: 40%;
+    height: 40%;
+  }
 }
 
 /*============================Media Queries large screen=================*/

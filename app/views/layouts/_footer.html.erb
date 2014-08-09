@@ -2,14 +2,28 @@
   <div class="large-12 columns">
       <div class="row">
         <div class="large-4 columns">
-          <p><a href="">Ecuador Travel</a> by Andrea Becerra</p>
+          <div class = "site">
+            <p><a href="">Ecuador Tourism</a> by Andrea Becerra</p>
+            <p><strong>Site</strong></p>
+            <ul>
+              <li><%= link_to t('.aboutEcuador'), country_path(1) %></li>
+              <li><%= link_to t('.events'), list_event_index_path %></li>
+              <li><%= link_to t('.destinations'), destination_list_index_path %></li>
+              <li><%= link_to t('.activities'), list_activity_index_path %></li>
+              <li><%= link_to t('.tips'), tip_index_path %></li>
+              <li><%= link_to t('.blog'), list_event_index_path %></li>
+              <li><%= link_to t('.book'), list_event_index_path %></li>
+            </ul>
+          </div>
         </div>
         <div class="large-4 columns">
-          <p><%= link_to t('.about') %></p>
+          <p><%= link_to t('.Contact') %></p>
         </div>
 
         <div class="large-4 columns">
-          <p><%= link_to t('.help') %></p>
+          <div class ="logo-footer"> 
+            <p><%= image_tag ('logo.png')  %></p>
+          </div>
         </div>
       </div>
     </div>

@@ -41,15 +41,19 @@
         </div>
         <div class = "row">
           <div class = "large-12 columns">
-             <p>
-                <strong>Summary:</strong>
-                <%= @event.summary %>
-              </p>
-
+            <div class ="description-event">
               <p>
                 <strong>Description:</strong>
                 <%= @event.description %>
               </p>
+            </div>
+          </div>
+        </div>
+        <div class = "row">
+           <div class = "large-12 columns">
+             <div class="flex-video">
+             <iframe width="554" height="210" src="//<%= @event.video_url %>" frameborder="0" ></iframe>
+              </div>
 
               <p>
                 <strong>Date:</strong>
@@ -57,7 +61,7 @@
               </p>
 
               <p>
-                <strong>Place:</strong>
+                <strong>Address:</strong>
                 <%= @event.address %>
               </p>
             </div>

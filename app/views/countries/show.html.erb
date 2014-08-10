@@ -22,6 +22,110 @@
                <a href="#panel2"><h5><%= t ('.geography')%>:</h5></a>
                <div id="panel2" class="content">
                 <%= @country.geography %>
+                  <div class = "row">
+                   <h5><%= t('.provinces') %></h5>
+                   <table>
+                       <tr>
+                         <th>Province</th>
+                         <th>Capital</th>
+                       </tr>
+                       <tr>
+                         <td>Azuay</td>
+                         <td>Cuenca</td>
+                       </tr>
+                        <tr>
+                         <td>Bolivar</td>
+                         <td>Guaranda</td>
+                       </tr>
+                        <tr>
+                         <td>Cañar</td>
+                         <td>Azogues</td>
+                       </tr>
+                        <tr>
+                         <td>Carchi</td>
+                         <td>Tulcán</td>
+                       </tr>
+                        <tr>
+                         <td>Chimborazo</td>
+                         <td>Riobamba</td>
+                       </tr>
+                        <tr>
+                         <td>Cotopaxi</td>
+                         <td>Latacunga</td>
+                       </tr> <tr>
+                         <td>El Oro</td>
+                         <td>Machala</td>
+                       </tr> 
+                       <tr>
+                         <td>Esmeraldas</td>
+                         <td>Esmeraldas</td>
+                       </tr>
+                       <tr>
+                         <td>Galapagos</td>
+                         <td>Puerto Baquerizo Moreno</td>
+                       </tr>
+                       <tr>
+                         <td>Guayas</td>
+                         <td>Guayaquil</td>
+                       </tr>
+                       <tr>
+                         <td>Imbabura</td>
+                         <td>Ibarra</td>
+                       </tr>
+                       <tr>
+                         <td>Loja</td>
+                         <td>Loja</td>
+                       </tr>
+                       <tr>
+                         <td>Los Ríos</td>
+                         <td>Babahoyo</td>
+                       </tr>
+                        <tr>
+                         <td>Manbí</td>
+                         <td>Portoviejo</td>
+                       </tr>
+                        <tr>
+                         <td>Morona Santiago</td>
+                         <td>Morona</td>
+                       </tr>
+                        <tr>
+                         <td>Napo</td>
+                         <td>Tena</td>
+                       </tr>
+                        <tr>
+                         <td>Orellana</td>
+                         <td>Puerto Francisco de Orellana</td>
+                       </tr>
+                         <tr>
+                         <td>Pastaza</td>
+                         <td>Puyo</td>
+                       </tr>
+                         <tr>
+                         <td>Pichincha</td>
+                         <td>Quito</td>
+                       </tr>
+                         <tr>
+                         <td>Santa Elena</td>
+                         <td>Santa Elena</td>
+                       </tr>
+                         <tr>
+                         <td>Santo Domingo de los Tsáchilas</td>
+                         <td>Santo Domingo</td>
+                       </tr>
+                         <tr>
+                         <td>Sucumbíos</td>
+                         <td>Nueva Loja</td>
+                       </tr>
+                        <tr>
+                         <td>Tungurahua</td>
+                         <td>Ambato</td>
+                       </tr>
+                       <tr>
+                         <td>Zamora Chinchipe</td>
+                         <td>Zamora</td>
+                       </tr>
+                     </table>
+                 </div>
                </div>
              </dd>
              <dd class="accordion-navigation">
@@ -46,6 +150,11 @@
                <a href="#panel6"><h5><%= t ('.population')%>:</h5></a>
                <div id="panel6" class="content">
                  <%= @country.population %>
+                  <div class="row">
+                   <div class="geography">
+                     <%= image_tag('mapa_etnografico_ecuador1.jpg') %>
+                   </div>
+                 </div>
                </div>
              </dd>
              <dd class="accordion-navigation">
@@ -78,7 +187,17 @@
               <li><%= link_to t('.coast'), region_path(3) %></li>
               <li><%= link_to t('.galapagos'), region_path(4) %></li>
             </ul>
+          </div>
+          <div class = "link-cities">
             <h4><%= t('.know-cities') %></h4>
+            <ul>
+              <li><%= link_to t('.quito'), city_path() %></li>
+              <li><%= link_to t('.guayaquil'), city_path() %></li>
+              <li><%= link_to t('.ambato'), city_path() %></li>
+              <li><%= link_to t('.cuenca'), city_path() %></li>
+              <li><%= link_to t('.esmeraldas'), city_path() %></li>
+              <li><%= link_to t('.santaCruz'), city_path() %></li>
+            </ul>
           </div>
           <div class = "gallery">
             <%= link_to t('.gallery'), gallery_index_path %>

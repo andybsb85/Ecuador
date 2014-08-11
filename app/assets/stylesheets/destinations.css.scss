@@ -5,15 +5,35 @@
   background-color: #ffffff;
   height: auto;
   
+  .links{
+    margin-top: 20%;
+    background-color: #f3f3f3;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .links ul{
+    list-style-type: none;
+  }
+  .links ul li{
+    background-image: url(blue.png);
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 20px; 
+    text-align: left;
+  }
+  
    .div-orbit{
       border: 3px solid #0e12a7;
       margin-top: 2%;
-      width: 80%;
-      height: 305px;
+      width: 90%;
+      height: 335px;
       
       img{
         width: 100%;
-        height: 299px;
+        height: 329px;
       }
     }
  
@@ -26,7 +46,7 @@
       border-radius: 10px;
       margin-top: 4%;
       margin-bottom: 5%;
-      width: 60%;
+      width: 70%;
       height: auto;
   }
   ul.social-share-list {
@@ -56,6 +76,11 @@ li.rating_star.on {
 .average_rating{
     float: left;
     
+  }
+   .video{
+    width: 80%;
+    height: 300px;
+    margin-bottom: 20%;
   }
   
 }

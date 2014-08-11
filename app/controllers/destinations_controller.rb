@@ -30,7 +30,6 @@ class DestinationsController < ApplicationController
         marker.lat destination.latitude
         marker.lng destination.longitude
         @destination = Destination.find(params[:id])
-      
       end
     end
   end
@@ -92,6 +91,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name, :city_id, :type_destination_id, :image_url, :image_url_two, :image_url_three, :summary, :description, :address, :latitude, :longitude, :phone, :website)
+      params.require(:destination).permit(:name, :city_id, :type_destination_id, :image_url, :image_url_two, :image_url_three, :video_url, :summary, :description, :address, :latitude, :longitude, :phone, :website)
     end
 end

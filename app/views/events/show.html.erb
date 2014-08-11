@@ -13,7 +13,7 @@
       <div class= "large-8 columns"> 
         <!--  <p id="notice"><%= notice %></p> -->
         <h3><%= @event.name %></h3>
-        <div class="row">
+        <div class = "row">
           <div class = "large-9 columns">
             <ul class="social-share-list list-inline">
               <li class="twt">
@@ -35,8 +35,33 @@
          </div>
         </div>
         <div class = "row">
-          <div class = "image-event">
-              <%= image_tag (@event.image_url) %>
+          <div class="div-orbit">
+            <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
+                          pause_on_hover:true;
+                          animation_speed: 600;
+                          timer_speed: 5000;
+                          navigation_arrows:true;
+                          bullets:false;
+                          next_on_click: false;
+                          timer: true;
+                          circular: true;
+                          slide_number: false;">
+             <li data-orbit-slide="headline-1">
+               <div>
+                 <%= image_tag(@event.image_url) %>
+               </div>
+             </li>
+             <li data-orbit-slide="headline-2">
+               <div>
+                 <%= image_tag(@event.image_url_two) %>
+               </div>
+             </li>
+             <li data-orbit-slide="headline-3">
+               <div>
+                 <%= image_tag(@event.image_url_three) %>
+               </div>
+             </li>
+           </ul>
           </div>
         </div>
         <div class = "row">
@@ -46,25 +71,26 @@
                 <strong>Description:</strong>
                 <%= @event.description %>
               </p>
-            </div>
-          </div>
-        </div>
-        <div class = "row">
-           <div class = "large-12 columns">
-             <div class="flex-video">
-             <iframe width="554" height="210" src="//<%= @event.video_url %>" frameborder="0" ></iframe>
-              </div>
-
-              <p>
+               <p>
                 <strong>Date:</strong>
                 <%= @event.date %>
               </p>
 
               <p>
-                <strong>Address:</strong>
+                <strong>Place:</strong>
                 <%= @event.address %>
               </p>
             </div>
+          </div>
+        </div>
+        <div class = "row">
+           <div class = "large-12 columns">
+             <div class ="video">
+               <div class="flex-video">
+                  <iframe width="354" height="210" src="//<%= @event.video_url %>" frameborder="0" ></iframe>
+                </div>
+             </div>
+           </div>
          </div>
       </div>
     </div>

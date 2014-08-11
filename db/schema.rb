@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810184448) do
+ActiveRecord::Schema.define(version: 20140811011916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20140810184448) do
     t.text     "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url_two"
+    t.string   "image_url_three"
+    t.string   "video_url"
   end
 
   add_index "activities", ["city_id"], name: "index_activities_on_city_id", using: :btree
@@ -152,6 +155,7 @@ ActiveRecord::Schema.define(version: 20140810184448) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "video_url"
   end
 
   add_index "destinations", ["city_id"], name: "index_destinations_on_city_id", using: :btree
@@ -183,6 +187,8 @@ ActiveRecord::Schema.define(version: 20140810184448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "video_url"
+    t.string   "image_url_two"
+    t.string   "image_url_three"
   end
 
   add_index "events", ["city_id"], name: "index_events_on_city_id", using: :btree

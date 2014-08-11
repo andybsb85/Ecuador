@@ -5,7 +5,34 @@
       </ul>
     <div class ="row">
       <div class= "large-3 columns">
-        <p>sdfas</p>
+            <div class="links">
+            <div class = "link-regions"> 
+              <h4><%= t('.know-regions') %></h4>
+              <ul>
+                <li><%= link_to t('.andes'), region_path(1) %></li>
+                <li><%= link_to t('.amazon'), region_path(2) %></li>
+                <li><%= link_to t('.coast'), region_path(3) %></li>
+                <li><%= link_to t('.galapagos'), region_path(4) %></li>
+              </ul>
+            </div>
+            <div class = "link-cities">
+              <h4><%= t('.know-cities') %></h4>
+              <ul>
+                <li><%= link_to t('.quito'), city_path() %></li>
+                <li><%= link_to t('.guayaquil'), city_path() %></li>
+                <li><%= link_to t('.ambato'), city_path() %></li>
+                <li><%= link_to t('.cuenca'), city_path() %></li>
+                <li><%= link_to t('.esmeraldas'), city_path() %></li>
+                <li><%= link_to t('.santaCruz'), city_path() %></li>
+              </ul>
+            </div>
+            <div class = "link-gallery">
+              <h4><%= t('.gallery') %></h4>
+              <ul>
+                <li><%= link_to t('.gallery'), gallery_index_path %></li>
+              </ul>
+            </div>
+          </div>
       </div>
       <div class= "large-9 columns">
         <div class="row">
@@ -30,39 +57,60 @@
             <h5>Share:</h5><%= social_share_button_tag(@activity.image_url) %>         
           </div>
         </div>
-        <div class= "row">
-           <%= @activity.image_url %>
-
-          <p>
-            <strong>Summary:</strong>
-            <%= @activity.summary %>
-          </p>
-
-          <p>
-            <strong>Description:</strong>
-            <%= @activity.description %>
-          </p>
-
-          <p>
-            <strong>Address:</strong>
-            <%= @activity.address %>
-          </p>
-
-          <p>
-            <strong>Latitude:</strong>
-            <%= @activity.latitude %>
-          </p>
-
-          <p>
-            <strong>Longitude:</strong>
-            <%= @activity.longitude %>
-          </p>
-
-          <p>
-            <strong>Website:</strong>
-            <%= @activity.website %>
-          </p>
+        <div class="row">
+          <div class="div-orbit">
+            <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
+                          pause_on_hover:true;
+                          animation_speed: 600;
+                          timer_speed: 5000;
+                          navigation_arrows:true;
+                          bullets:false;
+                          next_on_click: false;
+                          timer: true;
+                          circular: true;
+                          slide_number: false;">
+             <li data-orbit-slide="headline-1">
+               <div>
+                 <%= image_tag(@activity.image_url) %>
+               </div>
+             </li>
+             <li data-orbit-slide="headline-2">
+               <div>
+                 <%= image_tag(@activity.image_url_two) %>
+               </div>
+             </li>
+             <li data-orbit-slide="headline-3">
+               <div>
+                 <%= image_tag(@activity.image_url_three) %>
+               </div>
+             </li>
+           </ul>
+          </div>
         </div>
+        <div class="row">
+          <div class = "large-12 columns">
+            <div class ="description-event">
+              <p>    
+                <strong>Description:</strong>
+                <%= @activity.description %>
+              </p>
+
+              <p>
+                <strong>Address:</strong>
+                <%= @activity.address %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+           <div class = "large-12 columns">
+             <div class ="video">
+               <div class="flex-video">
+                  <iframe width="354" height="210" src="//<%= @activity.video_url %>" frameborder="0" ></iframe>
+                </div>
+             </div>
+           </div>
+         </div>
       </div>
     </div>
   </div>

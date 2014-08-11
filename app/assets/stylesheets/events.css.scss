@@ -4,6 +4,18 @@
 
 .show-event{
    background-color: #ffffff;
+  
+   .div-orbit{
+      border: 3px solid #0e12a7;
+      margin-top: 2%;
+      width: 90%;
+      height: 335px;
+      
+      img{
+        width: 100%;
+        height: 329px;
+      }
+    }
      
    #calendars{
       border: 5px solid #990a5f;
@@ -46,9 +58,15 @@
   }
   .image-event{
     img{
-      width: 100%;
-      height: 300px;
+      width: 90%;
+      height: 400px;
     }
+  }
+  .video{
+    width: 90%;
+    height: 300px;
+    margin-bottom: 23%;
+
   }
   .description-event{
     margin-top: 4%;

@@ -7,6 +7,9 @@
       <th>City</th>
       <th>Type activity</th>
       <th>Image url</th>
+      <th>Image url two</th>
+      <th>Image url three</th>
+      <th>Video url</th>
       <th>Summary</th>
       <th>Description</th>
       <th>Address</th>
@@ -21,9 +24,12 @@
     <% @activities.each do |activity| %>
       <tr>
         <td><%= activity.name %></td>
-        <td><%= activity.city %></td>
-        <td><%= activity.type_activity %></td>
+        <td><%= activity.city_id %></td>
+        <td><%= activity.type_activity_id %></td>
         <td><%= activity.image_url %></td>
+        <td><%= activity.image_url_two %></td>
+        <td><%= activity.image_url_three %></td>
+        <td><%= activity.video_url %></td>
         <td><%= activity.summary %></td>
         <td><%= activity.description %></td>
         <td><%= activity.address %></td>

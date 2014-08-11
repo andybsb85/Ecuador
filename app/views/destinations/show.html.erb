@@ -9,9 +9,37 @@
       </ul>
     <div class ="row">
       <div class= "large-3 columns">
-     
+          <div class="links">
+            <div class = "link-regions"> 
+              <h4><%= t('.know-regions') %></h4>
+              <ul>
+                <li><%= link_to t('.andes'), region_path(1) %></li>
+                <li><%= link_to t('.amazon'), region_path(2) %></li>
+                <li><%= link_to t('.coast'), region_path(3) %></li>
+                <li><%= link_to t('.galapagos'), region_path(4) %></li>
+              </ul>
+            </div>
+            <div class = "link-cities">
+              <h4><%= t('.know-cities') %></h4>
+              <ul>
+                <li><%= link_to t('.quito'), city_path() %></li>
+                <li><%= link_to t('.guayaquil'), city_path() %></li>
+                <li><%= link_to t('.ambato'), city_path() %></li>
+                <li><%= link_to t('.cuenca'), city_path() %></li>
+                <li><%= link_to t('.esmeraldas'), city_path() %></li>
+                <li><%= link_to t('.santaCruz'), city_path() %></li>
+              </ul>
+            </div>
+            <div class = "link-gallery">
+              <h4><%= t('.gallery') %></h4>
+              <ul>
+                <li><%= link_to t('.gallery'), gallery_index_path %></li>
+              </ul>
+            </div>
+          </div>
       </div>
       <div class= "large-9 columns">
+       <h4><strong> <%= @destination.name %></strong></h4>
         <div class="row">
           <div class = "large-9 columns">
             <ul class="social-share-list list-inline">
@@ -33,9 +61,8 @@
             <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>         
           </div>
         </div>
-        <h4><strong> <%= @destination.name %></strong></h4>
-     
-      <div class="div-orbit">
+        <div class="row"> 
+          <div class="div-orbit">
         <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
                           pause_on_hover:true;
                           animation_speed: 600;
@@ -63,24 +90,25 @@
           </li>
         </ul>
       </div>
-     
-      <div class="content-destination">
-        <% form_id = "destination_#{@destination.id}_rating" %>
-<% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
-    <% user_id = current_user.id %>
-<% else %>
-    <% user_id = -1 %>
-<% end %>        
-        <%= form_for @destination.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
-        <%= f.text_field :destination_id, :value => @destination.id %>
-        <% if user_signed_in? %>
-        <%= f.text_field :user_id, :value => current_user.id %>
-        <% end %>        
-        <%= f.text_field :stars, :id => form_id + "_stars" %>
-    <% end %>
-<% (1..5).each do |i| %>
-    <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%= form_id %>"></li>
-<% end %>
+        </div>
+        <div class="row">    
+          <div class="content-destination">
+            <% form_id = "destination_#{@destination.id}_rating" %>
+            <% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
+              <% user_id = current_user.id %>
+            <% else %>
+            <% user_id = -1 %>
+            <% end %>        
+            <%= form_for @destination.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
+            <%= f.text_field :destination_id, :value => @destination.id %>
+            <% if user_signed_in? %>
+            <%= f.text_field :user_id, :value => current_user.id %>
+            <% end %>        
+            <%= f.text_field :stars, :id => form_id + "_stars" %>
+            <% end %>
+            <% (1..5).each do |i| %>
+           <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i %>" data-form-id="<%=             form_id %>"></li>
+          <% end %>
         
         <div id="average_rating" style="display:inline;"><%= @destination.avg_rating %></div>
         <p>
@@ -103,20 +131,27 @@
           <%= @destination.website %>
         </p>
       </div>
-      <div class = "map-destination">
-        <div style='width: 100%;'>
-          <div id="map" style='width: 100%; height: 290px;'></div>
+          <div class = "map-destination">
+          <div style='width: 100%;'>
+            <div id="map" style='width: 100%; height: 290px;'></div>
         </div>
-      </div>
+       </div>
       <div class = "weather">
-     
-      <p>Your rating</p>
-
         <div id="user_star"></div>
       </div>
+     </div>
+        <div class="row">
+           <div class = "large-12 columns">
+             <div class ="video">
+               <div class="flex-video">
+                 <iframe width="354" height="210" src="//<%= @destination.video_url %>" frameborder="0" >                </iframe>
+               </div>
+             </div>
+           </div>
+         </div>
+      </div>
     </div>
-   </div>
- </div>
+  </div>
 </div>
 
 <%= content_for :scripts do %>

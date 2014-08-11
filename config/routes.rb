@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'list_blogs/index'
-
   resources :blogs
-
   get 'gallery/index'
-
   resources :users
   resources :activities
   resources :countries
@@ -17,15 +13,14 @@ Rails.application.routes.draw do
   resources :plans
   resources :events
   resources :ratings
+  resources :type_activities
   get 'destination_list/index'
   get 'tip/index'
   get 'list_event/index'
-  resources :type_activities
+  get 'list_blog/index'
   get 'list_activity/index'
  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
- 
- 
-  get 'welcome/index'
+   get 'welcome/index'
   
   scope '(:locale)' do
     resources :countries
@@ -35,12 +30,13 @@ Rails.application.routes.draw do
     resources :destinations
     resources :events
     resources :blogs
-    get 'destination_list/index'
     resources :type_activities
     resources :activities
     get 'list_activity/index'
     get 'gallery/index'
     get 'tip/index'
+    get 'list_blog/index'
+    get 'destination_list/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
     devise_for :admins
     

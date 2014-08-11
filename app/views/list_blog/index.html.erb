@@ -8,8 +8,8 @@
       <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
     </ul>
         
-    <h4><%= t('.blog') %></h4>
-
+    <div class="row">
+      <h4><%= t('.blog') %></h4>
       <div id="parallax" class="clear">
         <div class="parallax-layer" style="width:1200px; height:250px;">
           <%= image_tag('butterflies3.png') %>
@@ -19,8 +19,22 @@
         </div>
         <div class="parallax-layer" style="width:500px; height:250px;">
           <%= image_tag ('foca.png'), {style: "margin-left: 50%; padding-top: 5px;"}%>
-         </div>
-     </div>  
+        </div>
+      </div>  
+    </div>
+    <div class="row">
+      <% @blogs.each do |blog| %>
+        <div class="blog">
+          <div class="img_blog">
+            <%= link_to (image_tag(blog.image_url)), blog %>
+          </div>
+          <div class="des_location">
+            <h5><%= link_to (blog.title), blog %></h5>
+            <%= sanitize(blog.article) %>
+              </div>
+        </div>
+      <% end %>  
+    </div>
   </div>
 </div>
 

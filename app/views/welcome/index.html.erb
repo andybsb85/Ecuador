@@ -92,26 +92,30 @@
     <div class= "large-6 columns">
       <div class= "whats-on">
         <div class="flex-video">
-          <iframe width="540" height="301" src="//www.youtube.com/embed/9Fi88GBOHOA" frameborder="0" allowfullscreen></iframe>
+          <iframe width="540" height="280" src="//www.youtube.com/embed/9Fi88GBOHOA" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
   <div class= "row">
-    <div class ="large-12 columns">
-      <% @destination.each do |destination| %>
+    <div class="top-destination">
+      <div class="top-title">
+        <h4><%= t('.topDestination') %></h4>
+      </div>
+      <div class="top-content">
+        <% @destination.each do |destination| %>
         <div class="destinationI">
-              <div class="img_location">
-                <%= link_to (image_tag(destination.image_url)), destination %>
-              </div>
-              <div class="des_location">
-                <h5><%= link_to (destination.name), destination %></h5>
-              </div>
-            </div>
+           <div class="img_location">
+              <%= link_to (image_tag(destination.image_url)), destination %>
+           </div>
+           <div class="des_location">
+              <h5><%= link_to (destination.name), destination %></h5>
+           </div>
+        </div>
         <% end %>  
-    </div>    
+      </div>
+    </div>
   </div>
-</div>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
@@ -120,7 +124,7 @@
       markers = handler.addMarkers(<%=raw @hashcity.to_json %>);        
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(6);
+      handler.getMap().setZoom(5);
     });
   </script>
 

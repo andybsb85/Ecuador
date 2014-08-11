@@ -63,7 +63,7 @@
         </div>
         <div class="row"> 
           <div class="div-orbit">
-        <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
+           <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
                           pause_on_hover:true;
                           animation_speed: 600;
                           timer_speed: 5000;
@@ -136,9 +136,6 @@
             <div id="map" style='width: 100%; height: 290px;'></div>
         </div>
        </div>
-      <div class = "weather">
-        <div id="user_star"></div>
-      </div>
      </div>
         <div class="row">
            <div class = "large-12 columns">
@@ -161,7 +158,7 @@
       markers = handler.addMarkers(<%=raw @hash.to_json %>);        
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      handler.getMap().setZoom(17);
+      handler.getMap().setZoom(14);
      
     });
   </script>

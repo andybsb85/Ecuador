@@ -1,5 +1,3 @@
-
-
 <div class= "content-body">
   <div class="gallery">
      <ul class="breadcrumbs">
@@ -57,34 +55,19 @@
      <div class = "row">
        <h4><strong><%= t('.galapagos') %></strong></h4>
        <div class= "large-3 columns">
-       <a href="http://www.ecuaworld.com.ec/images/bluefootedboobies.jpg" class="fancybox" rel="gallery" ><img src="http://www.ecuaworld.com.ec/images/bluefootedboobies.jpg" /></a>
+       <a href="http://www.ecuaworld.com.ec/images/bluefootedboobies.jpg" class="fancybox" rel="gallery" data-fancybox-type="iframe"><img src="http://www.ecuaworld.com.ec/images/bluefootedboobies.jpg" /></a>
        </div>
        <div class ="large-3 columns">
-             <a href="http://www.travelgroup.com.pe/archivos/imagenes/paises/ecuador/islas-galapagos-ecuador-.jpg" class="fancybox" rel="gallery" ><img src="http://www.travelgroup.com.pe/archivos/imagenes/paises/ecuador/islas-galapagos-ecuador-.jpg" /></a>
+             <a href="http://www.travelgroup.com.pe/archivos/imagenes/paises/ecuador/islas-galapagos-ecuador-.jpg" class="fancybox" rel="gallery" data-fancybox-type="iframe"><img src="http://www.travelgroup.com.pe/archivos/imagenes/paises/ecuador/islas-galapagos-ecuador-.jpg" /></a>
        </div>
        <div class ="large-3 columns">
-             <a href="http://www.mdzol.com/files/image/244/244748/4d5bea1612b8c.jpg" class="fancybox" rel="gallery" ><img src="http://www.mdzol.com/files/image/244/244748/4d5bea1612b8c.jpg" /></a>
+             <a href="http://www.mdzol.com/files/image/244/244748/4d5bea1612b8c.jpg" class="fancybox" rel="gallery" data-fancybox-type="iframe"><img src="http://www.mdzol.com/files/image/244/244748/4d5bea1612b8c.jpg" /></a>
         </div>
        <div class= "large-3 columns">
-           <a href="http://i.hoy.ec/wp-content/uploads/2011/05/turismo1.jpg" class="fancybox" rel="gallery" ><img src="http://i.hoy.ec/wp-content/uploads/2011/05/turismo1.jpg" /></a>
+           <a href="http://i.hoy.ec/wp-content/uploads/2011/05/turismo1.jpg" class="fancybox" rel="gallery" data-fancybox-type="iframe"><img src="http://i.hoy.ec/wp-content/uploads/2011/05/turismo1.jpg" /></a>
          </div>
     </div>
   </div>
 </div>
 
-<%= content_for :scripts do %>
-<script type="text/javascript">
-$("div").load("url", function(){
-       $(".fancybox").fancybox({
-    'width'             : '80%',
-    'height'            : '90%',
-    'autoScale'         : false,
-    'transitionIn'      : 'elastic',
-    'transitionOut'     : 'elastic',
-    'type'              : 'iframe'
-    });
-
- });
-</script>
-<% end %>
 

@@ -61,7 +61,7 @@
               <div class="des_location">
                 <h5><%= link_to (destination.name), destination %></h5>
                 <%= sanitize(destination.summary) %>
-                <%= button_to 'Add to Plan', line_destinations_path(destination_id: destination),  {class: 'button tiny radius'} %>
+                <%= button_to 'Add to Plan', line_destinations_new_path(destination_id: destination),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id="star"></div>
               </div>
@@ -77,14 +77,3 @@
     </div>
   </div>
 </div>
-
-<%= content_for :scripts do %>
- <script type="text/javascript">
-$('#star').raty({
-  readOnly: true,
-  stars: <%= @destination.try(:average_rating) %>,
-  path: '/assets'
-});
-
-</script>
-<% end %>

@@ -150,14 +150,13 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*=======================content ==================================*/
-.content-body{
+.content-index{
   float: left;
   position: relative;
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
   height: auto;
-
 
     .book-destination{
       background-color: #990a5f;
@@ -173,12 +172,27 @@ h1, h2, h3, h4, h5, h6{
 
     }
   
-    .map{
-      border: 5px solid #990a5f;
+    .welcome{
+      border: 3px solid #990a5f;
       border-radius: 10px;
       margin-top: 10%;
       width: 100%;
-      height: auto;
+      height: 300px;
+      background-color: #000;
+      opacity: 0.9;
+      padding-top: 7%;
+ 
+      p{
+        color: #ffffff;
+      }
+      img{
+        width: 100%;
+        height: 225px;
+      }
+      .welcome-text{
+        padding-top: 20%;
+        
+      }
     
     }
     
@@ -259,10 +273,7 @@ h1, h2, h3, h4, h5, h6{
    color: #fff;
    text-align: center;
    width: 100%; 
-  .large-12{
-    margin-top: 2%;
-    margin-bottom: 2%;
-  }
+
   .site{
     text-align: left;
     padding-left: 5%;

@@ -10,7 +10,7 @@ class DestinationsController < ApplicationController
   # GET /destinations.json
   def index
     if params[:set_locale]
-      redirect_to destinations_path(locale: params[:set_locale])    
+      redirect_via_turbolinks_to destinations_path(locale: params[:set_locale])    
     else
       @destinations = Destination.all
      

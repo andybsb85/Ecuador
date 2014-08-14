@@ -36,16 +36,7 @@
         </div>
         <div class = "row">
           <div class="div-orbit">
-            <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
-                          pause_on_hover:true;
-                          animation_speed: 600;
-                          timer_speed: 5000;
-                          navigation_arrows:true;
-                          bullets:false;
-                          next_on_click: false;
-                          timer: true;
-                          circular: true;
-                          slide_number: false;">
+            <ul class="example-orbit-content" data-orbit>
              <li data-orbit-slide="headline-1">
                <div>
                  <%= image_tag(@event.image_url) %>
@@ -97,25 +88,3 @@
   </div>
 </div>
 
-<%= content_for :scripts do %>
- <script type="text/javascript">
- $(document).ready(function() {
-
-     $('#calendars').fullCalendar({
-        theme: true,
-        events:  '/events.json',
-        eventColor: '#f50504',
-        header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: null
-    },
-        height: 200,
-       eventRender: function(event, element) {
-         element.attr('title', event.name);
-           
-        }
-     })
- });
- </script>
-<% end %>

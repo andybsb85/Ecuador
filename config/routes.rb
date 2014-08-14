@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :destinations
   resources :events
   resources :line_destinations
+  post 'line_destinations/new'
   resources :plans
   resources :events
   resources :ratings
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
   get 'list_activity/index'
  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
    get 'welcome/index'
+  
   
   scope '(:locale)' do
     resources :countries

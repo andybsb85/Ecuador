@@ -12,8 +12,8 @@
   <tbody>
     <% @line_destinations.each do |line_destination| %>
       <tr>
-        <td><%= line_destination.destination %></td>
-        <td><%= line_destination.plan %></td>
+        <td><%= line_destination.destination_id %></td>
+        <td><%= line_destination.plan_id %></td>
         <td><%= link_to 'Show', line_destination %></td>
         <td><%= link_to 'Edit', edit_line_destination_path(line_destination) %></td>
         <td><%= link_to 'Destroy', line_destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -63,16 +63,7 @@
         </div>
         <div class="row"> 
           <div class="div-orbit">
-           <ul class="example-orbit-content" data-orbit   data-options="animation:slide;
-                          pause_on_hover:true;
-                          animation_speed: 600;
-                          timer_speed: 5000;
-                          navigation_arrows:true;
-                          bullets:false;
-                          next_on_click: false;
-                          timer: true;
-                          circular: true;
-                          slide_number: false;">
+           <ul class="example-orbit-content" data-orbit>
           <li data-orbit-slide="headline-1">
             <div>
              <%= image_tag(@destination.image_url) %>
@@ -153,17 +144,15 @@
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
-    handler = Gmaps.build('Google');
-     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%=raw @hash.to_json %>);        
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(14);
-     
-    });
-  </script>
-
- <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);        
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(14);
+  });
+</script>
+  <script type="text/javascript">
   $('#star').raty({
     readOnly: true,
     stars: <%= @destination.try(:average_rating) %>,
@@ -182,7 +171,4 @@
     }
   });
 </script>
-
-
-
 <% end %>

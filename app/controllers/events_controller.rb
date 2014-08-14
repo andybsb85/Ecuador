@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
      if params[:set_locale]
-      redirect_to events_path(locale: params[:set_locale])    
+      redirect_via_turbolinks_to events_path(locale: params[:set_locale])    
      else
       @events = Event.all
      end

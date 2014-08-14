@@ -1,11 +1,9 @@
-
 <div class = "content-body">
-  <div class = "list-event">
-    <ul class="breadcrumbs">
+  <ul class="breadcrumbs">
       <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
     </ul>
-    <div class ="row">
-      <div class= "large-3 columns">
+  <div class ="row">
+    <div class= "large-3 columns">
         <div id= "calendare">
         </div>
         <div class ="search-div">
@@ -33,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class= "large-9 columns">
+    <div class= "large-9 columns">
         <h4><strong><%= t('.events') %></strong></h4>
         <div class= "row">
           <% @events.each do |event| %>
@@ -58,30 +56,5 @@
            </div>
          </div>
       </div>
-    </div>
   </div>
 </div>
-
-
-<%= content_for :scripts do %>
- <script type="text/javascript">
- $(document).ready(function() {
-
-     $('#calendare').fullCalendar({
-        theme: true,
-        events:  '/events.json',
-        eventColor: '#f50504',
-        header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: null
-    },
-        height: 200,
-       eventRender: function(event, element) {
-         element.attr('title', event.name);
-           
-        }
-     })
- });
- </script>
-<% end %>

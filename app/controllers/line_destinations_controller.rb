@@ -1,6 +1,6 @@
 class LineDestinationsController < ApplicationController
   include CurrentPlan
-  before_action :set_plan, only: [:create]
+  before_action :set_plan, only: [:create, :new]
   before_action :set_line_destination, only: [:show, :edit, :update, :destroy]
 
   # GET /line_destinations
@@ -16,7 +16,8 @@ class LineDestinationsController < ApplicationController
 
   # GET /line_destinations/new
   def new
-    @line_destination = LineDestination.new
+    destination = Destination.find(params[:destination_id])
+    @line_destination = @plan.add_destination(destination.id)
   end
 
   # GET /line_destinations/1/edit
@@ -26,9 +27,7 @@ class LineDestinationsController < ApplicationController
   # POST /line_destinations
   # POST /line_destinations.json
   def create
-    destination = Destination.find(params[:destination_id])
-    @line_destination = @plan.add_destination(destination.id)
-
+    @line_destination = LineDestination.new(line_destination_params)
     respond_to do |format|
       if @line_destination.save
         format.html { redirect_to @line_destination.plan, notice: 'Line destination was successfully created.' }

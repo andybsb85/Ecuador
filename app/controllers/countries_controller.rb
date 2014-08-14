@@ -8,7 +8,7 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index 
      if params[:set_locale]
-       redirect_to countries_path(locale: params[:set_locale])    
+       redirect_via_turbolinks_to countries_path(locale: params[:set_locale])    
      else
      @countries = Country.all
      add_breadcrumb "index", index_path

@@ -1,13 +1,12 @@
 <div class="content-body">
-  <div class ="destination_list">
-     <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>   
-    <div class = "row">
-      <div class = "large-3 columns">
-        <div class ="search-div">
-          <h4><strong><%= t('.searchDestination') %></strong></h4>
-          <div class= "select-destination">
+  <ul class="breadcrumbs">
+    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+  </ul>   
+  <div class = "row">
+    <div class = "large-3 columns">
+      <div class ="search-div">
+        <h4><strong><%= t('.searchDestination') %></strong></h4>
+        <div class= "select-destination">
           <ul class="tabs" data-tab>
             <li class="tab-title active"><a href="#panel2-1"><%= t('.byCity')%></a></li>
             <li class="tab-title"><a href="#panel2-2"><%= t('.byType')%></a></li>
@@ -45,12 +44,12 @@
         </div>
         </div>
         <div class ="row">
-          <div class="large-12 columns">
+          <div class="plan">
              <%= render @plan %>
           </div>
         </div> 
       </div>
-      <div class = "large-9 columns">
+    <div class = "large-9 columns">
         <h4><strong><%= t('.destinations') %></strong></h4>
         <div class= "row">
           <% @destination.each do |destination| %>
@@ -74,6 +73,5 @@
             </div>
           </div>
        </div>
-    </div>
   </div>
 </div>

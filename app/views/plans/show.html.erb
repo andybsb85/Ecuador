@@ -1,11 +1,40 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
+<div class="content-body">
+  <% if notice %>
+  <p id="notice"><%= notice %></p>
+  <% end %>
+  <h4> <%= t('.trip') %></h4>
+  <div class= "row">
+    <div class  = "large-7 columns">
+      <div class = "plan-show-content">
+        <table>
+          <%= render (@plan.line_destinations) %>
+
+        </table>
+      </div>
+    </div>
+    <div class="large-5 columns">
+      <div class = "map-destination">
+          <div style='width: 100%;'>
+            <div id="map" style='width: 100%; height: 290px;'></div>
+           
+          </div>
+        </div>
+    </div>
+  </div>
+  <%= button_to 'Empty Plan', @plan, method: :delete,
+  data: {confirm: 'Are you sure?'} %>
+   <%= link_to t('.print'), '#', onclick: "printpage()"%>
+</div>
+
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash_plan.to_json %>);        
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(14);
+  });
+ </script>
 <% end %>
-<h2> Your Trip Plan </h2>
-    <ul>
-      <% @plan.line_destinations.each do |destin| %>
-        <li><%= destin.destination.name %></li>
-      <% end %>
-    </ul>
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', destination_list_index_path %>

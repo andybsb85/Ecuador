@@ -24,4 +24,8 @@
 
 $(function(){ $(document).foundation(); });
 
+function printpage()
+  {
+  window.print()
+  }
 

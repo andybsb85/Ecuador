@@ -3,12 +3,11 @@
 <script type="text/javascript" language="JavaScript" src="jquery.event.frame.js" ></script>
 
 <div class="content-body">
-  <div class ="list_blogs">
-    <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>
+  <ul class="breadcrumbs">
+    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+  </ul>
         
-    <div class="row">
+  <div class="row">
       <h4><%= t('.blog') %></h4>
       <div id="parallax" class="clear">
         <div class="parallax-layer" style="width:1200px; height:250px;">
@@ -22,7 +21,7 @@
         </div>
       </div>  
     </div>
-    <div class="row">
+  <div class="row">
       <% @blogs.each do |blog| %>
         <div class="blog">
           <div class="img_blog">
@@ -35,12 +34,10 @@
         </div>
       <% end %>  
     </div>
-    <div class="row">
+  <div class="row">
      <div class="fb-comments" data-href="http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/list_blog/index?locale=en" data-numposts="5" data-colorscheme="light"></div>
     </div>
-  </div>
 </div>
-
 
 <%= content_for :scripts do %>
 <script type="text/javascript">

@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
-  
+
    add_breadcrumb "Ecuador Tourism", :index_path
    add_breadcrumb "List Destinations", :destination_list_index_path
    add_breadcrumb "Destinations", :destination_path

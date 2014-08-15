@@ -1,8 +1,10 @@
-<h2> Your Plan </h2>
+<div class="content-body">
+  <h4> <%= t('.trip') %> </h4>
+  <div class= "plan-content">
     <table>
-      <%= render(@plan.line_destinations) %>
+      <%= render(plan.line_destinations) %>
     </table>
-        <%= link_to 'Destroy', @plan, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to t('.print') %>
-        <%= link_to t('.email') %>
-        <%= link_to 'Back', destination_list_index_path %>
+    <%= link_to t('.emptyPlan'), @plan, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('.openPlan'), plan_path(@plan), class: 'button tiny radius' %>
+  </div>
+</div>

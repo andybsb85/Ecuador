@@ -10,6 +10,11 @@ class PlansController < ApplicationController
   # GET /plans/1
   # GET /plans/1.json
   def show
+     if params[:set_locale]
+       redirect_to plan_path(locale: params[:set_locale])    
+     else
+       @line = @plan.line_destinations
+     end
   end
 
   # GET /plans/new
@@ -54,9 +59,10 @@ class PlansController < ApplicationController
   # DELETE /plans/1
   # DELETE /plans/1.json
   def destroy
-    @plan.destroy
+    @plan.destroy if @plan.id == session[:plan_id]
+    session[:plan_id] = nil
     respond_to do |format|
-      format.html { redirect_to plans_url, notice: 'Plan was successfully destroyed.' }
+      format.html { redirect_to destination_list_index_path, notice: 'Plan was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

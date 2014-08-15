@@ -1,10 +1,8 @@
 <div class= "content-body">
-  <div class="country">
-     <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>
-
-     <div class = "row">
+  <ul class="breadcrumbs">
+    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+  </ul>
+  <div class = "row">
        <h4><strong><%= @country.name %></strong></h4>
         <div class = "large-9 columns">
           <div class = "image-ecuador">
@@ -179,33 +177,8 @@
           </div>
         </div>  
         <div class = "large-3 columns">
-          <div class="links">
-            <div class = "link-regions"> 
-              <h4><%= t('.know-regions') %></h4>
-              <ul>
-                <li><%= link_to t('.andes'), region_path(1) %></li>
-                <li><%= link_to t('.amazon'), region_path(2) %></li>
-                <li><%= link_to t('.coast'), region_path(3) %></li>
-                <li><%= link_to t('.galapagos'), region_path(4) %></li>
-              </ul>
-            </div>
-            <div class = "link-cities">
-              <h4><%= t('.know-cities') %></h4>
-              <ul>
-                <li><%= link_to t('.quito'), city_path() %></li>
-                <li><%= link_to t('.guayaquil'), city_path() %></li>
-                <li><%= link_to t('.ambato'), city_path() %></li>
-                <li><%= link_to t('.cuenca'), city_path() %></li>
-                <li><%= link_to t('.esmeraldas'), city_path() %></li>
-                <li><%= link_to t('.santaCruz'), city_path() %></li>
-              </ul>
-            </div>
-            <div class = "gallery">
-              <%= link_to t('.gallery'), gallery_index_path %>
-            </div>
-          </div>
+          <%= render "shared/linkregion" %>
         </div>
-      </div>
-   </div>
+  </div>
 </div>
 

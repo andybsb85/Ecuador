@@ -1,3 +1,5 @@
 <tr>
-  <td><%= line_destination.destination.name %></td>
+  <td><%= image_tag(line_destination.destination.image_url) %></td>
+  <td><%= line_destination.destination.name %></td> 
+  <td><%= link_to t('.X'), line_destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

@@ -30,7 +30,7 @@ class LineDestinationsController < ApplicationController
     @line_destination = LineDestination.new(line_destination_params)
     respond_to do |format|
       if @line_destination.save
-        format.html { redirect_to @line_destination.plan, notice: 'Line destination was successfully created.' }
+        format.html { redirect_to destination_list_index_path, notice: 'Line destination was successfully created.' }
         format.json { render :show, status: :created, location: @line_destination }
       else
         format.html { render :new }
@@ -56,9 +56,10 @@ class LineDestinationsController < ApplicationController
   # DELETE /line_destinations/1
   # DELETE /line_destinations/1.json
   def destroy
+    
     @line_destination.destroy
     respond_to do |format|
-      format.html { redirect_to line_destinations_url, notice: 'Line destination was successfully destroyed.' }
+      format.html { redirect_to destination_list_index_path, notice: 'Line destination was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

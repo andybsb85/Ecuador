@@ -1,19 +1,15 @@
 <div class="content-body">
-  <div class ="destination_list">
-     <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>   
-    
+  <ul class="breadcrumbs">
+    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+  </ul>   
     <button data-po='one' data-pt = 'two' data-ph ='three'>Before Travel</button>
     <button data-po='two' data-pt = 'one' data-ph ='three'>View Results</button>
     <button data-po='three' data-pt = 'one' data-ph ='two'>Information</button>
     <div>
-    <span class="before-travel" style="display:none" id="one">
-      <h3>Before Travel</h3>
-      <p>div1</p></span>
-    <span style="display:none" id="two">div2</span>
-    <span id="three">div3</span>
-      
+      <span class="before-travel" style="display:none" id="one">
+        <h3>Before Travel</h3>
+        <p>div1</p></span>
+      <span style="display:none" id="two">div2</span>
+      <span id="three">div3</span>
     </div>
-  </div>
 </div>

@@ -16,18 +16,29 @@
         <div class="row">
           <div class = "large-9 columns">
             <ul class="social-share-list list-inline">
-              <li class="twt">
-                <%= tweet_button %>
-              </li>
-              <li class="fb">
-                <%= like_button(690575874330211) %>
-              </li>
-              <li class="pi">
-                <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
-              </li>
-              <li class = "gp">
-                <%= google_plus_button %>
-              </li>
+              <div class="row">
+                <div class = "large-3 columns">
+                  <li class="twt">
+                    <%= tweet_button count: 'horizontal' %>
+                  </li>
+                </div>
+                <div class = "large-9 columns">
+                  <li class="pi">
+                    <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
+                  </li>
+                  
+                </div>
+                <div class = "large-3 columns">
+                  <li class="fb">
+                    <%= like_button(690575874330211) %>
+                  </li>
+                </div>
+                <div class = "large-9 columns">
+                  <li class = "gp">
+                    <%= google_plus_button %>
+                  </li>
+                </div>
+              </div>
             </ul>
           </div>
           <div class = "large-3 columns">

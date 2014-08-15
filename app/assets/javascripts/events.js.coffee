@@ -20,19 +20,6 @@ $('#calendars').fullCalendar({
 });
 
 
-$(document).foundation({
-  orbit: {
-    animation:slide,
-    pause_on_hover:true,
-    animation_speed: 600,
-    timer_speed: 5000,
-    navigation_arrows:true,
-    bullets:false,
-    next_on_click: false,
-    timer: true,
-    circular: true,
-    slide_number: false
-  }
-})
+
 
 

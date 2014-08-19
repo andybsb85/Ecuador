@@ -20,9 +20,8 @@
 
   </head>
 
-  <body class="<%= controller.controller_name%>">
+  <body class="<%= controller.controller_name%>" id="div1">
     <%= render 'layouts/header' %>
-
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>

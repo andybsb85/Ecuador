@@ -15,6 +15,8 @@ jQuery ->
     }
     height: 260
   });
+  
+$("#div1").show();
 
 
       

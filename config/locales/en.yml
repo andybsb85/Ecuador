@@ -35,6 +35,7 @@ en:
       experiences: "Experiences"
       events: "Events"
       book: "Booking"
+     
   
   welcome:
     index:
@@ -44,6 +45,7 @@ en:
       searchDestination: "Search Destination"
       booking: "Booking"
       go: "Search"
+      topDestination: "Top Destinations"
       
   countries:
     show:

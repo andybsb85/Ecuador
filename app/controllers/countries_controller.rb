@@ -1,17 +1,14 @@
 class CountriesController < ApplicationController
   
   before_action :set_country, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb "Ecuador Tourism", :index_path
-  add_breadcrumb "About Ecuador", :country_path
 
   # GET /countries
   # GET /countries.json
   def index 
      if params[:set_locale]
-       redirect_via_turbolinks_to countries_path(locale: params[:set_locale])    
+       redirect_to countries_path(locale: params[:set_locale])    
      else
      @countries = Country.all
-     add_breadcrumb "index", index_path
      end
   end
 

@@ -1,10 +1,9 @@
-<script type="text/javascript" src="../js/jquery-1.6.4.min.js"></script>
-<script type="text/javascript" language="JavaScript" src="jquery.jparallax.min.js" ></script>
-<script type="text/javascript" language="JavaScript" src="jquery.event.frame.js" ></script>
+<% content_for :title, t('.blog')%>
 
 <div class="content-body">
   <ul class="breadcrumbs">
-    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+    <li><%=link_to t('.blog'),  :class => 'current' %></li>
   </ul>
         
   <div class="row">

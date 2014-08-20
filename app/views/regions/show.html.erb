@@ -1,7 +1,13 @@
+<% content_for :title,  @region.name%>
+
 <div class="content-body">
   <div class ="country-content">
-    <p id="notice"><%= notice %></p>
-
+    <ul class="breadcrumbs">
+      <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+      <li><%=link_to t('.aboutEcuador'),  country_path(1) %></li>
+      <li><%=link_to t('.regions'), :class => 'unavailable' %></li>
+      <li><%=link_to  @region.name, :class => 'current' %></li>
+    </ul>
     <p>
       <strong> name:</strong>
       <%= @region.name %>

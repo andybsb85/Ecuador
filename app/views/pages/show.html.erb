@@ -1,0 +1,25 @@
+<% content_for :title, @page.name %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @page.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @page.content %>
+</p>
+
+<p>
+  <strong>Ancestry:</strong>
+  <%= @page.ancestry %>
+</p>
+
+<div id="breadcrumbs">
+  <% @page.ancestors.each do |page| %>
+    <%= link_to page.name, page %> &gt;
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

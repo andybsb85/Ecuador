@@ -1,15 +1,11 @@
 class EventsController < ApplicationController
    before_action :set_event, only: [:show, :edit, :update, :destroy]
-   add_breadcrumb "Ecuador Tourism", :index_path
-   add_breadcrumb "List Events", :list_event_index_path
-   add_breadcrumb "Event", :event_path
-
 
   # GET /events
   # GET /events.json
   def index
      if params[:set_locale]
-      redirect_via_turbolinks_to events_path(locale: params[:set_locale])    
+      redirect_to events_path(locale: params[:set_locale])    
      else
       @events = Event.all
      end

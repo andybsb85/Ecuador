@@ -1,16 +1,12 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
 
-   add_breadcrumb "Ecuador Tourism", :index_path
-   add_breadcrumb "List Destinations", :destination_list_index_path
-   add_breadcrumb "Destinations", :destination_path
-
 
   # GET /destinations
   # GET /destinations.json
   def index
     if params[:set_locale]
-      redirect_via_turbolinks_to destinations_path(locale: params[:set_locale])    
+      redirect_to destinations_path(locale: params[:set_locale])    
     else
       @destinations = Destination.all
      

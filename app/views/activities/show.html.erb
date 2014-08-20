@@ -1,8 +1,12 @@
+<% content_for :title,  @activity.name%>
+
 <div class="content-body">
   <div class ="country-content">
-      <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-      </ul>
+    <ul class="breadcrumbs">
+      <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+      <li><%=link_to t('.activities'), list_activity_index_path%></li>
+      <li><%=link_to @activity.name, :class => 'current' %></li>
+    </ul>
     <div class ="row">
       <div class= "large-3 columns">
         <%= render "shared/linkregion" %>

@@ -16,8 +16,7 @@ class LineDestinationsController < ApplicationController
 
   # GET /line_destinations/new
   def new
-    destination = Destination.find(params[:destination_id])
-    @line_destination = @plan.add_destination(destination.id)
+      
   end
 
   # GET /line_destinations/1/edit
@@ -27,8 +26,9 @@ class LineDestinationsController < ApplicationController
   # POST /line_destinations
   # POST /line_destinations.json
   def create
-    @line_destination = LineDestination.new(line_destination_params)
-    respond_to do |format|
+    destination = Destination.find(params[:destination_id])
+    @line_destination = @plan.add_destination(destination.id)
+     respond_to do |format|
       if @line_destination.save
         format.html { redirect_to destination_list_index_path, notice: 'Line destination was successfully created.' }
         format.json { render :show, status: :created, location: @line_destination }

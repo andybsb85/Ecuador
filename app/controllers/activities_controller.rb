@@ -1,9 +1,5 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
-  add_breadcrumb "Ecuador Tourism", :index_path
-  add_breadcrumb "List Activities", :list_activity_index_path
-  add_breadcrumb "Activity", :activity_path
-
 
   # GET /activities
   # GET /activities.json

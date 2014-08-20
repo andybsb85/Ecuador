@@ -7,7 +7,7 @@ jQuery ->
   $('#calendar').fullCalendar({
     theme: true
     events:  '/events.json'
-    eventColor: '#f50504'
+    eventColor: '#008CBA'
     header: {
     left: 'prev,next today'
     center: 'title'

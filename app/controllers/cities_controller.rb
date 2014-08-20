@@ -11,6 +11,10 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
+      if params[:set_locale]
+        redirect_to city_path(locale: params[:set_locale])   
+      #authorize! :read, @country
+    end
   end
 
   # GET /cities/new

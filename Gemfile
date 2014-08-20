@@ -40,6 +40,7 @@ gem 'social-buttons'
 gem 'social-share-button'
 gem 'kaminari'
 gem 'yahoo_weather'
+gem 'ancestry'
 
 
 

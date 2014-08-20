@@ -1,7 +1,11 @@
+<% content_for :title,  t('.gallery')%>
+
 <div class= "content-body">
   <div class="gallery">
-     <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    <ul class="breadcrumbs">
+      <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+      <li><%=link_to t('.aboutEcuador'), country_path(1)%></li>
+      <li><%=link_to t('.gallery'), :class => 'current'%></li>
     </ul>
     <h4><strong><%= t('.gallery') %> </strong></h4>
      <div class = "row">

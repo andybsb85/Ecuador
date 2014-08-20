@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811011916) do
+ActiveRecord::Schema.define(version: 20140819222407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,6 +202,16 @@ ActiveRecord::Schema.define(version: 20140811011916) do
 
   add_index "line_destinations", ["destination_id"], name: "index_line_destinations_on_destination_id", using: :btree
   add_index "line_destinations", ["plan_id"], name: "index_line_destinations_on_plan_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["ancestry"], name: "index_pages_on_ancestry", using: :btree
 
   create_table "plans", force: true do |t|
     t.datetime "created_at"

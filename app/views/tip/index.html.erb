@@ -1,7 +1,10 @@
+<% content_for :title,  t('.tips')%>
 <div class="content-body">
-  <ul class="breadcrumbs">
-    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-  </ul>   
+   <ul class="breadcrumbs">
+      <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+     <li><%=link_to t('.tips'), :class => 'current' %></li>
+    </ul>
+  
     <button data-po='one' data-pt = 'two' data-ph ='three'>Before Travel</button>
     <button data-po='two' data-pt = 'one' data-ph ='three'>View Results</button>
     <button data-po='three' data-pt = 'one' data-ph ='two'>Information</button>
@@ -9,7 +12,13 @@
       <span class="before-travel" style="display:none" id="one">
         <h3>Before Travel</h3>
         <p>div1</p></span>
-      <span style="display:none" id="two">div2</span>
-      <span id="three">div3</span>
+      <span style="display:none" id="two">
+        <h3>Before Travel</h3>
+        <p>div2</p>
+      </span>
+      <span id="three">
+        <h3>Before Travel</h3>
+        <p>div3</p>
+      </span>
     </div>
 </div>

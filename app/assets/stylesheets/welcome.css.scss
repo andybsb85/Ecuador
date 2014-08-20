@@ -13,18 +13,27 @@ body.destination_list{
    background-repeat: no-repeat;
    background-size: 100% 600px;
 }
-
+body.destinations{
+   background-image: url("amazon.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
 body.countries{
    background-image: url("penguin.jpg");
    background-repeat: no-repeat;
    background-size: 100% 600px;
 }
-
-body.destinations{
-   background-image: url("quito_1.jpg");
+body.regions{
+   background-image: url("penguin.jpg");
    background-repeat: no-repeat;
    background-size: 100% 600px;
 }
+body.cities{
+   background-image: url("penguin.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
 
 body.registrations{
    background-image: url("ecuador_2.jpg");
@@ -53,12 +62,24 @@ body.list_activity{
    background-repeat: no-repeat;
    background-size: 100% 600px;
 }
-
 body.activities{
    background-image: url("quito_4.jpg");
    background-repeat: no-repeat;
    background-size: 100% 600px;
 }
+
+body.tip{
+   background-image: url("turtle.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
+body.list_blog{
+   background-image: url("cuenca_2.jpg");
+   background-repeat: no-repeat;
+   background-size: 100% 600px;
+}
+
 
 h1, h2, h3, h4, h5, h6{
   color: #0e12a7;

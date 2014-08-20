@@ -1,6 +1,8 @@
+<% content_for :title,  t('.aboutEcuador')%>
 <div class= "content-body">
   <ul class="breadcrumbs">
-    <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+    <li><%=link_to t('.aboutEcuador'),  country_path(1), :class => 'current' %></li>
   </ul>
   <div class = "row">
        <h4><strong><%= @country.name %></strong></h4>

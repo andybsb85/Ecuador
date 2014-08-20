@@ -1,10 +1,10 @@
 <div class="content-body">
-  <h4> <%= t('.trip') %> </h4>
+   <h4> <%= t('.trip') %> </h4>
   <div class= "plan-content">
     <table>
       <%= render(plan.line_destinations) %>
     </table>
-    <%= link_to t('.emptyPlan'), @plan, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to t('.emptyPlan'), @plan, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button tiny radius' %>
     <%= link_to t('.openPlan'), plan_path(@plan), class: 'button tiny radius' %>
   </div>
 </div>

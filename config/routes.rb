@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pages
+
   resources :blogs
   get 'gallery/index'
   resources :users
@@ -10,7 +12,6 @@ Rails.application.routes.draw do
   resources :destinations
   resources :events
   resources :line_destinations
-  post 'line_destinations/new'
   resources :plans
   resources :events
   resources :ratings

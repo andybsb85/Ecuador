@@ -1,13 +1,16 @@
+<% content_for :title,  t('.events')%>
+
 <div class = "content-body">
   <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
+    <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+    <li><%=link_to t('.events'), :class => 'current'%></li>
   </ul>
   <div class ="row">
     <div class= "large-3 columns">
         <div id= "calendare">
         </div>
         <div class ="search-div">
-          <h4><strong><%= t('.searchEvent') %></strong></h4>
+          <h5><strong><%= t('.searchEvent') %></strong></h5>
           <div class= "select-destination">
             <ul class="tabs" data-tab>
               <li class="tab-title"><a href="#panel2-1"><%= t('.byCity')%></a></li>

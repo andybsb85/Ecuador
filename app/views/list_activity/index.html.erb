@@ -1,11 +1,14 @@
+<% content_for :title, t('.activities')%>
+
 <div class="content-body">
   <ul class="breadcrumbs">
-      <li><a href="#"> <%= render_breadcrumbs :separator => ' / ' %></a></li>
-    </ul>
+    <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+    <li><%=link_to t('.activities'), :class => 'current'%></li>
+  </ul>
   <div class = "row">
       <div class = "large-3 columns">
         <div class ="search-div">
-          <h4><strong><%= t('.searchActivity') %></strong></h4>
+          <h5><strong><%= t('.searchActivity') %></strong></h5>
           <div class= "select-destination">
           <ul class="tabs" data-tab>
             <li class="tab-title active"><a href="#panel2-1"><%= t('.byCity')%></a></li>
@@ -19,7 +22,7 @@
                     <label><%= t('.selectCity')%>
                      <%= form_tag({ controller: 'list_activity', action: 'index' }, method: 'get') do %>
                       <%= select_tag 'search_city', option_groups_from_collection_for_select(@regions, :cities, :name, :id, :name, 1) %>
-                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                      <%= submit_tag t('.search'), name: nil, class: 'button tiny radius' %>
                     <% end %> 
                     </label>
                   </div>
@@ -55,7 +58,6 @@
               <div class="des_location">
                 <h5><%= link_to (activity.name), activity %></h5>
                 <%= sanitize(activity.summary) %>
-               <%= button_to 'Add to Plan', line_destinations_path(activity_id: activity),  {class: 'button tiny radius'} %>
                 <p>Averate rating</p>
                 <div id= "live-review"></div>
                 <span id="live"></span>

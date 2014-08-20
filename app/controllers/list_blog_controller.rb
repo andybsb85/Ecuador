@@ -1,7 +1,5 @@
 class ListBlogController < ApplicationController
-   add_breadcrumb "Ecuador Tourism", :index_path
-   add_breadcrumb "Blog", :list_blog_index_path
-  
+
   
   def index
      if params[:set_locale]

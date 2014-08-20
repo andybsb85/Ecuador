@@ -21,20 +21,20 @@
 
 --- 
 en: 
-
+  ecuadorTourism: "Ecuador Tourism"
   layouts: 
     header: 
       signup: "Sign Up"
       signin: "Login"            
       profile: "Profile"
       logout: "Logout"
-      ecuadorTurism: "Ecuador Tourism"
       destinations: "Destinations"
       aboutEcuador: "About Ecuador"
       activities: "Activities"
       tripPlanner: "Trip Planner"
       experiences: "Experiences"
       events: "Events"
+      book: "Booking"
   
   welcome:
     index:
@@ -47,6 +47,8 @@ en:
       
   countries:
     show:
+      ecuadorTourism: "Ecuador Tourism"
+      aboutEcuador: "About Ecuador"
       description: "Description"
       geography: "Geography"
       weather: "Weather"
@@ -57,18 +59,52 @@ en:
       emergencyServices: "Emergency Services"
       transport: "Transport"
   
+  regions:
+    show:
+      ecuadorTourism: "Ecuador Tourism"
+      aboutEcuador: "About Ecuador"
+      regions: "Regions"
+  
+  cities:
+    show:
+      ecuadorTourism: "Ecuador Tourism"
+      aboutEcuador: "About Ecuador"
+      cities: "Cities"
+  
+  gallery:
+    index:
+      ecuadorTourism: "Ecuador Tourism"
+      aboutEcuador: "About Ecuador"
+      gallery: "Gallery"
+      
+  
   destination_list:
     index:
+      ecuadorTourism: "Ecuador Tourism"
       destinations: "DESTINATIONS"
       selectRegion: "Select Region"
       selectCity: "Select City"
+      byCity: "By City"
+      byType: "By Type"
       searchDestination: "Search Destination"
       searchTypeDestination: "Destination by Type"
       selectTypeDestination: "Destination Type"
-      go: "Search"
+      search: "Search"
+      plan: "Add to Plan"
+    
+  plans:
+    plan: 
+      trip: "Trip Plan"
+      emptyPlan: "Empty Plan"
+      openPlan: "Open Plan"
+    show:
+      ecuadorTourism: "Ecuador Tourism"
+      destinations: "DESTINATIONS"
+      trip: "Trip Plan"
       
   list_event:
     index:
+      ecuadorTourism: "Ecuador Tourism"
       events: "EVENTS"
       searchEvent: "Search Event"
       selectCity: "Select City"
@@ -78,13 +114,32 @@ en:
       
   list_activity:
     index:
+      ecuadorTourism: "Ecuador Tourism"
       activities: "ACTIVITIES"
+      searchActivity: "Search Activity"
       selectRegion: "Select Region"
       selectCity: "Select City"
+      byCity: "By City"
+      byType: "By Type"
       searchActivity: "Search Activity"
       searchTypeActivity: "Activity by Type"
       selectTypeActivity: "Activity Type"
-      go: "Search"
+      search: "Search"
+      
+  events:
+    show:
+       ecuadorTourism: "Ecuador Tourism"
+       events: "EVENTS"
+      
+  tip:
+    index:
+      ecuadorTourism: "Ecuador Tourism"
+      tips: "TIPS"
+      
+  list_blog:
+    index:
+      ecuadorTourism: "Ecuador Tourism"
+      blog: "BLOG"
       
   devise:
     shared:
@@ -108,3 +163,9 @@ en:
       last: "Last"
     first_page:
       first: "First"
+      
+  shared:
+    linkregion: 
+      regions: "Explore Regions"
+      cities: "Explore Cities"
+      gallery: "Image Gallery"

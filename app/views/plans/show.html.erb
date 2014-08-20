@@ -1,7 +1,14 @@
+<% content_for :title,  t('.trip')%>
+
 <div class="content-body">
   <% if notice %>
   <p id="notice"><%= notice %></p>
   <% end %>
+   <ul class="breadcrumbs">
+      <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
+     <li><%=link_to t('.destinations'),  destination_list_index_path %></li>
+      <li><%=link_to t('.trip'), :class => 'unavailable' %></li>
+    </ul>
   <h4> <%= t('.trip') %></h4>
   <div class= "row">
     <div class  = "large-7 columns">
@@ -21,20 +28,13 @@
         </div>
     </div>
   </div>
-  <%= button_to 'Empty Plan', @plan, method: :delete,
-  data: {confirm: 'Are you sure?'} %>
-   <%= link_to t('.print'), '#', onclick: "printpage()"%>
+  <div class= "row">
+    <div class="large-2 columns">
+      <%= button_to 'Empty Plan', @plan, method: :delete,
+      data: {confirm: 'Are you sure?'}, class: 'button tiny radius'%>
+    </div>
+    <div class="large-10 columns">
+      <%= link_to t('.print'), '#', onclick: "printpage()", class: 'button tiny radius'%>
+    </div>
+  </div>
 </div>
-
-
-<%= content_for :scripts do %>
-  <script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash_plan.to_json %>);        
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  handler.getMap().setZoom(14);
-  });
- </script>
-<% end %>

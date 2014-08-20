@@ -10,6 +10,10 @@ class RegionsController < ApplicationController
   # GET /regions/1
   # GET /regions/1.json
   def show
+     if params[:set_locale]
+       redirect_to region_path(locale: params[:set_locale])   
+      #authorize! :read, @country
+    end
   end
 
   # GET /regions/new

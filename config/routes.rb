@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bookings
+
   resources :pages
 
   resources :blogs
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :ratings
   resources :type_activities
   get 'destination_list/index'
+  post 'bookings/new'
   get 'tip/index'
   get 'list_event/index'
   get 'list_blog/index'

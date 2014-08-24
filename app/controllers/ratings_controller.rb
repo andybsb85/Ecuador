@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
 
+
   # GET /ratings
   # GET /ratings.json
   def index
@@ -27,13 +28,11 @@ class RatingsController < ApplicationController
     @rating = Rating.new(params[:rating])
     @destination = Destination.find(params[:rating][:destination_id])
 
-
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
-        format.json { render json: {:avg_rating => @destination.avg_rating }}
+        format.json { render :json => { :avg_rating => @destination.avg_rating } }
       else
-        format.html { render :new }
+        
         format.json { render json: @rating.errors, status: :unprocessable_entity }
       end
     end
@@ -42,16 +41,11 @@ class RatingsController < ApplicationController
   # PATCH/PUT /ratings/1
   # PATCH/PUT /ratings/1.json
   def update
-     @rating = Rating.find(params[:id])
-     @destination = Destination.find(params[:rating][:destination_id])
-     @rating.update_attributes(params[:rating])
-    
+       
     respond_to do |format|
       if @rating.update(rating_params)
-        format.html { redirect_to @rating, notice: 'Rating was successfully updated.' }
         format.json { render json: {:avg_rating => @destination.avg_rating } }
       else
-        format.html { render :edit }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
       end
     end

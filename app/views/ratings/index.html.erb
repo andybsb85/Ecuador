@@ -14,8 +14,8 @@
     <% @ratings.each do |rating| %>
       <tr>
         <td><%= rating.stars %></td>
-        <td><%= rating.destination %></td>
-        <td><%= rating.user %></td>
+        <td><%= rating.destination_id %></td>
+        <td><%= rating.user_id %></td>
         <td><%= link_to 'Show', rating %></td>
         <td><%= link_to 'Edit', edit_rating_path(rating) %></td>
         <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>

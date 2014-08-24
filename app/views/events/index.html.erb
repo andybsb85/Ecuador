@@ -5,6 +5,7 @@
     <table>
       <thead>
         <tr>
+          <th>Id</th>
           <th>Name</th>
           <th>City_id</th>
           <th>Image url</th>
@@ -24,6 +25,7 @@
       <tbody>
         <% @events.each do |event| %>
           <tr>
+            <td><%= event.id %></td>
             <td><%= event.name %></td>
             <td><%= event.city_id %></td>
             <td><%= event.image_url %></td>

@@ -69,7 +69,8 @@
       </div>
         </div>
         <div class="row">    
-          <div class="content-destination">
+          <div class ="rating">
+            <div class="large-6 columns">
             <% form_id = "destination_#{@destination.id}_rating" %>
               <% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
                 <% user_id = current_user.id %>
@@ -77,15 +78,23 @@
                 <% user_id = -1 %>
               <% end %>        
             <%= form_for @destination.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
-            <%= f.text_field :destination_id, :value => @destination.id %>
-            <%= f.text_field :user_id, :value => current_user.id %>
-            <%= f.text_field :stars, :id => form_id + "_stars" %>
+            <%= f.hidden_field :destination_id, :value => @destination.id %>
+              <% if user_signed_in? %>
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+              <% end %>     
+            <%= f.hidden_field :stars, :id => form_id + "_stars" %>
             <% end %>
             <% (1..5).each do |i| %>
            <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i   %>" data-form-id="<%= form_id %>"></li>
           <% end %>
-        
-        <div id="average_rating" style="display:inline;"><%= @destination.avg_rating %></div>
+            </div>
+            <div class ="large-6 columns">
+          <div id="average_rating" style="display:inline;"><%= @destination.avg_rating %></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">   
+           <div class="content-destination">
         <p>
           <strong>Description:</strong>
           <%= @destination.description %>

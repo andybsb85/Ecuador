@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   get 'list_event/index'
   get 'list_blog/index'
   get 'list_activity/index'
- # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-   get 'welcome/index'
+  get 'welcome/index'
+
   
   
   scope '(:locale)' do
@@ -42,8 +42,6 @@ Rails.application.routes.draw do
     get 'list_blog/index'
     get 'destination_list/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
-    
-    
     root 'welcome#index', as: 'index', via: :all
   end
 

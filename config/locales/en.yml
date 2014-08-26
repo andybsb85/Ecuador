@@ -35,6 +35,7 @@ en:
       experiences: "Experiences"
       events: "Events"
       book: "Booking"
+      home: "Home"
      
   
   welcome:
@@ -185,7 +186,7 @@ en:
     first_page:
       first: "First"
       
-  shared:
+  sharedr:
     linkregion: 
       regions: "Explore Regions"
       cities: "Explore Cities"

@@ -7,7 +7,7 @@
    <% end %>
   <div class = "header-up">
       <div class = "logo">
-        <%= image_tag("logo.png") %>
+        <%= link_to (image_tag("logo.png")), index_path %>
       </div>
       <div class ="other_menu">
         <nav class="top-bar" data-topbar>
@@ -84,7 +84,7 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
-        <h1><a href="#"><%= link_to  t('.ecuadorTourism'), index_path %></a></h1>
+        <h1><a href="#"><%= link_to  t('.home'), index_path %></a></h1>
       </li>
        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>

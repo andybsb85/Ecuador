@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :bookings
-
   resources :pages
-
   resources :blogs
   get 'gallery/index'
   resources :users
@@ -44,7 +42,7 @@ Rails.application.routes.draw do
     get 'list_blog/index'
     get 'destination_list/index'
     devise_for :users, controllers: {registrations: 'registrations', sessions: 'sessions', passwords: 'passwords'}, path_names: { sign_out: "logout"}
-    devise_for :admins
+    
     
     root 'welcome#index', as: 'index', via: :all
   end

@@ -5,7 +5,7 @@ class ListEventController < ApplicationController
      if params[:set_locale]
        redirect_to list_event_index_path(locale: params[:set_locale])    
     else
-        @regions = Region.all
+       @regions = Region.all
        @events = Event.all.page(params[:page]).per(6)
        @events_by_date = @events.group_by(&:date)
        @date = params[:date] ? Date.parse(params[:date]) : Date.today

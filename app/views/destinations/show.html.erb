@@ -14,122 +14,124 @@
         <%= render "shared/linkregion" %>
       </div>
       <div class= "large-9 columns">
-       <h4><strong> <%= @destination.name %></strong></h4>
-        <div class="row">
-          <div class = "large-9 columns">
-            <ul class="social-share-list list-inline">
-              <div class="row">
-                <div class = "large-3 columns">
-                  <li class="twt">
-                    <%= tweet_button count: 'horizontal' %>
-                  </li>
+        <div class="right-content">
+         <h4><strong> <%= @destination.name %></strong></h4>
+          <div class="row">
+            <div class = "large-4 columns">
+              <ul class="social-share-list list-inline">
+                <div class="row">
+                  <div class = "large-5 columns">
+                    <li class="twt">
+                      <%= tweet_button count: 'horizontal' %>
+                    </li>
+                  </div>
+                  <div class = "large-4 columns">
+                    <li class="pi">
+                      <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
+                    </li>
+
+                  </div>
+                  <div class = "large-4 columns">
+                    <li class="fb">
+                      <%= like_button(690575874330211) %>
+                    </li>
+                  </div>
+                  <div class = "large-9 columns">
+                    <li class = "gp">
+                      <%= google_plus_button %>
+                    </li>
+                  </div>
                 </div>
-                <div class = "large-9 columns">
-                  <li class="pi">
-                    <%= pinit_button(url: request.url, media: @destination.image_url, description: "Amazing Picture") %>
-                  </li>
-                  
-                </div>
-                <div class = "large-3 columns">
-                  <li class="fb">
-                    <%= like_button(690575874330211) %>
-                  </li>
-                </div>
-                <div class = "large-9 columns">
-                  <li class = "gp">
-                    <%= google_plus_button %>
-                  </li>
-                </div>
+              </ul>
+            </div>
+            <div class = "large-4 columns">
+              <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>         
+            </div>
+          </div>
+          <div class="row"> 
+            <div class="div-orbit">
+             <ul class="example-orbit-content" data-orbit>
+            <li data-orbit-slide="headline-1">
+              <div>
+               <%= image_tag(@destination.image_url) %>
               </div>
-            </ul>
-          </div>
-          <div class = "large-3 columns">
-            <h5>Share:</h5><%= social_share_button_tag(@destination.image_url) %>         
-          </div>
+            </li>
+            <li data-orbit-slide="headline-2">
+              <div>
+               <%= image_tag(@destination.image_url_two) %>
+              </div>
+            </li>
+            <li data-orbit-slide="headline-3">
+              <div>
+                <%= image_tag(@destination.image_url_three) %>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="row"> 
-          <div class="div-orbit">
-           <ul class="example-orbit-content" data-orbit>
-          <li data-orbit-slide="headline-1">
-            <div>
-             <%= image_tag(@destination.image_url) %>
-            </div>
-          </li>
-          <li data-orbit-slide="headline-2">
-            <div>
-             <%= image_tag(@destination.image_url_two) %>
-            </div>
-          </li>
-          <li data-orbit-slide="headline-3">
-            <div>
-              <%= image_tag(@destination.image_url_three) %>
-            </div>
-          </li>
-        </ul>
-      </div>
-        </div>
-        <div class="row">    
-          <div class ="rating">
-            <div class="large-6 columns">
-            <% form_id = "destination_#{@destination.id}_rating" %>
-              <% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
-                <% user_id = current_user.id %>
-              <% else %>
-                <% user_id = -1 %>
-              <% end %>        
-            <%= form_for @destination.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
-            <%= f.hidden_field :destination_id, :value => @destination.id %>
-              <% if user_signed_in? %>
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-              <% end %>     
-            <%= f.hidden_field :stars, :id => form_id + "_stars" %>
+          </div>
+          <div class="row">    
+            <div class ="rating">
+              <div class="large-6 columns">
+              <% form_id = "destination_#{@destination.id}_rating" %>
+                <% if user_signed_in? %> <!-- To avoid throwing an exception if no user is signed in -->
+                  <% user_id = current_user.id %>
+                <% else %>
+                  <% user_id = -1 %>
+                <% end %>        
+              <%= form_for @destination.ratings.find_or_create_by(user_id: user_id), :html => {:id => form_id, :class => "star_rating_form"} do |f| %>
+              <%= f.hidden_field :destination_id, :value => @destination.id %>
+                <% if user_signed_in? %>
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+                <% end %>     
+              <%= f.hidden_field :stars, :id => form_id + "_stars" %>
+              <% end %>
+              <% (1..5).each do |i| %>
+             <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i   %>" data-form-id="<%= form_id %>"></li>
             <% end %>
-            <% (1..5).each do |i| %>
-           <li class="rating_star" id="<%= form_id %>_<%= i %>" data-stars="<%= i   %>" data-form-id="<%= form_id %>"></li>
-          <% end %>
+              </div>
+              <div class ="large-6 columns">
+                <div id="average_rating" style="display:inline;"><p><%= t('.average')%><%= @destination.avg_rating.round(1) %></p></div>
+              </div>
             </div>
-            <div class ="large-6 columns">
-          <div id="average_rating" style="display:inline;"><%= @destination.avg_rating %></div>
+          </div>
+          <div class="row">   
+             <div class="content-destination">
+          <p>
+            <strong><%= t('.description') %></strong>
+            <%= @destination.description %>
+          </p>
+
+          <p>
+            <strong><%= t('.place') %></strong>
+            <%= @destination.address %>
+          </p>
+
+          <p>
+            <strong><%= t('.phone') %></strong>
+            <%= @destination.phone %>
+          </p>
+
+          <p>
+            <strong><%= t('.website') %></strong>
+            <%= @destination.website %>
+          </p>
+        </div>
+          <div class = "map-destination">
+            <div style='width: 100%;'>
+              <div id="map" style='width: 100%; height: 290px;'></div>
             </div>
           </div>
         </div>
-        <div class="row">   
-           <div class="content-destination">
-        <p>
-          <strong>Description:</strong>
-          <%= @destination.description %>
-        </p>
-
-        <p>
-          <strong>Address:</strong>
-          <%= @destination.address %>
-        </p>
-
-        <p>
-          <strong>Phone:</strong>
-          <%= @destination.phone %>
-        </p>
-
-        <p>
-          <strong>Website:</strong>
-          <%= @destination.website %>
-        </p>
-      </div>
-        <div class = "map-destination">
-          <div style='width: 100%;'>
-            <div id="map" style='width: 100%; height: 290px;'></div>
-          </div>
-        </div>
-      </div>
-        <div class="row">
-           <div class = "large-12 columns">
-             <div class ="video">
-               <div class="flex-video">
-                 <iframe width="354" height="210" src="//<%= @destination.video_url %>" frameborder="0" >                </iframe>
+          <div class="row">
+             <div class = "large-12 columns">
+               <div class ="video">
+                 <div class="flex-video">
+                   <iframe width="354" height="210" src="//<%= @destination.video_url %>" frameborder="0" >                </iframe>
+                 </div>
                </div>
              </div>
            </div>
-         </div>
+        </div>
       </div>
     </div>
   </div>

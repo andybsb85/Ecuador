@@ -2,7 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.before-travel{
-  background-color: #ff0000;
-
+.content-body{
+  
+  .tip-header{
+    h5, h4{
+   color: #0e12a7;
+   font-family: 'Droid Sans', sans-serif;
+   font-weight: 700;
+   }
+ p{
+   font-family: 'Droid Sans', sans-serif;
+   font-weight: 700;
+   font-size: 1.2em;
+   }
+  }
+ 
+ .tip{
+   
+   background-color: #c0c0c0;
+   text-align: justify;
+   padding-top: 3%;
+   padding-left: 4%;
+   padding-right: 4%;
+   padding-bottom: 3%;
+   
+    ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+      
+        li{
+      background-image: url(blue.png);
+      background-repeat: no-repeat;
+      background-position: 0px 5px; 
+      padding-left: 20px; 
+      text-align: justify;
+      margin: 1.1em 0;
+      font-family: 'Droid Sans', sans-serif;
+      font-size: 1.1em;
+    }
+  }
+ }
 }
+  

@@ -4,21 +4,83 @@
       <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
      <li><%=link_to t('.tips'), :class => 'current' %></li>
     </ul>
-  
-    <button data-po='one' data-pt = 'two' data-ph ='three'>Before Travel</button>
-    <button data-po='two' data-pt = 'one' data-ph ='three'>View Results</button>
-    <button data-po='three' data-pt = 'one' data-ph ='two'>Information</button>
-    <div>
-      <span class="before-travel" style="display:none" id="one">
-        <h3>Before Travel</h3>
-        <p>div1</p></span>
-      <span style="display:none" id="two">
-        <h3>Before Travel</h3>
-        <p>div2</p>
-      </span>
-      <span id="three">
-        <h3>Before Travel</h3>
-        <p>div3</p>
-      </span>
+   <div class="row">
+     <div class= "tip-header">
+     <h4>Tips for Tourists</h4>
+     <p>In this section there are some tips to consider before, and during the trip. Following these tips will help you to have a planned, and secure trip and you will have a pleasant trip.</p>
+     </div>
+   </div>
+   <div class="row">
+    <button data-po='one' data-pt = 'two' data-ph ='three'  data-pf ='four'  data-pi ='five'  data-ps ='six'>Before Travel</button>
+    <button data-po='two' data-pt = 'one' data-ph ='three' data-pf ='four'  data-pi ='five'  data-ps ='six'>Visa Information</button>
+    <button data-po='three' data-pt = 'one' data-ph ='two' data-pf ='four'  data-pi ='five'  data-ps ='six'>During the Trip</button>
+    <button data-po='four' data-pt = 'one' data-ph ='two' data-pf ='three'  data-pi ='five'  data-ps ='six'>Transport</button>
+    <button data-po='five' data-pt = 'one' data-ph ='two' data-pf ='three'  data-pi ='four'  data-ps ='six'>Emergency Services</button>
+    <button data-po='six' data-pt = 'one' data-ph ='two' data-pf ='three'  data-pi ='four'  data-ps ='five'>Security</button>
+   </div>
+   <div class ="row">
+     <div class="tip" style="display:none" id="one">
+        <h5>Before Travel</h5>
+       <ul>
+       <li>The first day of your trip is often lost to logistics and unfamiliar surroundings. First you have to haul yourself and your stuff to a resting place. Then you have to figure out exactly where you are, what attractions are nearby and how best to use your limited time. Planning ahead will help you make the most of that first confusing day.</li>
+       <li>Make two photocopies of all your travel documents in case of emergency or if your documents are lost or stolen. Leave one copy with a friend or relative at home. It is always a great idea to let at least one person know exactly where you will be staying and how to contact you in an emergency. Carry the other copy with you stored separately from the originals</li>
+         <li>Avoid carrying cash and consider using traveler's checks or major credit cards instead (but make sure they are accepted at your destination before departing on your trip).</li>
+         <li>Carry your medications in their original labeled containers, and pack them in your carry-on bag since checked baggage is occasionally lost or delayed.</li>
+       </ul>
+        </div>
+      <div class="tip" style="display:none" id="two">
+        <h5>Visa Information</h5>
+        <ul>
+          <li>There are a number of ways to become an Ecuadorian resident and the process is fairly straightforward. Although you submit your immigrant-status visa application at the Ecuadorian consulate nearest your former residence, it is, in fact, approved through the Ministry of Foreign Relations, so expect the approval process to take four to eight weeks. Visa applications for your dependents, however, can be processed directly by the consulate once your application has been approved.</li>
+          <li>When you first enter Ecuador, you will receive a T-3 tourist stamp in your passport, allowing you to stay in the country for 90 days.
+If you wish to stay more than 90 days within a year, go to an Ecuador consulate in your home country and apply for the 12-IX visa. Often referred to as the Tourist, Commercial or Sports Visa, this allows you to stay in the country for up to 180 days in a year. If you are planning to apply for permanent residency, you are required to have the 12-IX visa when you file your application.</li>
+        </ul>
+      </div>
+      <div class="tip" style="display:none" id="three">
+        <h5>During the Trip</h5>
+       <ul>
+         <h6>General</h6>
+        <li>Take with you updated maps and guidebooks</li>
+        <li>Take with you the passport, birth certificate and Identification card</li>
+         
+        <h6>Accommodation:</h6>
+        <li>Choose accommodations wich respect the environment and people, especially children and adolescents. Make sure that your accommodation with t hese principles.</li>
+        <li>At the registration time, always provide personal information and also of girls, boys and adolescents who are part of the tour group.</li>
+        <li>Do not provide details of the hotel to strangers (name and address, room number, etc.).</li>
+
+
+         <h6>Tour Operators:</h6>
+<li>Hiring tour packages, tours, walks and excursions only with certified operators and agencies. They must display in their offices all operating licenses issued by the Ministry of Tourism and/or local municipality.</li>
+         <li>The tour guides must have a credential issued by the Ministry of Tourism of Ecuador.</li>
+<li>In case of questions or complaints regarding these issues, please direct them to denuncias@turismo.gob.ec.</li>
+
+         <h6>Natural Protected Areas:</h6>
+<li>All protected areas that are part of the Natural Heritage Areas of Ecuador (PANE) are accessible and free of charge, except for the Galapagos National Park.</li>
+<li>In protected areas the tours should be made with certified guides by the Ministry of Environment. Entering alone runs the risk of lost or accidents.</li>
+<li>To make a campfire, find out what are the facilities set up for this purposes. Doing it in other areas is prohibited and it can cause serious fires.</li>
+        </ul>
+      </div>
+     <div class="tip" style="display:none" id="four">
+        <h5>Transport</h5>
+        <ul> <li>Long-distance buses typically cost from $1 to $2 USD per hour.  Inside the city, a local bus ticket is usually around 25 cents.</li>
+          <li>Taxis in Quito have meters and short trips generally don’t cost more than $3 or $4 USD. For longer trips expect to pay around $10 USD.</li>           </ul>
+      </div>
+     <div class="tip" style="display:none" id="five">
+        <h5>Emergency Services</h5>
+       <ul>
+         <li>Country Code: +593</li>
+         <li>International Call Prefix: 00</li>
+         <li>To call a local number from a landline-phone, dial directly the 7 digits of the subscriber (xxx-xxxx).</li>
+         <li>To make a national long-distance call, or from any mobile phone to a local or national number, dial (0a) xxx-xxxx (For example, to a number in Pichincha province, (02) 211-1111).</li>
+       </ul>
+      </div>
+      <div class ="tip" id="six">
+        <h5>Security</h5>
+         <ul> 
+         <li>Check-in with your doctor and insurance carrier. Double check and make sure that you have all of the proper vaccinations and that you             have renewed all essential prescriptions. Also, ask you medical insurance provider if your policy applies overseas for emergencies. If it doesn’t, and you want to add extra coverage, consider supplemental insurance. Learn what you need to know before buying travel insurance.</li>
+<li>Bring copies of your passport. If your passport gets stolen or lost you want to be sure that you can still get back into the country, or be able to prove your citizenship.</li>
+<li>Leave a copy of your passport. For extra backup, leave a copy of your passport at home or with someone you trust. Consider making an electronic copy you can store in your email account as well.</li>
+<li>Register with your embassy. If there’s a problem in the country, this will make it easier for your government to contact you and get you to safety. U.S. citizens can register here.</li></ul>
+      </div>
     </div>
 </div>

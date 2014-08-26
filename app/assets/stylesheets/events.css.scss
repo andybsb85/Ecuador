@@ -5,7 +5,14 @@
 .show-event{
    background-color: #ffffff;
   
+  p{
+    font-family: 'Open Sans', sans-serif;
+     font-size: 1.1em;
+  }
      
+   .large-8 {
+     padding-left: 4%;
+   }
    #calendars{
       border: 5px solid #990a5f;
       border-radius: 10px;
@@ -23,10 +30,10 @@
    li {
      list-style-type: none;
      display: inline;
-    .twt {margin-right: 35px;margin-bottom: -5px;}
-    .gp {margin-right:  35px;margin-bottom: -5px;}
-    .pi {margin-right: 35px;margin-bottom: -5px;}
-    .fb {margin-right: 35px;margin-bottom: -5px;}
+    .twt {margin-right: 10px;margin-bottom: 5px;}
+    .gp {margin-right:  10px;margin-bottom: 5px;}
+    .pi {margin-right: 10px;margin-bottom: 5px;}
+    .fb {margin-right: 10px;margin-bottom: 5px;}
     }
   }
   .image-event{

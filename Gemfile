@@ -41,6 +41,7 @@ gem 'social-share-button'
 gem 'kaminari'
 gem 'yahoo_weather'
 gem 'ancestry'
+gem 'jquery-sliders-rails'
 
 
 

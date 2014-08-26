@@ -20,6 +20,7 @@
 //= require jquery.ui.datepicker
 //= require fancybox
 //= require fullcalendar
+//= require jquery.sliders
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -39,4 +40,13 @@ $(document).foundation({
     bullets: false
   }
 });
+
+setTimeout(function(){
+   $(window).trigger('resize');        
+}, 0);
+
+ $(document).ready(function () {
+        $("#slideshow1").sliders();
+        $("#slideshow2").sliders({ interval: 1000 });
+ });
 

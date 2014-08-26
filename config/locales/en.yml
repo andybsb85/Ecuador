@@ -42,10 +42,16 @@ en:
       selectRegion: "Select Region"  
       selectCity: "Select City"
       selectOption: "Select Type Destination"
-      searchDestination: "Search Destination"
+      searchEvent: "Search Event"
+      searchDestination: "Destination"
+      searchActivity: "Activity"
+      selectTypeDestination: "Select Type Destination"
+      selectTypeActivity: "Select Type Activity"
       booking: "Booking"
       go: "Search"
       topDestination: "Top Destinations"
+      welcome: "Welcome to Ecuador Tourism"
+      welcomet: "Explore one of the most biodiverse country in South America. Enjoy its climates, culture, adventure and more..."
       
   countries:
     show:
@@ -128,10 +134,23 @@ en:
       selectTypeActivity: "Activity Type"
       search: "Search"
       
+      
   events:
     show:
        ecuadorTourism: "Ecuador Tourism"
        events: "EVENTS"
+       description: "Description:"
+       date: "Date:"
+       place: "Place:" 
+  
+  destinations:
+    show:
+      description: "Description:"
+      place: "Place:"
+      phone: "Phone:" 
+      website: "Website:"
+      average: "Average Rating: "
+     
       
   tip:
     index:

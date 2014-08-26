@@ -1,12 +1,16 @@
 <% content_for :title,  t('.aboutEcuador')%>
+
 <div class= "content-body">
   <ul class="breadcrumbs">
     <li><%=link_to t('.ecuadorTourism'),  index_path%></li>
     <li><%=link_to t('.aboutEcuador'),  country_path(1), :class => 'current' %></li>
   </ul>
   <div class = "row">
-       <h4><strong><%= @country.name %></strong></h4>
+       <div class = "large-3 columns">
+          <%= render "shared/linkregion" %>
+        </div>
         <div class = "large-9 columns">
+          <h4><strong><%= @country.name %></strong></h4>
           <div class = "image-ecuador">
             <%= image_tag (@country.image_url) %>
           </div>
@@ -141,12 +145,6 @@
                </div>
              </dd>
              <dd class="accordion-navigation">
-               <a href="#panel5"><h5><%= t ('.visaInformation')%>:</h5></a>
-               <div id="panel5" class="content">
-                 <%= @country.visa_information %>
-               </div>
-             </dd>
-             <dd class="accordion-navigation">
                <a href="#panel6"><h5><%= t ('.population')%>:</h5></a>
                <div id="panel6" class="content">
                  <%= @country.population %>
@@ -163,24 +161,9 @@
                  <%= @country.currency %>
                </div>
              </dd>
-             <dd class="accordion-navigation">
-               <a href="#panel8"><h5><%= t ('.emergencyServices')%>:</h5></a>
-               <div id="panel8" class="content">
-                 <%= @country.emergency_services %>
-                </div>
-             </dd>
-             <dd class="accordion-navigation">
-               <a href="#panel9"><h5><%= t ('.transport')%>:</h5></a>
-               <div id="panel9" class="content">
-                 <%= @country.transport %>
-              </div>
-             </dd>
           </dl>
           </div>
         </div>  
-        <div class = "large-3 columns">
-          <%= render "shared/linkregion" %>
-        </div>
   </div>
 </div>
 

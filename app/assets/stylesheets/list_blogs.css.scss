@@ -19,4 +19,21 @@
 .row{
   margin-top: 2%;
   margin-bottom: 2%;
+  
+  .blog{
+    
+      img{
+       border-radius: 6px;
+        height: 500px;
+      }
+
+     .blog-description{
+      margin-top: 3%;
+
+      h5{
+        color: #0e12a7;
+        font-family: 'Droid Sans', sans-serif;
+      }
+    }
+  }
 }

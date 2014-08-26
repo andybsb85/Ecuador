@@ -7,55 +7,38 @@
   </ul>
         
   <div class="row">
-      <h4><%= t('.blog') %></h4>
-      <div id="parallax" class="clear">
-        <div class="parallax-layer" style="width:1200px; height:250px;">
-          <%= image_tag('butterflies3.png') %>
-        </div>
-        <div class="parallax-layer" style="width:500px; height:250px;">
-          <%= image_tag('pelicano.png', height: '900', width: '900') %>
-        </div>
-        <div class="parallax-layer" style="width:500px; height:250px;">
-          <%= image_tag ('foca.png'), {style: "margin-left: 50%; padding-top: 5px;"}%>
-        </div>
-      </div>  
+    <div class="large-3 columns">
+       <%= render "shared/linkregion" %>
     </div>
-  <div class="row">
-      <% @blogs.each do |blog| %>
+    <div class="large-9 columns">
+      <h4><%= t('.blog') %></h4>
+       <% @blogs.each do |blog| %>
         <div class="blog">
           <div class="img_blog">
             <%= link_to (image_tag(blog.image_url)), blog %>
           </div>
-          <div class="des_location">
+          <div class="blog-description">
             <h5><%= link_to (blog.title), blog %></h5>
-            <%= sanitize(blog.article) %>
-              </div>
+            <p><%= sanitize(blog.article) %></p>
+          </div>
         </div>
-      <% end %>  
-    </div>
-  <div class="row">
-     <div class="fb-comments" data-href="http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/list_blog/index?locale=en" data-numposts="5" data-colorscheme="light"></div>
-    </div>
+       <% end %>  
+       <div class="row">
+  <div class="fb-comments" data-href="http://zippy-dragonstone-46-129231.euw1.nitrousbox.com/list_blog/index?locale=en" data-numposts="5" data-colorscheme="light"></div>
+        </div>
+     </div>
+  </div>
 </div>
 
+
 <%= content_for :scripts do %>
-<script type="text/javascript">
- jQuery(document).ready(function() 
-{
-    $('#parallax .parallax-layer')
-    .parallax({
-        mouseport: $('#parallax')
-    });
-});
-</script>  
-
-
-<script type="text/javascript">
-  (function(d, s, id) {
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <% end %>

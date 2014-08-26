@@ -12,84 +12,86 @@
         <%= render "shared/linkregion" %>
       </div>
       <div class= "large-9 columns">
-        <div class="row">
-          <div class = "large-9 columns">
-            <h4><strong><%= @activity.name %></strong></h4>
-            <ul class="social-share-list list-inline">
-              <div class="row">
-                <div class = "large-3 columns">
-                  <li class="twt">
-                    <%= tweet_button count: 'horizontal' %>
-                  </li>
-                </div>
-                <div class = "large-9 columns">
-                  <li class="pi">
-                    <%= pinit_button(url: request.url, media: @activity.image_url, description: "Amazing Picture") %>
-                  </li>
-                  
-                </div>
-                <div class = "large-3 columns">
-                  <li class="fb">
-                    <%= like_button(690575874330211) %>
-                  </li>
-                </div>
-                <div class = "large-9 columns">
-                  <li class = "gp">
-                    <%= google_plus_button %>
-                  </li>
-                </div>
-              </div>
-            </ul>
-          </div>
-          <div class = "large-3 columns">
-            <h5>Share:</h5><%= social_share_button_tag(@activity.image_url) %>         
-          </div>
-        </div>
-        <div class="row">
-          <div class="div-orbit">
-            <ul class="example-orbit-content" data-orbit>
-             <li data-orbit-slide="headline-1">
-               <div>
-                 <%= image_tag(@activity.image_url) %>
-               </div>
-             </li>
-             <li data-orbit-slide="headline-2">
-               <div>
-                 <%= image_tag(@activity.image_url_two) %>
-               </div>
-             </li>
-             <li data-orbit-slide="headline-3">
-               <div>
-                 <%= image_tag(@activity.image_url_three) %>
-               </div>
-             </li>
-           </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class = "large-12 columns">
-            <div class ="description-event">
-              <p>    
-                <strong>Description:</strong>
-                <%= @activity.description %>
-              </p>
+        <div class = "right-content">
+          <div class="row">
+            <div class = "large-4 columns">
+              <h4><strong><%= @activity.name %></strong></h4>
+              <ul class="social-share-list list-inline">
+                <div class="row">
+                  <div class = "large-5 columns">
+                    <li class="twt">
+                      <%= tweet_button count: 'horizontal' %>
+                    </li>
+                  </div>
+                  <div class = "large-4 columns">
+                    <li class="pi">
+                      <%= pinit_button(url: request.url, media: @activity.image_url, description: "Amazing Picture") %>
+                    </li>
 
-              <p>
-                <strong>Address:</strong>
-                <%= @activity.address %>
-              </p>
+                  </div>
+                  <div class = "large-4 columns">
+                    <li class="fb">
+                      <%= like_button(690575874330211) %>
+                    </li>
+                  </div>
+                  <div class = "large-9 columns">
+                    <li class = "gp">
+                      <%= google_plus_button %>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class = "large-4 columns">
+              <h5>Share:</h5><%= social_share_button_tag(@activity.image_url) %>         
             </div>
           </div>
-        </div>
-        <div class="row">
-           <div class = "large-12 columns">
-             <div class ="video">
-               <div class="flex-video">
-                  <iframe width="354" height="210" src="//<%= @activity.video_url %>" frameborder="0" ></iframe>
-                </div>
+          <div class="row">
+            <div class="div-orbit">
+              <ul class="example-orbit-content" data-orbit>
+               <li data-orbit-slide="headline-1">
+                 <div>
+                   <%= image_tag(@activity.image_url) %>
+                 </div>
+               </li>
+               <li data-orbit-slide="headline-2">
+                 <div>
+                   <%= image_tag(@activity.image_url_two) %>
+                 </div>
+               </li>
+               <li data-orbit-slide="headline-3">
+                 <div>
+                   <%= image_tag(@activity.image_url_three) %>
+                 </div>
+               </li>
+             </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class = "large-12 columns">
+              <div class ="description-event">
+                <p>    
+                  <strong>Description:</strong>
+                  <%= @activity.description %>
+                </p>
+
+                <p>
+                  <strong>Address:</strong>
+                  <%= @activity.address %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+             <div class = "large-12 columns">
+               <div class ="video">
+                 <div class="flex-video">
+                    <iframe width="354" height="210" src="//<%= @activity.video_url %>" frameborder="0" ></iframe>
+                  </div>
+               </div>
              </div>
            </div>
-         </div>
+        </div>
       </div>
     </div>
   </div>

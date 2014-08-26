@@ -21,10 +21,16 @@ es:
       selectRegion: "Seleccione Region"  
       selectCity: "Seleccione Ciudad"
       selectOption: "Seleccione Tipo de Destino"
-      searchDestination: "Buscar Destino"
+      searchEvent: "Buscar Evento"
+      searchDestination: "Destino"
+      searchActivity: "Actividad"
+      selectTypeDestination: "Tipo de Destino" 
+      selectTypeActivity: "Tipo de Actividad"
       booking: "Reservaciones"
       go: "Buscar"
       topDestination: "Top Destinos"
+      welcome: "Bienvenidos a Ecuador Turismo"
+      welcomet: "Explora uno de los país mas biodiversos de América del Sur. Difruta sus climas, cultura, aventura y mas..."
       
   countries:
     show:
@@ -109,6 +115,17 @@ es:
     show:
        ecuadorTourism: "Ecuador Turismo"
        events: "EVENTOS"
+       description: "Descripción:"
+       date: "Fecha:"
+       place: "Lugar:"
+       
+  destinations:
+    show:
+      description: "Descripción:"
+      place: "Lugar:"
+      phone: "Teléfono:" 
+      website: "Website:"
+      average: "Rating Promedio: "
     
   tip:
     index:

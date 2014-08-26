@@ -8,6 +8,7 @@
   background-color: #ffffff;
 }
 
+
 .links{
     margin-top: 2%;
     background-color: #f3f3f3;
@@ -76,9 +77,13 @@
       width: 100%;
       height: 90px;
 
-      h5{
+      h5, a{
          font-weight:bold;
-         color: #f50504;
+         color: #0e12a7;
+      }
+       p{
+        font-family: 'Open Sans', sans-serif;
+         font-size: 1.1em;
       }
     }
   }

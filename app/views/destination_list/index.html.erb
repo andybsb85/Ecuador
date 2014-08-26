@@ -47,9 +47,7 @@
         </div>
         </div>
         <div class ="row">
-          <div class="plan">
-             <%= render @plan %>
-          </div>
+          <%= render @plan %>
         </div> 
       </div>
     <div class = "large-9 columns">
@@ -62,10 +60,9 @@
               </div>
               <div class="des_location">
                 <h5><%= link_to (destination.name), destination %></h5>
-                <%= sanitize(destination.summary) %>
+                <p><%= sanitize(destination.summary) %></p>
                 <%= button_to t('.plan'), line_destinations_path(destination_id: destination),  {class: 'button tiny radius'} %>
-                <p>Averate rating</p>
-                <div id="star"></div>
+               
               </div>
             </div>
             <% end %>  

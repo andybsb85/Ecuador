@@ -10,3 +10,15 @@ $ ->
     
     social = $(this).data("social")
     openwindow(social)
+
+    
+openwindow = (despegar) ->
+  window.open(despegar)
+
+
+$ ->
+  $("a[data-despegar]").click (e) ->
+    e.preventDefault()
+    
+    despegar = $(this).data("despegar")
+    openwindow(despegar)

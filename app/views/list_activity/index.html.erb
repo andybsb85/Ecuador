@@ -36,7 +36,7 @@
                     <label><%= t('.selectTypeDestination')%>
                     <%= form_tag({ controller: 'list_activity', action: 'index' }, method: 'get') do %>
                     <%= select_tag 'search_topic', options_from_collection_for_select(TypeActivity.all, :id, :name) %>
-                      <%= submit_tag "Search", name: nil, class: 'button tiny radius' %>
+                      <%= submit_tag t('.search'), name: nil, class: 'button tiny radius' %>
                     <% end %> 
                     </label>
                   </div>
@@ -57,10 +57,7 @@
               </div>
               <div class="des_location">
                 <h5><%= link_to (activity.name), activity %></h5>
-                <%= sanitize(activity.summary) %>
-                <p>Averate rating</p>
-                <div id= "live-review"></div>
-                <span id="live"></span>
+                <p><%= sanitize(activity.summary) %></p>
               </div>
             </div>
             <% end %>  

@@ -22,3 +22,7 @@ $ ->
     
     despegar = $(this).data("despegar")
     openwindow(despegar)
+    
+    
+    
+    

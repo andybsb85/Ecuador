@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   get 'list_blog/index'
   get 'list_activity/index'
   get 'welcome/index'
-
   
   
   scope '(:locale)' do

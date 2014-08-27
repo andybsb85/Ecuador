@@ -25,21 +25,23 @@
 
 $(function(){ $(document).foundation(); });
 
+
+$(document).foundation({
+  orbit: {
+    animation: 'slide',
+    timer_speed: 6800,
+    pause_on_hover: true,
+    animation_speed: 900,
+    navigation_arrows: true,
+    bullets: false
+  }
+});
+
 function printpage()
   {
   window.print()
   }
 
-$(document).foundation({
-  orbit: {
-    animation: 'slide',
-    timer_speed: 1000,
-    pause_on_hover: true,
-    animation_speed: 600,
-    navigation_arrows: true,
-    bullets: false
-  }
-});
 
 setTimeout(function(){
    $(window).trigger('resize');        
@@ -49,4 +51,5 @@ setTimeout(function(){
         $("#slideshow1").sliders();
         $("#slideshow2").sliders({ interval: 1000 });
  });
+
 
